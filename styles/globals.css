@@ -1,16 +1,820 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+nav,
+header,
+section,
+footer {
+  animation: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+section {
+  padding: 30px 20px 10px 20px;
+  /* border-top: 0.6px solid #938787;
+  border-top-style: groove; */
+}
+.subheading-p {
+  font-family: "Mukta", sans-serif;
+  color: #c8dedf;
+  letter-spacing: 0.8px;
+}
+#drive-section {
+  padding-bottom: 30px;
+}
+.err {
+  border: 1px solid white;
+  padding: 3px 8px;
+  margin-bottom: 25px;
+  font-family: monospace;
+  font-size: 14px;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.section:nth-child(2n) {
+  background-color: #070b0e;
+}
+.section:nth-child(2n + 1) {
+  background-color: #160101;
+}
+#admin-section,
+#drive-section {
+  background-position: center;
+}
+#group-section,
+#achieve-section {
+  background-image: url("/static/ex.svg");
+}
+
+/* --------------------------------- NAV BAR -------------------------------- */
+nav {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #1a0202de;
+  box-shadow: 0px 3px 6px rgb(62 43 43 / 60%);
+  height: 40px;
+}
+
+.nav-item-container {
+  display: inline-flex;
+  align-items: center;
+  transform: translateY(2px);
+}
+
+.nav-logo {
+  margin: 0;
+  width: 80px;
+  transform: translateY(2px);
+  filter: invert(1);
+}
+
+.nav-logo:hover {
+  transition: 1s;
+}
+
+nav li {
+  display: inline;
+  cursor: pointer;
+  margin-left: 18px;
+  font-size: 18px;
+}
+
+nav li:hover {
+  color: #e5dede;
+}
+
+nav .active {
+  text-decoration: underline;
+}
+
+/* --------------------------------- HEADER --------------------------------- */
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: #0c151a;
+  /* background-image: url(./asserts/images/bg-stars.svg); */
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/static/ex2.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+#logo {
+  background-position: center;
+  background-size: 300px;
+  padding: 3px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid #ffffff44;
+  animation: border-anim;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+}
+@keyframes border-anim {
+  100% {
+    border: 4px solid rgba(255, 255, 255, 0.74);
+  }
+}
+
+#edit-icon {
+  display: none;
+  width: 30px;
+}
+
+header .heading {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+header .subheading {
+  font-weight: 200;
+  font-size: 18px;
+}
+
+/* ------------------------------ GROUP SECTION ----------------------------- */
+.groups {
+  display: inline-block;
+}
+
+.section-heading {
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 10px 36px 10px;
+  background: #24364200;
+  color: #ffffffe0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px -2px #f5f5f5;
+  padding: 4px 15px;
+  display: inline-block;
+}
+
+.app-heading {
+  font-weight: 400;
+  background-color: #0c151a;
+  width: 90%;
+  height: 30px;
+  margin: 15px auto 5px auto;
+  border-radius: 5px;
+  border: 1px solid aliceblue;
+  background-color: white;
+  color: black;
+}
+.wa .app-heading {
+  margin-top: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+  background-color: #231e1f;
+  background-color: #8b00001e;
+  height: 255px;
+  width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card,
+.admin-box {
+  box-shadow: 2px 2px 5px -1px #000000;
+  background-color: #131618;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 4px 0px white;
+  transition: 0s;
+}
+
+.group-container {
+  display: inline-flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-dp {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.group-name {
+  font-weight: 400;
+  margin: 0px;
+  border-bottom: 1px solid #ffffff5c;
+  padding-bottom: 5px;
+  width: 100%;
+}
+.admin-name {
+  font-weight: 400;
+  padding-bottom: 5px;
+  margin: 0px;
+  font-size: 15px;
+}
+
+.group-info {
+  font-family: "Inter", sans-serif;
+  font-family: "Mukta", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #ffffffc7;
+  height: 38px;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+}
+
+/* ------------------------------ DRIVE SECTION ----------------------------- */
+.drive-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.drive-img {
+  width: 50%;
+  max-width: 460px;
+  filter: brightness(1.5);
+}
+
+.donation-text,
+.drive-text {
+  width: 50%;
+  max-width: 500px;
+  padding: 0 20px;
+}
+.donation-text a,
+.drive-text a {
+  color: #007eff;
+}
+
+/* ---------------------------- DONATION SECTION ---------------------------- */
+.donation-section {
+  padding-top: 80px !important;
+}
+
+.donators-subheading {
+  margin: 50px 0 0 0;
+  font-weight: 500;
+}
+.donators-subheading span:first-child {
+  text-decoration: underline;
+  margin-right: 10px;
+}
+.donators-table {
+  margin: 25px auto;
+  text-align: left;
+  text-transform: capitalize;
+  border-collapse: collapse;
+}
+.donators-table tr {
+  border-bottom: solid 1px #ffffff4d;
+}
+.donators-table td {
+  margin: 0 5px;
+  padding: 2px;
+  font-family: "Mukta", sans-serif;
+}
+.donator-name {
+  min-width: 600px;
+}
+
+.donator-amount {
+  min-width: 54px;
+  text-align: right;
+}
+
+.qr-img {
+  height: 250px;
+  width: 250px;
+}
+
+.donation-text {
+  max-width: 800px;
+  word-break: break-word;
+}
+
+.step {
+  margin-top: 8px !important;
+  line-height: 1.5;
+  padding-top: 8px;
+}
+
+/* ----------------------------- ACHIEVE SECTION ---------------------------- */
+#achieve-section {
+  width: 100%;
+}
+
+.achieve-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achieve-box {
+  display: inline-block;
+  margin-bottom: 32px;
+  padding: 13px;
+  padding-bottom: 0;
+  box-shadow: 4px 4px 5px -3px #3d3f4a;
+  border-radius: 6px;
+  background-color: #0c151a;
+  background-color: #0c151a73;
+}
+.tournament {
+  width: 500px;
+}
+
+.medal-img {
+  width: 55px;
+  height: 55px;
+}
+.winners {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+.winners div {
+  width: 110px;
+}
+
+.winners-2 {
+  transform: translateY(40px);
+}
+.winners-3 {
+  transform: translateY(50px);
+}
+
+/* ------------------------------ ADMIN SECTION ----------------------------- */
+.admin-box {
+  margin: 5px;
+  padding: 10px;
+  padding-bottom: 0;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -3px #101010;
+}
+
+.admin-dp {
+  width: 80px;
+  height: 82px;
+  border-radius: 50%;
+}
+
+/* --------------------------------- FOOTER --------------------------------- */
+footer {
+  padding: 18px 0 14px 0;
+  background: #000000 !important;
+}
+
+.dev-name {
+  display: none;
+}
+
+.dev-name a {
+  color: #007eff;
+}
+
+/* --------------------------- MEDIA QUERY: 700PX --------------------------- */
+@media (max-width: 700px) {
+  .section {
+    padding: 15px 15px 5px 15px;
+  }
+  .drive-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .drive-img {
+    width: 100%;
+  }
+
+  .donation-text,
+  .drive-text {
+    margin: 25px 15px;
+  }
+
+  .donation img,
+  .unread img {
+    width: 85vw;
+    padding: 12px 0 0;
+  }
+  .card {
+    margin: 15px;
+    width: 200px;
+  }
+  .admin-box {
+    padding: 9px 9px 0 9px;
+  }
+  .admin-dp {
+    width: 65px;
+    height: 67px;
+  }
+  .admin-name {
+    font-size: 14px;
+  }
+  .drive-container {
+    flex-direction: column;
+  }
+  .drive-img {
+    width: 100%;
+  }
+  .donation-text,
+  .drive-text {
+    width: 100%;
+    max-width: 460px;
+    padding: 0;
+  }
+  .donator-name {
+    min-width: 400px;
+  }
+}
+
+/* --------------------------- MEDIA QUERY: 500PX --------------------------- */
+@media (max-width: 500px) {
+  .donators-table {
+    width: 100%;
+  }
+  .donator-name {
+    min-width: unset;
+  }
+  .err {
+    font-size: 12px;
+  }
+
+  .nav-logo {
+    width: 60px;
+  }
+  nav li {
+    margin: 0 0 0 15px;
+    font-size: 16px;
+  }
+  .imp-li {
+    display: block;
+  }
+  #logo {
+    width: 160px;
+    height: 160px;
+    background-size: 182px;
+  }
+  .tournament {
+    width: 100%;
+  }
+  header .heading {
+    font-size: 26px;
+  }
+
+  #header-section p {
+    font-size: 14px;
+  }
+  .section-heading {
+    font-size: 25px;
+  }
+  .group-dp {
+    width: 105px;
+    height: 105px;
+  }
+  .group-info {
+    font-size: 12px;
+  }
+  .group-name,
+  .admin-name {
+    font-size: 14px;
+  }
+  .card {
+    height: 220px;
+    width: 150px;
+    margin: 15px 10px;
+  }
+  .admin-box {
+    margin: 6px;
+    padding: 8px 8px 0 8px;
+  }
+  .admin-dp {
+    width: 60px;
+    height: 62px;
+  }
+  .admin-name {
+    font-size: 13px;
+  }
+}
+
+/* --------------------------- MEDIA QUERY: 380PX --------------------------- */
+@media (max-width: 380px) {
+  nav li {
+    margin: 0 0 0 10px;
+  }
+
+  #group-section {
+    padding: 15px 0px 5px 0px;
+  }
+  nav {
+    padding: 0px 10px;
+  }
+  .card {
+    height: 215px;
+    width: 140px;
+    margin: 10px 5px;
+  }
+  .group-dp {
+    width: 95px;
+    height: 95px;
+  }
+  .group-name,
+  .admin-name {
+    margin: 10px 0px 5px;
+  }
+  .admin-box {
+    margin: 5px;
+    padding: 7px 7px 0 7px;
+  }
+  .admin-dp {
+    width: 55px;
+    height: 56px;
+  }
+  .admin-name {
+    font-size: 12px;
+  }
+  .winners div {
+    width: 33%;
+  }
+}
+
+/* --------------------------- MEDIA QUERY: 310PX --------------------------- */
+@media (max-width: 310px) {
+  .group-nav {
+    display: none;
+  }
+  .nav-logo {
+    display: none;
+  }
+}
+
+/* ------------------------------------ - ----------------------------------- */
+/* ------------------------------ BIRTHDAY PAGE ----------------------------- */
+/* ------------------------------------ - ----------------------------------- */
+#birthday_b {
+  background-size: auto;
+  background-image: url("https://thumbs.dreamstime.com/b/high-tech-eco-green-infinity-computer-technology-concept-backgro-background-32595794.jpg");
+  color: black;
+  letter-spacing: 0px;
+  padding: 30px 0 15px 0;
+}
+
+.bday-header_b {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 25px 0 10px 0;
+  color: #000102d4;
+}
+
+.wish_b {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: url("/static/diwali.gif");
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  margin: 10px 0;
+}
+
+.happy-birthday_b {
+  font-family: "Satisfy", cursive;
+  text-shadow: 5px 4px 9px rgb(44, 37, 146);
+  margin: 0;
+  color: #fdfdfd;
+  font-weight: 400;
+  font-size: 46px;
+  position: relative;
+  top: 7px;
+}
+
+.bdy-boy_b {
+  font-size: 55px;
+  color: #c4c70cf1;
+  font-family: "Satisfy", cursive;
+  text-shadow: 5px 4px 5px red;
+  margin: 0;
+  animation: infinite o;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.gif_b {
+  background: url("/static/cake.gif");
+  width: 135px;
+  height: 135px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.balloon_b {
+  width: 50px;
+  margin: 0 20px;
+  animation: down_up 3.5s infinite;
+  transform: translateY(130px);
+}
+
+.balloon2_b {
+  animation-delay: 1s;
+}
+
+@keyframes down_up {
+  0% {
+  }
+  100% {
+    display: inline;
+    transform: translateY(-130px);
+  }
+}
+
+.months-container_b {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+}
+.card_b {
+  position: relative;
+  display: inline;
+  margin: 40px 15px 15px 15px;
+  border-radius: 2px 2px 8px 8px;
+  box-shadow: 2px 2px 12px 2px black;
+  width: 450px;
+}
+
+.content-table_b {
+  margin: 0%;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+
+.month_b {
+  background-color: #feae96;
+  background-image: linear-gradient(315deg, #feae96 0%, #fe0944 74%);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 27px;
+  font-family: "Inter", sans-serif;
+  font-weight: bolder;
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-75px);
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  width: 165px;
+  border-radius: 15px;
+}
+.month2_b {
+  background: linear-gradient(to right, #019d13 0%, #879e93 100%);
+}
+.month3_b {
+  background: linear-gradient(to right, #03019d 0%, #969aa6 100%);
+}
+
+.content-table_b thead {
+  background-color: #ee9617;
+  background-image: linear-gradient(315deg, #e4b573 0%, #fe5858 74%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.month2-tr_b thead {
+  background: linear-gradient(to right, #54c060 0%, #60cc60 100%);
+}
+.month3-tr_b thead {
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.content-table_b th {
+  padding: 30px 10px 10px 10px;
+  width: 140px;
+  font-weight: 500;
+}
+.content-table_b td {
+  padding: 9px 6px 7px 6px;
+  word-break: break-word;
+  text-transform: capitalize;
+}
+
+.content-table_b tbody tr {
+  border-bottom: 1px solid #f5f2f2;
+}
+
+.content-table_b tbody tr:nth-of-type(even) {
+  background-color: #eeeaeab7;
+}
+
+.date_b {
+  width: 30px !important;
+}
+
+@media (max-width: 700px) {
+  .today-bday-text_b {
+    width: 80%;
+  }
+  .happy-birthday_b {
+    font-size: 42px;
+  }
+  .bdy-boy_b {
+    font-size: 50px;
+  }
+  .balloon_b {
+    width: 46px;
+  }
+  .balloon2_b {
+    display: none;
+  }
+  .gif_b {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .happy-birthday_b {
+    font-size: 36px;
+    z-index: 1;
+  }
+  .bdy-boy_b {
+    font-size: 40px;
+    z-index: 1;
+  }
+  .balloon_b {
+    z-index: 0;
+    position: absolute;
+    right: 0;
+  }
+  .month_b {
+    font-size: 22px;
+    padding: 6px;
+    top: -28px;
+  }
+  .months-container_b {
+    padding: 0 10px;
+  }
+  .content-table_b th {
+    padding: 20px 3px 6px 3px;
+    font-size: 18px;
+  }
+  .content-table_b td {
+    font-size: 17px;
+    padding: 10px 3px 10px 3px;
+  }
+  .card_b {
+    width: 100%;
+    margin: 40px 0px 15px 0px;
+  }
 }
