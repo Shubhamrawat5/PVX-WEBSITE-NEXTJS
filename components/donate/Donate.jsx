@@ -76,8 +76,9 @@ export default function Donate(props) {
       <div className="drive-container">
         <p className="donation-text subheading-p">
           <span className="step">
-            1) Scan the given qr code or donate at "shubhamraw123@okhdfcbank"
-            this VPA using your favourite payments app.
+            1) Scan the given qr code or donate at
+            &quot;shubhamraw123@okhdfcbank&quot; this VPA using your favourite
+            payments app.
             <br />
           </span>
           <span className="step">
@@ -93,7 +94,7 @@ export default function Donate(props) {
             <br />
           </span>
           <span className="step">
-            3) You'll be listed on community bot, website and other apps as
+            3) You&apos;ll be listed on community bot, website and other apps as
             donor 💰
           </span>
           <br />

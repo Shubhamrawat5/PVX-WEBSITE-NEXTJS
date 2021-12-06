@@ -15,6 +15,9 @@ export default function HomePage() {
   const [wagroups, setWagroups] = useState(GroupStateProvider());
   return (
     <>
+      <Head>
+        <title>PVX | HOME</title>
+      </Head>
       <Header />
       <Group wagroups={wagroups} setWagroups={setWagroups} />
       <Drive />

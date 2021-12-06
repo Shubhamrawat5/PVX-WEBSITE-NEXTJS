@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import Community from "../components/bday/Community";
 import BdayStateProvider from "../components/bday/BdayStateProvider";
 
@@ -7,11 +8,16 @@ export default function BdaysPage() {
   const [todayBday, setTodayBday] = useState("");
 
   return (
-    <Community
-      months={months}
-      setMonths={setMonths}
-      todayBday={todayBday}
-      setTodayBday={setTodayBday}
-    />
+    <>
+      <Head>
+        <title>PVX | BDAYS</title>
+      </Head>
+      <Community
+        months={months}
+        setMonths={setMonths}
+        todayBday={todayBday}
+        setTodayBday={setTodayBday}
+      />
+    </>
   );
 }
