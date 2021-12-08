@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Whatsapp(props) {
   const { wagroups } = props;
@@ -23,14 +24,18 @@ export default function Whatsapp(props) {
             >
               <div className="card">
                 <h4 className="group-name">{group.name}</h4>
-                <img className="group-dp" src={group.img} alt="" />
+                <div className="group-dp">
+                  <Image src={group.img} alt="dp" layout="fill" />
+                </div>
                 <p className="group-info">&#40;{group.desc}&#41;</p>
               </div>
             </a>
           ) : (
             <div className="card" key={index}>
               <h4 className="group-name">{group.name}</h4>
-              <img className="group-dp" src={group.img} alt="" />
+              <div className="group-dp">
+                <Image src={group.img} alt="dp" layout="fill" />
+              </div>
               <p className="group-info">&#40;{group.desc}&#41;</p>
             </div>
           );

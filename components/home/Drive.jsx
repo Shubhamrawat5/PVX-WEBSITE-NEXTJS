@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Drive() {
   return (
     <section id="drive-section" className="section">
@@ -7,7 +8,13 @@ export default function Drive() {
         place!
       </p>
       <div className="drive-container">
-        <img className="drive-img" src="./static/drive.png" alt="drive" />
+        <Image
+          className="drive-img"
+          src="/static/drive.png"
+          alt="drive"
+          width="600"
+          height="350"
+        />
         <p className="drive-text subheading-p">
           Join PVX Shared Drive
           <br />
@@ -23,11 +30,11 @@ export default function Drive() {
           <br />
           2) Join Group
           <br />
-          (an error message can be displayed: "You don't have permission to
-          access this content", but ignore it!) <br />
+          (an error message can be displayed: &quot;You don&apos;t have
+          permission to access this content&quot;, but ignore it!) <br />
           3) Open Google drive app
           <br />
-          4) Go to "Files", then "Shared drives" - Adi
+          4) Go to &quot;Files&quot;, then &quot;Shared drives&quot; - Adi
           <br />
           Enjoy!
           <br />

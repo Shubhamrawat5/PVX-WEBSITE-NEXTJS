@@ -104,6 +104,7 @@ nav {
 .nav-logo {
   margin: 0;
   width: 80px;
+  height: 30px;
   transform: translateY(2px);
   filter: invert(1);
 }
@@ -143,9 +144,9 @@ header {
 }
 
 #logo {
-  background-position: center;
-  background-size: 300px;
-  padding: 3px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -242,6 +243,9 @@ header .subheading {
 }
 
 .group-dp {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -281,7 +285,6 @@ header .subheading {
 }
 
 .drive-img {
-  width: 50%;
   max-width: 460px;
   filter: brightness(1.5);
 }
@@ -405,6 +408,9 @@ header .subheading {
 }
 
 .admin-dp {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   width: 80px;
   height: 82px;
   border-radius: 50%;
@@ -432,9 +438,6 @@ footer {
   .drive-container {
     width: 100%;
     padding: 0 15px;
-  }
-  .drive-img {
-    width: 100%;
   }
 
   .donation-text,
@@ -491,7 +494,8 @@ footer {
   }
 
   .nav-logo {
-    width: 60px;
+    width: 55px;
+    height: 20px;
   }
   nav li {
     margin: 0 0 0 15px;

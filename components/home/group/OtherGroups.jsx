@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function OtherGroups() {
   return (
     <>
@@ -12,7 +13,9 @@ export default function OtherGroups() {
           >
             <div className="card">
               <h4 className="group-name">COMMUNITY</h4>
-              <img className="group-dp" src="./static/group/fb.jpg" alt="" />
+              <div className="group-dp">
+                <Image src="/static/group/fb.jpg" alt="dp" layout="fill" />
+              </div>
               <p className="group-info">(Posting group)</p>
             </div>
           </a>
@@ -30,11 +33,9 @@ export default function OtherGroups() {
           >
             <div className="card">
               <h4 className="group-name">COMMUNITY</h4>
-              <img
-                className="group-dp"
-                src="./static/group/discord.jpg"
-                alt=""
-              />
+              <div className="group-dp">
+                <Image src="/static/group/discord.jpg" alt="dp" layout="fill" />
+              </div>
               <p className="group-info">(Discord PVX group)</p>
             </div>
           </a>
@@ -52,7 +53,9 @@ export default function OtherGroups() {
           >
             <div className="card">
               <h4 className="group-name">COMMUNITY</h4>
-              <img className="group-dp" src="./static/group/main.jpg" alt="" />
+              <div className="group-dp">
+                <Image src="/static/group/main.jpg" alt="dp" layout="fill" />
+              </div>
               <p className="group-info">(Signal PVX group)</p>
             </div>
           </a>

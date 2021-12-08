@@ -1,16 +1,17 @@
-const kryptonImg = "./static/admin/krypton.jpg";
-const adiImg = "./static/admin/adi.jpg";
-const rollyImg = "./static/admin/rolly.jpg";
-const mundalImg = "./static/admin/mundal.jpg";
-const bhanuImg = "./static/admin/bhanu.jpg";
-const jigneshImg = "./static/admin/jignesh.jpg";
-const anmolImg = "./static/admin/anmol.jpg";
-const masterImg = "./static/admin/master.jpg";
-const kiraImg = "./static/admin/kira.jpg";
-const ankitImg = "./static/admin/toxic.jpg";
-const mysImg = "./static/admin/mys.jpg";
-const vivekImg = "./static/admin/leo.jpg";
-const karmaImg = "./static/admin/karma.jpg";
+const kryptonImg = "/static/admin/krypton.jpg";
+const adiImg = "/static/admin/adi.jpg";
+const rollyImg = "/static/admin/rolly.jpg";
+const mundalImg = "/static/admin/mundal.jpg";
+const bhanuImg = "/static/admin/bhanu.jpg";
+const jigneshImg = "/static/admin/jignesh.jpg";
+const anmolImg = "/static/admin/anmol.jpg";
+const masterImg = "/static/admin/master.jpg";
+const kiraImg = "/static/admin/kira.jpg";
+const ankitImg = "/static/admin/toxic.jpg";
+const mysImg = "/static/admin/mys.jpg";
+const vivekImg = "/static/admin/leo.jpg";
+const karmaImg = "/static/admin/karma.jpg";
+import Image from "next/image";
 
 export default function Admin() {
   let admins = [
@@ -75,7 +76,9 @@ export default function Admin() {
         {admins.map((admin, index) => {
           return (
             <div className="admin-box" key={index}>
-              <img className="admin-dp" src={admin.img} alt="admin" />
+              <div className="admin-dp">
+                <Image src={admin.img} alt="admin" layout="fill" />
+              </div>
               <h4 className="admin-name">{admin.name}</h4>
             </div>
           );

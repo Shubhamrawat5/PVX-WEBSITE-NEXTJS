@@ -14,13 +14,9 @@ export default function Nav(props) {
 
   return (
     <nav>
-      <Image
-        className="nav-logo"
-        src="/static/pvxx.png"
-        alt="logo"
-        height={30}
-        width={80}
-      />
+      <div className="nav-logo">
+        <Image src="/static/pvxx.png" alt="logo" layout="fill" />
+      </div>
       <div className="nav-item-container">
         <Link href="/" passHref>
           <a>
@@ -40,7 +36,7 @@ export default function Nav(props) {
         <Link href="/bdays" passHref>
           <a>
             <li className={pathname === "/bdays" ? "active" : null}>
-              B&apos;Days
+              B&apos;Day
             </li>
           </a>
         </Link>

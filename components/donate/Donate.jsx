@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 // import axios from "axios";
+import Image from "next/image";
 
 export default function Donate(props) {
   const isUnmounted = useRef(false);
@@ -100,7 +101,13 @@ export default function Donate(props) {
           <br />
         </p>
 
-        <img className="qr-img" src="./static/pvx_qr.png" alt="pvx-qr" />
+        <Image
+          className="qr-img"
+          src="/static/pvx_qr.png"
+          alt="pvx-qr"
+          height="250"
+          width="250"
+        />
       </div>
 
       <br />
@@ -136,7 +143,12 @@ export default function Donate(props) {
       ) : null}
 
       <div className="achieve-box donation">
-        <img src="./static/pvx/certi.jpg" alt="certificate" />
+        <Image
+          src="/static/pvx/certi.jpg"
+          alt="certificate"
+          height="400"
+          width="570"
+        />
         <p className="subheading-p">Donations collected by PVX in Feb 2020</p>
       </div>
     </section>
