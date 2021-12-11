@@ -1,63 +1,10 @@
-import { useEffect, useState, useRef } from "react";
-// import axios from "axios";
-
-export default function Stats(props) {
-  const isUnmounted = useRef(false);
-  const { gcount, setGcount, totalMessages, setTotalMessages } = props;
-  const [gcountInfo, setGcountInfo] = useState("");
-
-  // useEffect(() => {
-  //   if (isUnmounted.current) return;
-  //   if (gcount.length !== 0) return; //to avoid reattaching gcount
-
-  //   setGcountInfo("Adding count data... please wait.");
-  //   const url = "https://pvxgroup.herokuapp.com/api/gcount";
-  //   const urlBackup = "https://pvxgroupbackup.herokuapp.com/api/gcount";
-
-  //   function setGcountList({ data }) {
-  //     if (isUnmounted.current) return;
-  //     let total = 0;
-  //     setGcount(data);
-  //     data.forEach((ele) => {
-  //       total += Number(ele.count);
-  //     });
-  //     setTotalMessages(total);
-  //   }
-
-  //   async function tryWithUrl(url) {
-  //     // try {
-  //     let { data } = await axios.get(url);
-  //     setGcountList(data);
-
-  //     setGcountInfo("Count data added!");
-  //     setTimeout(() => {
-  //       setGcountInfo("");
-  //       return true;
-  //     }, 2000);
-  //   }
-
-  //   async function start() {
-  //     let response = await tryWithUrl(url);
-  //     if (response === false) {
-  //       //error in main url, now trying backup url
-  //       console.log("Error in main url.. trying backup url.");
-  //       setGcountInfo("Problem with main url.. trying backup url.");
-  //       let response = await tryWithUrl(urlBackup);
-  //       if (response === false) {
-  //         setGcountInfo(
-  //           "NOTE: There is a problem with attaching the gcount data ! Contact PVX admins."
-  //         );
-  //       }
-  //     }
-  //   }
-
-  //   start();
-  //   return () => {
-  //     isUnmounted.current = true;
-  //   };
-  //   //TODO: fix this eslint warning
-  //   // eslint-disable-next-line
-  // }, []);
+export default function Stats({ gcount }) {
+  let totalMessages = 0;
+  if (gcount) {
+    gcount.forEach((ele) => {
+      totalMessages += Number(ele.count);
+    });
+  }
 
   return (
     <section id="achieve-section" className="section donation-section">
@@ -71,13 +18,7 @@ export default function Stats(props) {
         down time gets ignored and are not counted.
       </p>
 
-      {gcountInfo ? (
-        <div id="err" className="err">
-          {gcountInfo}
-        </div>
-      ) : null}
-
-      {gcount.length !== 0 ? (
+      {gcount ? (
         <>
           <h2 className="donators-subheading">
             <span>TOTAL MESSAGES: </span>
@@ -94,7 +35,12 @@ export default function Stats(props) {
             </tbody>
           </table>
         </>
-      ) : null}
+      ) : (
+        <div div id="err" className="err">
+          NOTE: There is a problem with attaching the stats data ! Contact PVX
+          admins.
+        </div>
+      )}
     </section>
   );
 }
