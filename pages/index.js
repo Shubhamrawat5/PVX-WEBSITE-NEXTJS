@@ -10,14 +10,33 @@ import Groups from "../components/home/groups/Groups";
 
 import GroupStateProvider from "../components/home/groups/GroupStateProvider";
 
-import axios from "axios";
+// import axios from "axios";
 
-HomePage.getInitialProps = async () => {
+// HomePage.getInitialProps = async () => {
+export const getServerSideProps = async (ctx) => {
   //runs in server side
-  const url = "https://pvx-api-vercel.vercel.app/api/links";
-  let { data } = await axios.get(url);
+  // const url = "https://pvx-api-vercel.vercel.app/api/links";
+  // let { data } = await axios.get(url);
+  // return { data: data };
+  const mongoose = require("mongoose");
+  const URI = process.env.URI;
 
-  return { data: data };
+  // DB connect
+  mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  // Collection schema
+  const groupLink_schema = new mongoose.Schema({
+    name: String,
+    link: String,
+  });
+
+  const GroupLink =
+    mongoose.models.grouplinks ||
+    mongoose.model("grouplinks", groupLink_schema);
+
+  const data = await GroupLink.find().sort({ name: 1 });
+
+  return { props: { data: JSON.parse(JSON.stringify(data)) } };
 };
 
 export default function HomePage({ data }) {
