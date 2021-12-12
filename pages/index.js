@@ -36,6 +36,12 @@ export const getServerSideProps = async (ctx) => {
 
   const data = await GroupLink.find().sort({ name: 1 });
 
+  let index = data.findIndex((d) => d.name === "website");
+  if (data[index]["link"] === "0") {
+    //close all links
+    for (let i = 0; i < data.length; ++i) data[i]["link"] = "";
+  }
+
   return { props: { data: JSON.parse(JSON.stringify(data)) } };
 };
 

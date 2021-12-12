@@ -13,7 +13,7 @@ export default function Groups(props) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       ) : null}
-      <Whatsapp wagroups={wagroups} />
+      <Whatsapp wagroups={wagroups} isBlocked={isBlocked} />
       <Telegram />
       <OtherGroups />
     </section>

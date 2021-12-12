@@ -11,21 +11,21 @@ export default function Telegram() {
     },
     {
       name: "TECH NEWS",
-      desc: "(For Daily Tech News)",
+      desc: "(Channel)",
       img: "/static/group/tech.jpg",
       url: "https://t.me/pvxtechnews",
       cn: "tg-technews",
     },
     {
       name: "MOVIES",
-      desc: "(For any Movies & Series)",
+      desc: "(Discussion)",
       img: "/static/group/movies.jpg",
       url: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
       cn: "tg-movies",
     },
     {
       name: "MIRROR",
-      desc: "(For Copying Files to Gdrive)",
+      desc: "(Gdrive Uploader)",
       img: "/static/group/mirror.jpg",
       url: "https://t.me/PVXMIRROR",
       cn: "tg-mirror",
@@ -39,21 +39,22 @@ export default function Telegram() {
       <div className="group-container">
         {tgGroups.map((grp, index) => {
           return (
-            <a
-              key={index}
-              href={grp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={grp.cn}
-            >
-              <div className="card">
-                <h4 className="group-name">{grp.name}</h4>
-                <div className="group-dp">
-                  <Image src={grp.img} alt="dp" layout="fill" />
-                </div>
-                <p className="group-info">{grp.desc}</p>
+            <div className="card" key={index}>
+              <h4 className="group-name">{grp.name}</h4>
+              <p className="group-info">{grp.desc}</p>
+              <div className="group-dp">
+                <Image src={grp.img} alt="dp" layout="fill" />
               </div>
-            </a>
+              <a
+                key={index}
+                href={grp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={grp.cn}
+              >
+                <p className="join-grp">JOIN GROUP</p>
+              </a>
+            </div>
           );
         })}
       </div>
