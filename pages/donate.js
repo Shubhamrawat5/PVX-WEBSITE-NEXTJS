@@ -27,7 +27,7 @@ export const getServerSideProps = async (ctx) => {
     mongoose.models.donations || mongoose.model("donations", donation_schema);
 
   let obj = {};
-  const data = await Donation.find();
+  const data = await Donation.find().sort({ amount: -1 });
 
   let arr = [];
   data.forEach((document) => {
