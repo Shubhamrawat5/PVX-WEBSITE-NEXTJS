@@ -13,13 +13,14 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="keywords"
-          content="PVX,pvx family,pvx website,pvx webpage,pvx community,pvx bot,whatsapp group,whatsapp bot,insta downloader,youtube downloader,movies,series,technology,news,programming,crypto,stocks,anime,sports,sticker,bot,study,meme,gaming,automobile,astronomy,space,bgmi,coc,status,pvx whatsapp group,pvx telegram group,pvx telegram channel,pvx facebook group,pvx discord channel"
+          content="PVX,pvx family,pvx birthday,stats,donate,gdrive,pvx website,pvx webpage,pvx community,pvx bot,whatsapp group,whatsapp bot,insta downloader,youtube downloader,movies,series,technology,news,programming,crypto,stocks,anime,sports,sticker,bot,study,meme,gaming,automobile,astronomy,space,bgmi,coc,status,pvx whatsapp group,pvx telegram group,pvx telegram channel,pvx facebook group,pvx discord channel"
         />
         <meta
           property="og:image"
           content="https://github.com/Shubhamrawat5/PVX_webpage/blob/main/src/asserts/images/main.jpg?raw=true"
         />
         <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <title>PVX</title>
       </Head>
       <Component {...pageProps} />
