@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 import Head from "next/head";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -23,6 +24,20 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>PVX</title>
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag("config", "G-VN9V7K8V4P");
+        `}
+      </Script>
+
       <Component {...pageProps} />
     </Layout>
   );
