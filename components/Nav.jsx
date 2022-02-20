@@ -22,22 +22,34 @@ export default function Nav(props) {
           <a>
             <li className={pathname === "/" ? "active" : null}>Home</li>
           </a>
-        </Link>
+        </Link>{" "}
+        {/* <Link href="/" passHref>
+          <a>
+            <li className={pathname === "/projects" ? "active" : null}>
+              Projects
+            </li>
+          </a>
+        </Link> */}
         <Link href="/stats" passHref>
           <a>
             <li className={pathname === "/stats" ? "active" : null}>Stats</li>
           </a>
         </Link>
-        <Link href="/donate" passHref>
+        {/* <Link href="/donate" passHref>
           <a>
             <li className={pathname === "/donate" ? "active" : null}>Donate</li>
           </a>
-        </Link>
+        </Link> */}
         <Link href="/bdays" passHref>
           <a>
             <li className={pathname === "/bdays" ? "active" : null}>
               B&apos;Day
             </li>
+          </a>
+        </Link>
+        <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
+          <a>
+            <li>Feedback</li>
           </a>
         </Link>
       </div>

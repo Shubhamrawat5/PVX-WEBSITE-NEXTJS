@@ -15,7 +15,7 @@ export default function Whatsapp(props) {
         {wagroups.map((group, index) => {
           //won't add a tag when url are not set or blocked
           return showAtag(group.url) ? (
-            <div className="card">
+            <div className="card" key={index}>
               <h4 className="group-name">{group.name}</h4>
               <p className="group-info">&#40;{group.desc}&#41;</p>
               <div className="group-dp">
