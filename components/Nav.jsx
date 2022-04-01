@@ -47,6 +47,11 @@ export default function Nav(props) {
             </li>
           </a>
         </Link>
+        <Link href="/others" passHref>
+          <a>
+            <li className={pathname === "/others" ? "active" : null}>Others</li>
+          </a>
+        </Link>
         {/* <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
           <a>
             <li>Feedback</li>

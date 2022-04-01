@@ -3,9 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 /* ------------------------------------ - ----------------------------------- */
 import Header from "../components/home/Header";
-import Drive from "../components/home/Drive";
 import Admin from "../components/home/Admin";
-import Others from "../components/home/Others";
 import Groups from "../components/home/groups/Groups";
 
 import GroupStateProvider from "../components/home/groups/GroupStateProvider";
@@ -74,8 +72,6 @@ export default function HomePage({ data }) {
       </Head>
       <Header />
       <Groups wagroups={wagroups} isBlocked={isBlocked} />
-      <Drive />
-      <Others />
       <Admin />
     </>
   );

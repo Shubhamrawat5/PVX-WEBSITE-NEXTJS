@@ -49,7 +49,7 @@ section {
   letter-spacing: 0.8px;
 }
 #drive-section {
-  padding-bottom: 30px;
+  padding-top: 80px;
 }
 .err {
   border: 1px solid white;
@@ -76,7 +76,7 @@ a {
 }
 #group-section,
 #achieve-section {
-  background-image: url("/static/ex.svg");
+  /* background-image: url("/static/ex.svg"); */
 }
 
 /* --------------------------------- NAV BAR -------------------------------- */
@@ -189,9 +189,9 @@ header .subheading {
   font-size: 30px;
   margin: 0 10px 36px 10px;
   background: #24364200;
-  color: #ffffffe0;
+  color: #2776ebe0;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px -2px #f5f5f5;
+  box-shadow: 0px 0px 2px 1px #2776ebe0;
   padding: 4px 15px;
   display: inline-block;
 }
@@ -229,6 +229,7 @@ header .subheading {
 .admin-box {
   box-shadow: 2px 2px 5px -1px #000000;
   background-color: #131618;
+  background-color: #292a505e;
 }
 
 /* .card:hover {
@@ -255,7 +256,8 @@ header .subheading {
 .group-name {
   font-weight: 400;
   margin: 0px;
-  border-bottom: 1px solid #ffffff5c;
+  /* color: #e52d2dfa; */
+  border-bottom: 1px solid #e52d2d94;
   padding-bottom: 5px;
   width: 100%;
 }
@@ -283,6 +285,7 @@ header .subheading {
   margin: 0;
   margin-top: 5px;
   box-shadow: 0px 0px 1px 1px #f0f8ff91;
+  box-shadow: 0px 0px 1px 1px #e52d2d94;
   padding: 3px 5px;
   border-radius: 3px;
   font-size: 14px;
@@ -457,7 +460,7 @@ footer {
 /* --------------------------- MEDIA QUERY: 700PX --------------------------- */
 @media (max-width: 700px) {
   .section {
-    padding: 15px 15px 5px 15px;
+    padding: 30px 15px 10px 15px;
   }
   .drive-container {
     width: 100%;

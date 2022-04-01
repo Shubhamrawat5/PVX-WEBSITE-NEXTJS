@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Others() {
+export default function Extra() {
   return (
     <section id="achieve-section" className="section">
       <h2 className="section-heading">OTHERS</h2>
