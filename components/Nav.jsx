@@ -47,11 +47,11 @@ export default function Nav(props) {
             </li>
           </a>
         </Link>
-        <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
+        {/* <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
           <a>
             <li>Feedback</li>
           </a>
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

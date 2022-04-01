@@ -1,7 +1,7 @@
-export default function Stats({ gcount }) {
+export default function Stats({ dataPVXG, dataPVXT }) {
   let totalMessages = 0;
-  if (gcount) {
-    gcount.forEach((ele) => {
+  if (dataPVXG) {
+    dataPVXG.forEach((ele) => {
       totalMessages += Number(ele.count);
     });
   }
@@ -18,18 +18,41 @@ export default function Stats({ gcount }) {
         down time gets ignored and are not counted.
       </p>
 
-      {gcount ? (
+      {dataPVXG ? (
         <>
           <h2 className="donators-subheading">
-            <span>TOTAL MESSAGES: </span>
+            <span>TOTAL GROUP MESSAGES: </span>
             <span>{totalMessages.toLocaleString("en-IN")}</span>
           </h2>
           <table className="donators-table">
             <tbody>
-              {gcount.map((grp, index) => (
+              {dataPVXG.map((grp, index) => (
                 <tr key={index}>
                   <td className="donator-name">{grp.gname.slice(8)}</td>
                   <td className="donator-amount">{grp.count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ) : (
+        <div div id="err" className="err">
+          NOTE: There is a problem with attaching the stats data ! Contact PVX
+          admins.
+        </div>
+      )}
+
+      {dataPVXT ? (
+        <>
+          <h2 className="donators-subheading">
+            <span>TOP MEMBER MESSAGES </span>
+          </h2>
+          <table className="donators-table">
+            <tbody>
+              {dataPVXT.map((mem, index) => (
+                <tr key={index}>
+                  <td className="donator-name">{mem.name}</td>
+                  <td className="donator-amount">{mem.count}</td>
                 </tr>
               ))}
             </tbody>

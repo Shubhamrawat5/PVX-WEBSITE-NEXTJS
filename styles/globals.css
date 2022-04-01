@@ -328,6 +328,7 @@ header .subheading {
 }
 
 .donators-subheading {
+  color: #e52d2dfa;
   margin: 50px 0 0 0;
   font-weight: 500;
 }
@@ -342,7 +343,8 @@ header .subheading {
   border-collapse: collapse;
 }
 .donators-table tr {
-  border-bottom: solid 1px #ffffff4d;
+  border-bottom: solid 1px #e52d2d91;
+  color: #e7e7e4;
 }
 .donators-table td {
   margin: 0 5px;
