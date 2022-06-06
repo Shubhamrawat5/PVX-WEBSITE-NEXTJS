@@ -18,6 +18,7 @@ const cryptoImg = "/static/group/crypto.jpg";
 const autoImg = "/static/group/auto.jpg";
 const dealsImg = "/static/group/deals.jpg";
 const pubgmImg = "/static/group/pubgm.jpg";
+const foodImg = "/static/group/food.jpg";
 
 export default function GroupStateProvider() {
   const wagroups = [
@@ -127,6 +128,12 @@ export default function GroupStateProvider() {
       name: "SPORTS",
       desc: "Discussion",
       img: sportsImg,
+      url: "https://",
+    },
+    {
+      name: "FOOD",
+      desc: "Discussion",
+      img: foodImg,
       url: "https://",
     },
     {

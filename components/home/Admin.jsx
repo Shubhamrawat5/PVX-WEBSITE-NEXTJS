@@ -11,6 +11,7 @@ const ankitImg = "/static/admin/toxic.jpg";
 const mysImg = "/static/admin/mys.jpg";
 const vivekImg = "/static/admin/leo.jpg";
 const karmaImg = "/static/admin/karma.jpg";
+const lokendraImg = "/static/admin/lokendra.jpg";
 import Image from "next/image";
 
 export default function Admin() {
@@ -66,6 +67,10 @@ export default function Admin() {
     {
       name: "VIVEK",
       img: vivekImg,
+    },
+    {
+      name: "LOKENDRA",
+      img: lokendraImg,
     },
   ];
   return (
