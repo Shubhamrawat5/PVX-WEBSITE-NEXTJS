@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Drive() {
   return (
     <section id="drive-section" className="section">
-      <h2 className="section-heading">PVX SHARED DRIVE</h2>
+      <h2 className="section-heading">SHARED DRIVE</h2>
       <p className="subheading-p">
         Access all Movies, Series, Anime, Courses, PC Games, Softwares in one
         place!
