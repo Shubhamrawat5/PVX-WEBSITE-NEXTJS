@@ -65,7 +65,13 @@ export default function GroupStateProvider() {
       url: "https://",
     },
     {
-      name: "STICKER ONLY",
+      name: "STICKER ONLY 1.0",
+      desc: "Admin Only",
+      img: stickerOnlyImg,
+      url: "https://",
+    },
+    {
+      name: "STICKER ONLY 2.0",
       desc: "Admin Only",
       img: stickerOnlyImg,
       url: "https://",
@@ -80,12 +86,6 @@ export default function GroupStateProvider() {
       name: "STICKER 2.0",
       desc: "Sticker Sharing",
       img: sticker2Img,
-      url: "https://",
-    },
-    {
-      name: "STICKER 3.0",
-      desc: "Sticker Sharing",
-      img: sticker3Img,
       url: "https://",
     },
     {
