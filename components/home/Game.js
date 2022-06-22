@@ -453,9 +453,10 @@ export default function Game(props) {
             R
           </button>
         </div>
-        {/* <div id="author">
-          Score more than 75 and send ss in whatsapp to win 150 Rs paytm
-        </div> */}
+        <div id="author">
+          First 3 to score more than 70 and send ss in whatsapp and tag admin to
+          win 150,100,50 Rs Prize
+        </div>
       </div>
     </>
   );

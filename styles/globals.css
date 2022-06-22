@@ -142,8 +142,8 @@ canvas {
 }
 .game-btn button {
   margin: 7px;
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
 }
 .game-btn-ud {
   display: flex;
