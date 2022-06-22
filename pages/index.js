@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Game from "../components/home/Game";
+import { useState } from "react";
+
 /* ------------------------------------ - ----------------------------------- */
 import Header from "../components/home/Header";
 import Admin from "../components/home/Admin";
@@ -44,6 +47,9 @@ export const getServerSideProps = async (ctx) => {
 };
 
 export default function HomePage({ data }) {
+  const [showGame, setShowGame] = useState(false);
+  const [gameEventAdded, setGameEventAdded] = useState(false);
+
   let wagroups = GroupStateProvider();
 
   let isBlocked = false;
@@ -70,9 +76,19 @@ export default function HomePage({ data }) {
       <Head>
         <title>PVX | HOME</title>
       </Head>
-      <Header />
-      <Groups wagroups={wagroups} isBlocked={isBlocked} />
-      <Admin />
+      {showGame ? (
+        <Game
+          setShowGame={setShowGame}
+          gameEventAdded={gameEventAdded}
+          setGameEventAdded={setGameEventAdded}
+        />
+      ) : (
+        <>
+          <Header setShowGame={setShowGame} />
+          <Groups wagroups={wagroups} isBlocked={isBlocked} />
+          <Admin />
+        </>
+      )}
     </>
   );
 }
