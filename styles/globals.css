@@ -105,7 +105,6 @@ canvas {
   }
   #ui {
     flex-flow: row wrap;
-    margin-bottom: 20px;
   }
   #score {
     margin-top: 0;
@@ -141,9 +140,9 @@ canvas {
   justify-content: center;
 }
 .game-btn button {
-  margin: 7px;
-  height: 40px;
-  width: 40px;
+  margin: 20px;
+  height: 50px;
+  width: 50px;
 }
 .game-btn-ud {
   display: flex;
