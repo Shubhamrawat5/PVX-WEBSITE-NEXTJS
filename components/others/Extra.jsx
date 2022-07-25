@@ -1,5 +1,6 @@
 import Image from "next/image";
 const memeImg = "/static/group/meme.jpg";
+const sticker1Img = "/static/group/sticker1.jpg";
 
 export default function Extra() {
   return (
@@ -90,9 +91,17 @@ export default function Extra() {
           </div>
 
           <div className="achieve-box tournament">
-            <Image src={memeImg} alt="meme" height="200" width="200" />
+            <Image src={memeImg} alt="meme" height="160" width="170" />
             <p className="subheading-p">Winner: Harsh</p>
             <p className="subheading-p">PVX MEME LOGO COMPETITION (12/07/22)</p>
+          </div>
+
+          <div className="achieve-box tournament">
+            <Image src={sticker1Img} alt="meme" height="160" width="170" />
+            <p className="subheading-p">Winner: Doku Doku Noooo</p>
+            <p className="subheading-p">
+              PVX STICKER LOGO COMPETITION (25/07/22)
+            </p>
           </div>
         </div>
       </section>
