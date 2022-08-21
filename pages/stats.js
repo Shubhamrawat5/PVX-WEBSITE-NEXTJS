@@ -32,7 +32,7 @@ export const getServerSideProps = async (ctx) => {
   }
 
   let resultPVXT = await pool.query(
-    "SELECT countmembername.name,countmember.memberJid,sum(countmember.count) as count FROM countmember,countmembername  WHERE countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 20;"
+    "SELECT countmembername.name,countmember.memberJid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 20;"
   );
 
   if (resultPVXT.rowCount) {
