@@ -22,6 +22,10 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <meta
+          name="google-site-verification"
+          content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU"
+        />
         <title>PVX</title>
       </Head>
       <Script
