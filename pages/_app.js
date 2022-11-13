@@ -28,10 +28,10 @@ function MyApp({ Component, pageProps }) {
         />
         <title>PVX</title>
       </Head>
-      {/* <Script
+      <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
         strategy="afterInteractive"
-      /> */}
+      />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
