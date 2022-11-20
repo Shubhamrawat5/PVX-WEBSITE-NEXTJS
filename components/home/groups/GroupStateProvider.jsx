@@ -1,6 +1,7 @@
 const stickerOnlyImg = "/static/group/stickeronly.jpg";
 const communityImg = "/static/group/main.jpg";
 const techImg = "/static/group/tech.jpg";
+const tech2Img = "/static/group/tech2.jpg";
 const progImg = "/static/group/prog.jpg";
 const moviesImg = "/static/group/movies.jpg";
 const statusImg = "/static/group/status.jpg";
@@ -37,7 +38,7 @@ export default function GroupStateProvider() {
     {
       name: "TECH NEWS",
       desc: "Admin Only",
-      img: techImg,
+      img: tech2Img,
       url: "https://",
     },
     {
