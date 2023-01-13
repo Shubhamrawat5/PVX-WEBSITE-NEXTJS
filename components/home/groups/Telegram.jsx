@@ -5,6 +5,7 @@ export default function Telegram() {
     {
       name: "COMMUNITY",
       desc: "(Group Chat)",
+      alt: "pvx community telegram",
       img: "/static/group/tg-pvx.jpg",
       url: "https://t.me/PVX_Community_Group",
       cn: "tg-community",
@@ -12,6 +13,7 @@ export default function Telegram() {
     {
       name: "TECH NEWS",
       desc: "(Channel)",
+      alt: "pvx tech news telegram",
       img: "/static/group/tech.jpg",
       url: "https://t.me/pvxtechnews",
       cn: "tg-technews",
@@ -19,6 +21,7 @@ export default function Telegram() {
     {
       name: "MOVIES",
       desc: "(Discussion)",
+      alt: "pvx movies series telegram",
       img: "/static/group/movies.jpg",
       url: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
       cn: "tg-movies",
@@ -26,6 +29,7 @@ export default function Telegram() {
     {
       name: "MIRROR",
       desc: "(Gdrive Uploader)",
+      alt: "pvx mirror drive telegram",
       img: "/static/group/mirror.jpg",
       url: "https://t.me/PVXMIRROR",
       cn: "tg-mirror",
@@ -43,7 +47,7 @@ export default function Telegram() {
               <h4 className="group-name">{grp.name}</h4>
               <p className="group-info">{grp.desc}</p>
               <div className="group-dp">
-                <Image src={grp.img} alt="dp" layout="fill" />
+                <Image src={grp.img} alt={grp.alt} layout="fill" />
               </div>
               <a
                 key={index}

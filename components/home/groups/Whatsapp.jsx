@@ -19,7 +19,7 @@ export default function Whatsapp(props) {
               <h4 className="group-name">{group.name}</h4>
               <p className="group-info">&#40;{group.desc}&#41;</p>
               <div className="group-dp">
-                <Image src={group.img} alt="dp" layout="fill" />
+                <Image src={group.img} alt={group.alt} layout="fill" />
               </div>
               <a
                 href={group.url}
@@ -36,7 +36,7 @@ export default function Whatsapp(props) {
               <h4 className="group-name">{group.name}</h4>
               <p className="group-info">&#40;{group.desc}&#41;</p>
               <div className="group-dp">
-                <Image src={group.img} alt="dp" layout="fill" priority />
+                <Image src={group.img} alt={group.alt} layout="fill" priority />
               </div>
               <p className={isBlocked ? "join-grp join-block" : "join-grp"}>
                 NONE

@@ -9,7 +9,11 @@ export default function OtherGroups() {
             <h4 className="group-name">COMMUNITY</h4>
             <p className="group-info">(Posting group)</p>
             <div className="group-dp">
-              <Image src="/static/group/fb.jpg" alt="dp" layout="fill" />
+              <Image
+                src="/static/group/fb.jpg"
+                alt="pvx community facebook"
+                layout="fill"
+              />
             </div>
             <a
               href="https://facebook.com/groups/pvxgaming/"
@@ -31,7 +35,11 @@ export default function OtherGroups() {
             <h4 className="group-name">COMMUNITY</h4>
             <p className="group-info">(Channel)</p>
             <div className="group-dp">
-              <Image src="/static/group/discord.jpg" alt="dp" layout="fill" />
+              <Image
+                src="/static/group/discord.jpg"
+                alt="pvz community discord"
+                layout="fill"
+              />
             </div>
             <a
               href="https://discord.gg/zMktzNzx9U"
@@ -53,7 +61,11 @@ export default function OtherGroups() {
             <h4 className="group-name">COMMUNITY</h4>
             <p className="group-info">(Group Chat)</p>
             <div className="group-dp">
-              <Image src="/static/group/main.jpg" alt="dp" layout="fill" />
+              <Image
+                src="/static/group/main.jpg"
+                alt="pvx community signal"
+                layout="fill"
+              />
             </div>
             <a
               href="https://signal.group/#CjQKIFt19XJr-7owvEs8F0otjk5TujIroVnPsqQB-QV8dQXCEhDbIbTkPzfIpDek1Xhoxk53"
