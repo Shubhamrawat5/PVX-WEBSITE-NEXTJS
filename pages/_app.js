@@ -20,6 +20,13 @@ function MyApp({ Component, pageProps }) {
           property="og:image"
           content="https://github.com/Shubhamrawat5/PVX_webpage/blob/main/src/asserts/images/main.jpg?raw=true"
         />
+        <meta property="og:title" content="PVX" />
+        <meta
+          property="og:description"
+          content="PVX is an active community of friends and easy going people enthusiastically engaged in mutual transaction of ideas spanning over a spectrum of headers ranging from your typical Bakchodi to some serious Crypto and Technology..."
+        />
+        <meta property="og:URL" content="https://pvxcommunity.com/" />
+        <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta
