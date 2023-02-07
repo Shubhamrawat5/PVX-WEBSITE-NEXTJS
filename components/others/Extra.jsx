@@ -3,6 +3,7 @@ const memeImg = "/static/group/meme.jpg";
 const animeImg = "/static/group/anime.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 const techImg = "/static/group/tech.jpg";
+const progImg = "/static/group/prog.jpg";
 
 export default function Extra() {
   return (
@@ -123,6 +124,14 @@ export default function Extra() {
             <Image src={techImg} alt="pvx tech" height="160" width="170" />
             <p className="subheading-p">Winner: Spandan Ghosh</p>
             <p className="subheading-p">PVX TECH LOGO COMPETITION (18/11/22)</p>
+          </div>
+
+          <div className="achieve-box tournament">
+            <Image src={progImg} alt="pvx tech" height="160" width="170" />
+            <p className="subheading-p">Winner: Satya</p>
+            <p className="subheading-p">
+              PVX PROGRAMMERS LOGO COMPETITION (07/02/23)
+            </p>
           </div>
         </div>
       </section>
