@@ -94,13 +94,6 @@ export default function GroupStateProvider() {
       url: "https://",
     },
     {
-      name: "STICKER 2.0",
-      desc: "Sticker Sharing",
-      alt: "pvx sticker 2.0",
-      img: sticker2Img,
-      url: "https://",
-    },
-    {
       name: "ANIME",
       desc: "Discussion",
       alt: "pvx anime",
