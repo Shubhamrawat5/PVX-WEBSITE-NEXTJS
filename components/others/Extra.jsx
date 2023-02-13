@@ -17,10 +17,6 @@ export default function Extra() {
       >
         <h2 className="section-heading">CONTESTS</h2>
         <div className="achieve-container">
-          {/* <div  className="achieve-box donation">
-          <img  src={certiImg} alt="certificate" />
-          <p>Donations collected by PVX in Feb 2020</p>
-        </div> */}
           <div className="achieve-box tournament">
             <div className="winners">
               <div className="winners-2">
@@ -138,6 +134,17 @@ export default function Extra() {
       <section id="achieve-section" className="section">
         <h2 className="section-heading">SCREENSHOTS</h2>
         <div className="achieve-container">
+          <div className="achieve-box donation">
+            <Image
+              src="/static/pvx/certi.jpg"
+              alt="certificate"
+              height="350"
+              width="500"
+            />
+            <p className="subheading-p">
+              Donations collected by PVX in Feb 2020
+            </p>
+          </div>
           <div className="achieve-box unread">
             <Image
               src="/static/pvx/unread.jpg"

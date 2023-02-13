@@ -88,16 +88,6 @@ export default function Donate({ donators }) {
           PVX admins.
         </div>
       )}
-
-      <div className="achieve-box donation">
-        <Image
-          src="/static/pvx/certi.jpg"
-          alt="certificate"
-          height="400"
-          width="570"
-        />
-        <p className="subheading-p">Donations collected by PVX in Feb 2020</p>
-      </div>
     </section>
   );
 }
