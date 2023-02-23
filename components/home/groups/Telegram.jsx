@@ -10,7 +10,6 @@ export default function Telegram() {
       alt: "pvx community telegram",
       img: "/static/group/tg-pvx.jpg",
       url: "https://t.me/PVX_Community_Group",
-      cn: "tg-community",
     },
     {
       name: "TECH NEWS",
@@ -18,7 +17,6 @@ export default function Telegram() {
       alt: "pvx tech news telegram",
       img: "/static/group/tech.jpg",
       url: "https://t.me/pvxtechnews",
-      cn: "tg-technews",
     },
     {
       name: "MOVIES",
@@ -26,7 +24,6 @@ export default function Telegram() {
       alt: "pvx movies series telegram",
       img: "/static/group/movies.jpg",
       url: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
-      cn: "tg-movies",
     },
     {
       name: "MIRROR",
@@ -34,7 +31,6 @@ export default function Telegram() {
       alt: "pvx mirror drive telegram",
       img: "/static/group/mirror.jpg",
       url: "https://t.me/PVXMIRROR",
-      cn: "tg-mirror",
     },
   ];
 
@@ -68,7 +64,6 @@ export default function Telegram() {
                   key={index}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={group.cn}
                 >
                   <p className="join-grp">JOIN GROUP</p>
                 </a>
