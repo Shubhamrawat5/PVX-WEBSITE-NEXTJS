@@ -205,16 +205,16 @@ a {
   background-color: #070b0e;
 }
 .section:nth-child(2n + 1) {
-  background-color: #160101;
+  background-color: #080101;
 }
 #admin-section,
 #drive-section {
   background-position: center;
 }
-#group-section,
+/* #group-section,
 #achieve-section {
-  /* background-image: url("/static/ex.svg"); */
-}
+  background-image: url("/static/ex.svg");
+} */
 
 /* --------------------------------- NAV BAR -------------------------------- */
 nav {
@@ -227,8 +227,8 @@ nav {
   top: 0;
   left: 0;
   z-index: 1;
-  background: #1a0202de;
-  box-shadow: 0px 3px 6px rgb(62 43 43 / 60%);
+  background: #020000d9;
+  box-shadow: 0px 2px 5px rgb(42 24 24 / 60%);
   height: 40px;
 }
 

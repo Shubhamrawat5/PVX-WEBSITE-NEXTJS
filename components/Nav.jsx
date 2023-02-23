@@ -16,10 +16,12 @@ export default function Nav(props) {
     <nav>
       <div className="nav-logo">
         <Link href="/" passHref>
-          <Image src="/static/pvxx.png" alt="logo" layout="fill" />
+          <a>
+            <Image src="/static/pvxx.png" alt="logo" layout="fill" />
+          </a>
         </Link>
       </div>
-      <div className="nav-item-container">
+      <ul className="nav-item-container">
         <Link href="/" passHref>
           <a>
             <li className={pathname === "/" ? "active" : null}>Home</li>
@@ -59,7 +61,7 @@ export default function Nav(props) {
             <li>Feedback</li>
           </a>
         </Link> */}
-      </div>
+      </ul>
     </nav>
   );
 }

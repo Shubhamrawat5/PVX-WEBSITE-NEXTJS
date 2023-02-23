@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { useState } from "react";
 
 export default function Telegram() {
   let tgGroups = [
@@ -37,6 +38,17 @@ export default function Telegram() {
     },
   ];
 
+  const [copied, setCopied] = useState(new Array(tgGroups.length).fill(false));
+
+  const checkCopied = (text, result, index) => {
+    // console.log(text, result, index);
+    if (result) {
+      let copiedNew = new Array(tgGroups.length).fill(false);
+      copiedNew[index] = true;
+      setCopied(copiedNew);
+    }
+  };
+
   return (
     <div className="tg groups">
       <h3 className="app-heading">TELEGRAM</h3>
@@ -60,13 +72,26 @@ export default function Telegram() {
                 >
                   <p className="join-grp">JOIN GROUP</p>
                 </a>
-                <CopyToClipboard text={group.url}>
+                <CopyToClipboard
+                  text={group.url}
+                  onCopy={(text, result) => {
+                    checkCopied(text, result, index);
+                  }}
+                >
                   <div className="copy-link">
-                    <Image
-                      src="/static/copy.png"
-                      alt="copy"
-                      layout="fill"
-                    ></Image>
+                    {copied[index] ? (
+                      <Image
+                        src="/static/tick.png"
+                        alt="copy"
+                        layout="fill"
+                      ></Image>
+                    ) : (
+                      <Image
+                        src="/static/copy.png"
+                        alt="copy"
+                        layout="fill"
+                      ></Image>
+                    )}
                   </div>
                 </CopyToClipboard>
               </div>
