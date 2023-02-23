@@ -418,6 +418,13 @@ header .subheading {
   width: 100%;
 }
 
+.join-copy-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .join-grp {
   margin: 0;
   margin-top: 5px;
@@ -436,6 +443,15 @@ header .subheading {
 .join-grp:hover {
   background-color: white;
   color: black;
+}
+
+.copy-link {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 /* ------------------------------ DRIVE SECTION ----------------------------- */

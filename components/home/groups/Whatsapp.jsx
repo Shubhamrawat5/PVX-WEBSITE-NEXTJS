@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function Whatsapp(props) {
   const { wagroups, isBlocked } = props;
@@ -21,15 +22,26 @@ export default function Whatsapp(props) {
               <div className="group-dp">
                 <Image src={group.img} alt={group.alt} layout="fill" />
               </div>
-              <a
-                href={group.url}
-                key={index}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={group.name}
-              >
-                <p className="join-grp">JOIN GROUP</p>
-              </a>
+              <div className="join-copy-wrapper">
+                <a
+                  href={group.url}
+                  key={index}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={group.name}
+                >
+                  <p className="join-grp">JOIN GROUP</p>
+                </a>
+                <CopyToClipboard text={group.url}>
+                  <div className="copy-link">
+                    <Image
+                      src="/static/copy.png"
+                      alt="copy"
+                      layout="fill"
+                    ></Image>
+                  </div>
+                </CopyToClipboard>
+              </div>
             </div>
           ) : (
             <div className="card" key={index}>
