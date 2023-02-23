@@ -9,7 +9,7 @@ export const getServerSideProps = async (ctx) => {
   // let { data } = await axios.get(url);
   // return { gcount: data.data };
 
-  const { Pool } = require("pg");
+  const { Client } = require("pg");
 
   const proConfig = {
     connectionString: process.env.HEROKU_PG,
@@ -17,11 +17,12 @@ export const getServerSideProps = async (ctx) => {
       rejectUnauthorized: false,
     },
   };
+  const client = new Client(proConfig);
+  await client.connect();
 
-  const pool = new Pool(proConfig);
   let dataPVXG, dataPVXT;
 
-  let resultPVXG = await pool.query(
+  let resultPVXG = await client.query(
     "SELECT groupname.gname,SUM(countmember.count) as count from countmember INNER JOIN groupname ON countmember.groupjid = groupname.groupjid GROUP BY groupname.gname ORDER BY count DESC;"
   );
 
@@ -31,9 +32,10 @@ export const getServerSideProps = async (ctx) => {
     dataPVXG = [];
   }
 
-  let resultPVXT = await pool.query(
+  let resultPVXT = await client.query(
     "SELECT countmembername.name,countmember.memberJid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 20;"
   );
+  await client.end();
 
   if (resultPVXT.rowCount) {
     dataPVXT = resultPVXT.rows;
