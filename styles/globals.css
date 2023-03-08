@@ -390,6 +390,15 @@ header .subheading {
   border-radius: 50%;
 }
 
+.card img {
+  transition: all 0.3s;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+  transition: all 0.3s;
+}
+
 .group-name {
   font-weight: 400;
   margin: 0px;

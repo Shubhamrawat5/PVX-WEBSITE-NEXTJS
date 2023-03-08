@@ -25,13 +25,13 @@ export default function Telegram() {
       img: "/static/group/movies.jpg",
       url: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
     },
-    {
-      name: "MIRROR",
-      desc: "Gdrive Uploader",
-      alt: "pvx mirror drive telegram",
-      img: "/static/group/mirror.jpg",
-      url: "https://t.me/PVXMIRROR",
-    },
+    // {
+    //   name: "MIRROR",
+    //   desc: "Gdrive Uploader",
+    //   alt: "pvx mirror drive telegram",
+    //   img: "/static/group/mirror.jpg",
+    //   url: "https://t.me/PVXMIRROR",
+    // },
   ];
 
   const [copied, setCopied] = useState(new Array(tgGroups.length).fill(false));

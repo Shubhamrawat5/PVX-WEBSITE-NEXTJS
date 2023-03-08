@@ -64,13 +64,14 @@ export default function GroupStateProvider() {
       jid: "919557666582-1506690003@g.us",
     },
     {
-      name: "STATUS",
-      desc: "Whatsapp Status",
-      alt: "pvx whatsapp status",
-      img: statusImg,
+      name: "SPORTS",
+      desc: "Discussion",
+      alt: "pvx sports",
+      img: sportsImg,
       url: "",
-      jid: "919557666582-1627834788@g.us",
+      jid: "919557666582-1559476348@g.us",
     },
+
     {
       name: "MEMES",
       desc: "Memes Sharing",
@@ -78,6 +79,14 @@ export default function GroupStateProvider() {
       img: memeImg,
       url: "",
       jid: "919557666582-1551346051@g.us",
+    },
+    {
+      name: "STICKER",
+      desc: "Sticker Sharing",
+      alt: "pvx sticker chat",
+      img: sticker1Img,
+      url: "",
+      jid: "919557666582-1580308963@g.us",
     },
     {
       name: "STICKER ONLY 1.0",
@@ -96,14 +105,6 @@ export default function GroupStateProvider() {
       jid: "919557666582-1586018947@g.us",
     },
     {
-      name: "STICKER",
-      desc: "Sticker Sharing",
-      alt: "pvx sticker chat",
-      img: sticker1Img,
-      url: "",
-      jid: "919557666582-1580308963@g.us",
-    },
-    {
       name: "ANIME",
       desc: "Discussion",
       alt: "pvx anime",
@@ -120,6 +121,14 @@ export default function GroupStateProvider() {
       jid: "918329198682-1614096949@g.us",
     },
     {
+      name: "GAMING",
+      desc: "Discussion",
+      alt: "pvx gaming",
+      img: gamingImg,
+      url: "",
+      jid: "17028054150-1608057174@g.us",
+    },
+    {
       name: "BOT",
       desc: "Whatsapp Bot",
       alt: "pvx whatsapp bot",
@@ -134,14 +143,6 @@ export default function GroupStateProvider() {
     //   url: "",
     // },
     {
-      name: "GAMING",
-      desc: "Discussion",
-      alt: "pvx gaming",
-      img: gamingImg,
-      url: "",
-      jid: "17028054150-1608057174@g.us",
-    },
-    {
       name: "STUDIES",
       desc: "Discussion",
       alt: "pvx studies",
@@ -150,20 +151,20 @@ export default function GroupStateProvider() {
       jid: "919557666582-1617595892@g.us",
     },
     {
-      name: "SPORTS",
-      desc: "Discussion",
-      alt: "pvx sports",
-      img: sportsImg,
-      url: "",
-      jid: "919557666582-1559476348@g.us",
-    },
-    {
       name: "FOOD",
       desc: "Discussion",
       alt: "pvx food",
       img: foodImg,
       url: "",
       jid: "120363039452453480@g.us",
+    },
+    {
+      name: "STATUS",
+      desc: "Whatsapp Status",
+      alt: "pvx whatsapp status",
+      img: statusImg,
+      url: "",
+      jid: "919557666582-1627834788@g.us",
     },
     {
       name: "AUTOMOBILE",
