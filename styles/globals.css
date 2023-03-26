@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
+/* TODO: define fixed font size */
 /* ------------------------------------ - ----------------------------------- */
 @font-face {
   font-family: "game";
@@ -42,6 +43,7 @@ canvas {
 #score {
   margin-top: 20px;
   font-size: 30px;
+
   font-weight: 800;
 }
 .noselect {

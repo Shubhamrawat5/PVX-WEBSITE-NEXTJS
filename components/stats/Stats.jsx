@@ -13,9 +13,9 @@ export default function Stats({ dataPVXG, dataPVXT }) {
       <p className="subheading-p">ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
       <p className="subheading-p">FROM 24 NOV 2021</p>
       <p className="subheading-p">
-        Stats are not 100% correct as pvx bot in whatsapp collect the message
-        count and sometimes the bot is down then all the messsages during bot
-        down time gets ignored and are not counted.
+        Please note that these figures may not be 100% accurate, as the PVX bot
+        in WhatsApp groups is used to collect message counts and can sometimes
+        be down. Messages sent during this time are not counted.
       </p>
 
       {dataPVXG ? (
