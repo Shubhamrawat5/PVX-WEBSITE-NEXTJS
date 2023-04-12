@@ -166,14 +166,14 @@ export default function GroupStateProvider() {
       url: "",
       jid: "919557666582-1627834788@g.us",
     },
-    {
-      name: "AUTOMOBILE",
-      desc: "Discussion",
-      alt: "pvx automobile",
-      img: autoImg,
-      url: "",
-      jid: "917506703222-1595354899@g.us",
-    },
+    // {
+    //   name: "AUTOMOBILE",
+    //   desc: "Discussion",
+    //   alt: "pvx automobile",
+    //   img: autoImg,
+    //   url: "",
+    //   jid: "917506703222-1595354899@g.us",
+    // },
   ];
   return wagroups;
 }
