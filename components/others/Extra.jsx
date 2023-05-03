@@ -4,6 +4,7 @@ const animeImg = "/static/group/anime.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 const techImg = "/static/group/tech.jpg";
 const progImg = "/static/group/prog.jpg";
+const botImg = "/static/group/bot.jpg";
 
 export default function Extra() {
   return (
@@ -128,6 +129,12 @@ export default function Extra() {
             <p className="subheading-p">
               PVX PROGRAMMERS LOGO COMPETITION (07/02/23)
             </p>
+          </div>
+
+          <div className="achieve-box tournament">
+            <Image src={botImg} alt="pvx tech" height="160" width="170" />
+            <p className="subheading-p">Winner: Ikshwaku</p>
+            <p className="subheading-p">PVX BOT LOGO COMPETITION (02/05/23)</p>
           </div>
         </div>
       </section>
