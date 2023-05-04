@@ -190,6 +190,11 @@ section {
   margin-left: 10px;
   text-align: justify;
 }
+
+.bot-github a {
+  color: #35adde;
+}
+
 .err {
   border: 1px solid white;
   padding: 3px 8px;
