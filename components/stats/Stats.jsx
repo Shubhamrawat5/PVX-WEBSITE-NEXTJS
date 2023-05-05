@@ -51,7 +51,9 @@ export default function Stats({ dataPVXG, dataPVXT }) {
             <tbody>
               {dataPVXT.map((mem, index) => (
                 <tr key={index}>
-                  <td className="donator-name">{mem.name}</td>
+                  <td className="donator-name">
+                    {index + 1}) {mem.name}
+                  </td>
                   <td className="donator-amount">{mem.count}</td>
                 </tr>
               ))}
