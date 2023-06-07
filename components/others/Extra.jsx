@@ -143,13 +143,25 @@ export default function Extra() {
         <div className="achieve-container">
           <div className="achieve-box donation">
             <Image
-              src="/static/pvx/certi.jpg"
+              src="/static/pvx/certificate1.jpg"
               alt="certificate"
               height="350"
               width="500"
             />
             <p className="subheading-p">
               Donations collected by PVX in Feb 2020
+            </p>
+          </div>
+          <div className="achieve-box donation">
+            <Image
+              src="/static/pvx/certificate2.jpg"
+              alt="certificate"
+              height="600"
+              width="480"
+            />
+            <p className="subheading-p">
+              Donations collected by PVX in June 2023 (for odisha train
+              collision)
             </p>
           </div>
           <div className="achieve-box unread">
