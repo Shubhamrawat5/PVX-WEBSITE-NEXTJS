@@ -5,6 +5,7 @@
     "linebreak-style": "off",
     "react/jsx-one-expression-per-line": "off",
     "comma-dangle": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "operator-linebreak": "off"
   }
 }
