@@ -1,4 +1,6 @@
+import React from "react";
 import Image from "next/image";
+
 export default function Drive() {
   return (
     <section id="drive-section" className="section">
@@ -31,7 +33,8 @@ export default function Drive() {
           2) Join Group
           <br />
           (an error message can be displayed: &quot;You don&apos;t have
-          permission to access this content&quot;, but ignore it!) <br />
+          permission to access this content&quot;, but ignore it!)
+          <br />
           3) Open Google drive app
           <br />
           4) Go to &quot;Files&quot;, then &quot;Shared drives&quot; - Adi

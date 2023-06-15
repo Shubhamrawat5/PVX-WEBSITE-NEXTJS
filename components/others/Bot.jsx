@@ -1,4 +1,6 @@
+import React from "react";
 import Image from "next/image";
+
 const botImg = "/static/group/bot.jpg";
 
 export default function Bot() {

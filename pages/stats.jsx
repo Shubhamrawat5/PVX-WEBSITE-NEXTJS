@@ -1,15 +1,15 @@
-import Stats from "../components/stats/Stats";
+import React from "react";
 import Head from "next/head";
+import { Client } from "pg";
+import Stats from "../components/stats/Stats";
 // import axios from "axios";
 
 // StatsPage.getInitialProps = async () => {
-export const getServerSideProps = async (ctx) => {
-  //runs in server side
+export const getServerSideProps = async () => {
+  // runs in server side
   // const url = "https://pvx-api-vercel.vercel.app/api/gcount";
   // let { data } = await axios.get(url);
   // return { gcount: data.data };
-
-  const { Client } = require("pg");
 
   const proConfig = {
     connectionString: process.env.HEROKU_PG,
@@ -20,10 +20,11 @@ export const getServerSideProps = async (ctx) => {
   const client = new Client(proConfig);
   await client.connect();
 
-  let dataPVXG, dataPVXT;
+  let dataPVXG;
+  let dataPVXT;
 
-  let resultPVXG = await client.query(
-    "SELECT groupname.gname,SUM(countmember.count) as count from countmember INNER JOIN groupname ON countmember.groupjid = groupname.groupjid GROUP BY groupname.gname ORDER BY count DESC;"
+  const resultPVXG = await client.query(
+    "SELECT groupname.gname,groupname.groupjid,SUM(countmember.count) as count from countmember INNER JOIN groupname ON countmember.groupjid = groupname.groupjid GROUP BY groupname.gname,groupname.groupjid ORDER BY count DESC;"
   );
 
   if (resultPVXG.rowCount) {
@@ -32,7 +33,7 @@ export const getServerSideProps = async (ctx) => {
     dataPVXG = [];
   }
 
-  let resultPVXT = await client.query(
+  const resultPVXT = await client.query(
     "SELECT countmembername.name,countmember.memberJid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 50;"
   );
   await client.end();

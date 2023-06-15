@@ -61,29 +61,29 @@ export default function Donate({ donators }) {
       <br />
 
       <p className="subheading-p">
-        Donations are ✅ transparently used to build tools, 🌐 buy domain, 🤖
-        bots and much more ❤️
+        Donations are ✅ transparently used to host competitions, events, build
+        tools, 🌐 buy domain, 🤖 bots and much more ❤️
       </p>
 
       {donators ? (
         <>
           <h2 className="donators-subheading">
             <span>TOTAL DONATIONS:</span>
-            <span>{"₹ " + totalDonation.toLocaleString("en-IN")}</span>
+            <span>{`₹ ${totalDonation.toLocaleString("en-IN")}`}</span>
           </h2>
           <table className="donators-table">
             <tbody>
-              {donators.map((mem, index) => (
-                <tr key={index}>
+              {donators.map((mem) => (
+                <tr key={mem.name}>
                   <td className="donator-name">{mem.name}</td>
-                  <td className="donator-amount">{"₹ " + mem.amount}</td>
+                  <td className="donator-amount">{`₹ ${mem.amount}`}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       ) : (
-        <div div id="err" className="err">
+        <div id="err" className="err">
           NOTE: There is a problem with attaching the donation data ! Contact
           PVX admins.
         </div>
@@ -91,3 +91,4 @@ export default function Donate({ donators }) {
     </section>
   );
 }
+// TODO: VERIFY ALL THE KEYS IN MAP

@@ -1,7 +1,8 @@
-import Projects from "../components/projects/Projects";
+import React from "react";
 import Head from "next/head";
+import Projects from "../components/projects/Projects";
 
-export default function ProjectPage({}) {
+export default function ProjectPage() {
   return (
     <>
       <Head>

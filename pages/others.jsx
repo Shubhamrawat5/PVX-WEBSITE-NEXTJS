@@ -1,7 +1,8 @@
-import Others from "../components/others/Others";
+import React from "react";
 import Head from "next/head";
+import Others from "../components/others/Others";
 
-export default function StatsPage({ dataPVXG, dataPVXT }) {
+export default function StatsPage() {
   return (
     <>
       <Head>

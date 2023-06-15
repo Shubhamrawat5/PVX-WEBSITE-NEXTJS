@@ -1,11 +1,11 @@
 import React from "react";
 
 export default function Month(props) {
-  const { month, index } = props;
+  const { month, id } = props;
   return (
-    <div className="card_b" id={month.name.toLowerCase()} key={index}>
-      <div className={`month_b month${(index % 3) + 1}_b`}>{month.name}</div>
-      <table className={`content-table_b month${(index % 3) + 1}-tr_b`}>
+    <div className="card_b" id={month.name.toLowerCase()} key={id}>
+      <div className={`month_b month${(id % 3) + 1}_b`}>{month.name}</div>
+      <table className={`content-table_b month${(id % 3) + 1}-tr_b`}>
         <thead>
           <tr>
             <th className="date_b">Date</th>
@@ -15,16 +15,14 @@ export default function Month(props) {
           </tr>
         </thead>
         <tbody id={`${month.name.toLowerCase()}-body`}>
-          {month.members.map((member, ind) => {
-            return (
-              <tr key={ind}>
-                <td>{member.date}</td>
-                <td>{member.name}</td>
-                <td>{member.username}</td>
-                <td>{member.place}</td>
-              </tr>
-            );
-          })}
+          {month.members.map((member) => (
+            <tr key={member.username}>
+              <td>{member.date}</td>
+              <td>{member.name}</td>
+              <td>{member.username}</td>
+              <td>{member.place}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

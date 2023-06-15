@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-
+/* eslint-disable */
+import React, { useEffect } from "react";
 export default function Game(props) {
   const { setShowGame, gameEventAdded, setGameEventAdded } = props;
-  /** Snake game - https://codepen.io/fariati/pen/mdRpEYP **/
+  /** Snake game - https://codepen.io/fariati/pen/mdRpEYP * */
   const keyDownhelper = (e) => {
     if (e.key === "ArrowUp" && KEY.ArrowDown) return;
     if (e.key === "ArrowDown" && KEY.ArrowUp) return;

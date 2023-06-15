@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Stats({ dataPVXG, dataPVXT }) {
   let totalMessages = 0;
   if (dataPVXG) {
@@ -26,17 +28,17 @@ export default function Stats({ dataPVXG, dataPVXT }) {
           </h2>
           <table className="donators-table">
             <tbody>
-              {dataPVXG.map((grp, index) => (
-                <tr key={index}>
-                  <td className="donator-name">{grp.gname.slice(8)}</td>
-                  <td className="donator-amount">{grp.count}</td>
+              {dataPVXG.map((group) => (
+                <tr key={group.groupjid}>
+                  <td className="donator-name">{group.gname.slice(8)}</td>
+                  <td className="donator-amount">{group.count}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       ) : (
-        <div div id="err" className="err">
+        <div id="err" className="err">
           NOTE: There is a problem with attaching the stats data ! Contact PVX
           admins.
         </div>
@@ -49,19 +51,19 @@ export default function Stats({ dataPVXG, dataPVXT }) {
           </h2>
           <table className="donators-table">
             <tbody>
-              {dataPVXT.map((mem, index) => (
-                <tr key={index}>
+              {dataPVXT.map((member, index) => (
+                <tr key={member.memberjid}>
                   <td className="donator-name">
-                    {index + 1}) {mem.name}
+                    {index + 1}) {member.name}
                   </td>
-                  <td className="donator-amount">{mem.count}</td>
+                  <td className="donator-amount">{member.count}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       ) : (
-        <div div id="err" className="err">
+        <div id="err" className="err">
           NOTE: There is a problem with attaching the stats data ! Contact PVX
           admins.
         </div>

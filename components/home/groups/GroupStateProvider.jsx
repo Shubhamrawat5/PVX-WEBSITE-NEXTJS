@@ -7,8 +7,8 @@ const moviesImg = "/static/group/movies.jpg";
 const statusImg = "/static/group/status.jpg";
 const memeImg = "/static/group/meme.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
-const sticker2Img = "/static/group/sticker2.jpg";
-const sticker3Img = "/static/group/sticker3.jpg";
+// const sticker2Img = "/static/group/sticker2.jpg";
+// const sticker3Img = "/static/group/sticker3.jpg";
 const animeImg = "/static/group/anime2.jpg";
 const botImg = "/static/group/bot2.jpg";
 // const haveliImg = "/static/group/haveli.jpg";
@@ -16,10 +16,10 @@ const gamingImg = "/static/group/gaming.jpg";
 const studiesImg = "/static/group/study.jpg";
 const sportsImg = "/static/group/sports.jpg";
 const cryptoImg = "/static/group/crypto.jpg";
-const autoImg = "/static/group/auto.jpg";
-const dealsImg = "/static/group/deals.jpg";
-const pubgmImg = "/static/group/pubgm.jpg";
 const foodImg = "/static/group/food.jpg";
+// const autoImg = "/static/group/auto.jpg";
+// const dealsImg = "/static/group/deals.jpg";
+// const pubgmImg = "/static/group/pubgm.jpg";
 
 export default function GroupStateProvider() {
   const wagroups = [

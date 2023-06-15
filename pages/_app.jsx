@@ -1,7 +1,8 @@
-import "../styles/globals.css";
-import Layout from "../components/Layout";
+import React from "react";
 import Head from "next/head";
 import Script from "next/script";
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (

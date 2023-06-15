@@ -1,11 +1,12 @@
+import React, { useState } from "react";
 import Image from "next/image";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { useState } from "react";
 
 export default function OtherGroups() {
   const discordGroups = [
     {
       name: "COMMUNITY",
+      id: 1,
       desc: "Channel",
       alt: "pvx community discord",
       img: "/static/group/discord.jpg",
@@ -20,7 +21,7 @@ export default function OtherGroups() {
   const checkCopiedDiscord = (text, result, index) => {
     // console.log(text, result, index);
     if (result) {
-      let copiedNew = new Array(discordGroups.length).fill(false);
+      const copiedNew = new Array(discordGroups.length).fill(false);
       copiedNew[index] = true;
       setCopiedDiscord(copiedNew);
     }
@@ -29,6 +30,7 @@ export default function OtherGroups() {
   const fbGroups = [
     {
       name: "COMMUNITY",
+      id: 1,
       desc: "Posting group",
       alt: "pvx community facebook",
       img: "/static/group/fb.jpg",
@@ -40,11 +42,11 @@ export default function OtherGroups() {
     new Array(discordGroups.length).fill(false)
   );
 
-  const checkCopiedFb = (text, result, index) => {
-    // console.log(text, result, index);
+  const checkCopiedFb = (text, result, id) => {
+    // console.log(text, result, id);
     if (result) {
-      let copiedNew = new Array(discordGroups.length).fill(false);
-      copiedNew[index] = true;
+      const copiedNew = new Array(discordGroups.length).fill(false);
+      copiedNew[id] = true;
       setCopiedFb(copiedNew);
     }
   };
@@ -54,98 +56,78 @@ export default function OtherGroups() {
       <div className="discord groups">
         <h3 className="app-heading">DISCORD</h3>
         <div className="group-container">
-          {discordGroups.map((group, index) => {
-            return (
-              <div className="card" key={index}>
-                <h4 className="group-name">{group.name}</h4>
-                <p className="group-info">&#40;{group.desc}&#41;</p>
-                <div className="group-dp">
-                  <Image src={group.img} alt={group.alt} layout="fill" />
-                </div>
-                <div className="join-copy-wrapper">
-                  <a
-                    href={group.url}
-                    key={index}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p className="join-grp">JOIN GROUP</p>
-                  </a>
-                  <CopyToClipboard
-                    text={group.url}
-                    onCopy={(text, result) => {
-                      checkCopiedDiscord(text, result, index);
-                    }}
-                  >
-                    <div className="copy-link">
-                      {copiedDiscord[index] ? (
-                        <Image
-                          src="/static/tick.png"
-                          alt="copy"
-                          layout="fill"
-                        ></Image>
-                      ) : (
-                        <Image
-                          src="/static/copy.png"
-                          alt="copy"
-                          layout="fill"
-                        ></Image>
-                      )}
-                    </div>
-                  </CopyToClipboard>
-                </div>
+          {discordGroups.map((group) => (
+            <div className="card" key={group.id}>
+              <h4 className="group-name">{group.name}</h4>
+              <p className="group-info">&#40;{group.desc}&#41;</p>
+              <div className="group-dp">
+                <Image src={group.img} alt={group.alt} layout="fill" />
               </div>
-            );
-          })}
+              <div className="join-copy-wrapper">
+                <a
+                  href={group.url}
+                  key={group.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="join-grp">JOIN GROUP</p>
+                </a>
+                <CopyToClipboard
+                  text={group.url}
+                  onCopy={(text, result) => {
+                    checkCopiedDiscord(text, result, group.id);
+                  }}
+                >
+                  <div className="copy-link">
+                    {copiedDiscord[group.id] ? (
+                      <Image src="/static/tick.png" alt="copy" layout="fill" />
+                    ) : (
+                      <Image src="/static/copy.png" alt="copy" layout="fill" />
+                    )}
+                  </div>
+                </CopyToClipboard>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="fb groups">
         <h3 className="app-heading">FACEBOOK</h3>
         <div className="group-container">
-          {fbGroups.map((group, index) => {
-            return (
-              <div className="card" key={index}>
-                <h4 className="group-name">{group.name}</h4>
-                <p className="group-info">&#40;{group.desc}&#41;</p>
-                <div className="group-dp">
-                  <Image src={group.img} alt={group.alt} layout="fill" />
-                </div>
-                <div className="join-copy-wrapper">
-                  <a
-                    href={group.url}
-                    key={index}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p className="join-grp">JOIN GROUP</p>
-                  </a>
-                  <CopyToClipboard
-                    text={group.url}
-                    onCopy={(text, result) => {
-                      checkCopiedFb(text, result, index);
-                    }}
-                  >
-                    <div className="copy-link">
-                      {copiedFb[index] ? (
-                        <Image
-                          src="/static/tick.png"
-                          alt="copy"
-                          layout="fill"
-                        ></Image>
-                      ) : (
-                        <Image
-                          src="/static/copy.png"
-                          alt="copy"
-                          layout="fill"
-                        ></Image>
-                      )}
-                    </div>
-                  </CopyToClipboard>
-                </div>
+          {fbGroups.map((group) => (
+            <div className="card" key={group.id}>
+              <h4 className="group-name">{group.name}</h4>
+              <p className="group-info">&#40;{group.desc}&#41;</p>
+              <div className="group-dp">
+                <Image src={group.img} alt={group.alt} layout="fill" />
               </div>
-            );
-          })}
+              <div className="join-copy-wrapper">
+                <a
+                  href={group.url}
+                  key={group.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="join-grp">JOIN GROUP</p>
+                </a>
+                <CopyToClipboard
+                  text={group.url}
+                  onCopy={(text, result) => {
+                    checkCopiedFb(text, result, group.id);
+                  }}
+                >
+                  <div className="copy-link">
+                    {copiedFb[group.id] ? (
+                      <Image src="/static/tick.png" alt="copy" layout="fill" />
+                    ) : (
+                      <Image src="/static/copy.png" alt="copy" layout="fill" />
+                    )}
+                  </div>
+                </CopyToClipboard>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

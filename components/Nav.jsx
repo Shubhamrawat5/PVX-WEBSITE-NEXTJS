@@ -1,14 +1,14 @@
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect } from "react";
 import Image from "next/image";
 
-export default function Nav(props) {
+export default function Nav() {
   const router = useRouter();
   const { pathname } = router;
   // console.log(pathname);
   useEffect(() => {
-    //everytime url will change so page will be scrolled href top
+    // everytime url will change so page will be scrolled href top
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -16,16 +16,12 @@ export default function Nav(props) {
     <nav>
       <div className="nav-logo">
         <Link href="/" passHref>
-          <a>
-            <Image src="/static/pvxx.png" alt="logo" layout="fill" />
-          </a>
+          <Image src="/static/pvxx.png" alt="logo" layout="fill" />
         </Link>
       </div>
       <ul className="nav-item-container">
         <Link href="/" passHref>
-          <a>
-            <li className={pathname === "/" ? "active" : null}>Home</li>
-          </a>
+          <li className={pathname === "/" ? "active" : null}>Home</li>
         </Link>
         {/* <Link href="/" passHref>
           <a>
@@ -35,9 +31,7 @@ export default function Nav(props) {
           </a>
         </Link> */}
         <Link href="/stats" passHref>
-          <a>
-            <li className={pathname === "/stats" ? "active" : null}>Stats</li>
-          </a>
+          <li className={pathname === "/stats" ? "active" : null}>Stats</li>
         </Link>
         {/* <Link href="/donate" passHref>
           <a>
@@ -45,16 +39,12 @@ export default function Nav(props) {
           </a>
         </Link> */}
         <Link href="/bdays" passHref>
-          <a>
-            <li className={pathname === "/bdays" ? "active" : null}>
-              B&apos;Day
-            </li>
-          </a>
+          <li className={pathname === "/bdays" ? "active" : null}>
+            B&apos;Day
+          </li>
         </Link>
         <Link href="/others" passHref>
-          <a>
-            <li className={pathname === "/others" ? "active" : null}>Others</li>
-          </a>
+          <li className={pathname === "/others" ? "active" : null}>Others</li>
         </Link>
         {/* <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
           <a>

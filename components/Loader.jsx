@@ -1,4 +1,5 @@
-import "../asserts/css/Loader.css";
+import React from "react";
+// import "../asserts/css/Loader.css";
 
 export default function Loader() {
   return (

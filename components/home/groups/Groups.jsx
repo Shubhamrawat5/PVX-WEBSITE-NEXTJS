@@ -1,3 +1,4 @@
+import React from "react";
 import Whatsapp from "./Whatsapp";
 import Telegram from "./Telegram";
 import OtherGroups from "./OtherGroups";

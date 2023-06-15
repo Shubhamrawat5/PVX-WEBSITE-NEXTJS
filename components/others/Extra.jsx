@@ -1,4 +1,6 @@
+import React from "react";
 import Image from "next/image";
+
 const memeImg = "/static/group/meme.jpg";
 const animeImg = "/static/group/anime.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
