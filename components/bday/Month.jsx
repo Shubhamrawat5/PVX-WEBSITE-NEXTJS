@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Month(props) {
   const { month, id } = props;
@@ -28,3 +29,19 @@ export default function Month(props) {
     </div>
   );
 }
+
+Month.propTypes = {
+  month: PropTypes.PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    members: PropTypes.PropTypes.PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
+        date: PropTypes.number.isRequired,
+        place: PropTypes.string.isRequired,
+      })
+    ),
+  }).isRequired,
+  id: PropTypes.number.isRequired,
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import PropTypes from "prop-types";
 
 export default function Donate({ donators }) {
   let totalDonation = 0;
@@ -33,7 +34,7 @@ export default function Donate({ donators }) {
           <span className="step">
             2) Take a screenshot and send it to us&nbsp;
             <a
-              href="https://wa.me/919557666582"
+              href="https://wa.me/916397867115"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -92,3 +93,12 @@ export default function Donate({ donators }) {
   );
 }
 // TODO: VERIFY ALL THE KEYS IN MAP
+
+Donate.propTypes = {
+  donators: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

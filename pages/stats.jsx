@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
+import PropTypes from "prop-types";
+
 import Stats from "../components/stats/Stats";
 // import axios from "axios";
 
@@ -34,7 +36,7 @@ export const getServerSideProps = async () => {
   }
 
   const resultPVXT = await client.query(
-    "SELECT countmembername.name,countmember.memberJid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 50;"
+    "SELECT countmembername.name,countmember.memberjid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 50;"
   );
   await client.end();
 
@@ -57,3 +59,20 @@ export default function StatsPage({ dataPVXG, dataPVXT }) {
     </>
   );
 }
+
+StatsPage.propTypes = {
+  dataPVXG: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      gname: PropTypes.string.isRequired,
+      groupjid: PropTypes.string.isRequired,
+      count: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  dataPVXT: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      memberjid: PropTypes.string.isRequired,
+      count: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

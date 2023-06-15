@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import mongoose from "mongoose";
 import Head from "next/head";
-import Community from "../components/bday/Community";
+import Bdays from "../components/bday/Bdays";
 import BdayStateProvider from "../components/bday/BdayStateProvider";
 
 // import axios from "axios";
@@ -14,7 +15,7 @@ export const getServerSideProps = async () => {
   // return { data: data.data };
 
   const { URI } = process.env;
-
+  // TODO: use elephant sql
   // DB connect
   mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -77,7 +78,19 @@ export default function BdaysPage({ data }) {
       <Head>
         <title>PVX | BDAYS</title>
       </Head>
-      <Community months={months} todayBday={todayBday} />
+      <Bdays months={months} todayBday={todayBday} />
     </>
   );
 }
+
+BdaysPage.propTypes = {
+  data: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+      date: PropTypes.number.isRequired,
+      month: PropTypes.number.isRequired,
+      place: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

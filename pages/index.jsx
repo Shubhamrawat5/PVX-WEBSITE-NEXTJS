@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import PropTypes from "prop-types";
 import { Client } from "pg";
 
 import Game from "../components/home/Game";
@@ -46,6 +47,7 @@ export const getServerSideProps = async () => {
 
   await client.end();
 
+  // CHECK THIS PARSE
   return {
     props: {
       data: JSON.parse(JSON.stringify(groupLinks)),
@@ -54,8 +56,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function HomePage(props) {
-  const { data, enabled } = props;
+export default function HomePage({ data, enabled }) {
   const [showGame, setShowGame] = useState(false);
   const [gameEventAdded, setGameEventAdded] = useState(false);
 
@@ -67,8 +68,8 @@ export default function HomePage(props) {
     // grpIn = data present inside already - wagroups
     wagroups.forEach((grpIn, index) => {
       data.forEach((grpOut) => {
-        if (grpOut.groupjid === grpIn.jid) {
-          wagroups[index].url = grpOut.link;
+        if (grpOut.groupjid === grpIn.groupjid) {
+          wagroups[index].link = grpOut.link;
         }
       });
     });
@@ -95,3 +96,14 @@ export default function HomePage(props) {
     </>
   );
 }
+
+HomePage.propTypes = {
+  data: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      gname: PropTypes.string.isRequired,
+      groupjid: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  enabled: PropTypes.number.isRequired,
+};

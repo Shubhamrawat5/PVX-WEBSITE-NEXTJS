@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Stats({ dataPVXG, dataPVXT }) {
   let totalMessages = 0;
@@ -71,3 +72,20 @@ export default function Stats({ dataPVXG, dataPVXT }) {
     </section>
   );
 }
+
+Stats.propTypes = {
+  dataPVXG: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      gname: PropTypes.string.isRequired,
+      groupjid: PropTypes.string.isRequired,
+      count: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  dataPVXT: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      memberjid: PropTypes.string.isRequired,
+      count: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

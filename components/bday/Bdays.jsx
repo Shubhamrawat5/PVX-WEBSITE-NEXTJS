@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Image from "next/image";
 import Month from "./Month";
 
-export default function Community(props) {
+export default function Bdays(props) {
   const { months, todayBday } = props;
 
   return (
@@ -50,3 +51,21 @@ export default function Community(props) {
     </section>
   );
 }
+
+Bdays.propTypes = {
+  months: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      members: PropTypes.PropTypes.PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          username: PropTypes.string.isRequired,
+          date: PropTypes.number.isRequired,
+          place: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ).isRequired,
+  todayBday: PropTypes.string.isRequired,
+};

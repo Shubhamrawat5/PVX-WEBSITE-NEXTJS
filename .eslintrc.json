@@ -4,7 +4,6 @@
     "quotes": ["error", "double"],
     "linebreak-style": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/prop-types": "off",
     "comma-dangle": "off",
     "object-curly-newline": "off"
   }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -21,31 +22,31 @@ export default function Whatsapp(props) {
       <h3 className="app-heading">WHATSAPP</h3>
       <div className="group-container">
         {wagroups.map((group) => (
-          <div className="card" key={group.jid}>
-            <h4 className="group-name">{group.name}</h4>
+          <div className="card" key={group.groupjid}>
+            <h4 className="group-name">{group.gname}</h4>
             <p className="group-info">&#40;{group.desc}&#41;</p>
             <div className="group-dp">
               <Image src={group.img} alt={group.alt} layout="fill" />
             </div>
-            {group.url ? (
+            {group.link ? (
               <div className="join-copy-wrapper">
                 <a
-                  href={group.url}
-                  key={group.jid}
+                  href={group.link}
+                  key={group.groupjid}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={group.name}
+                  className={group.gname}
                 >
                   <p className="join-grp">JOIN GROUP</p>
                 </a>
                 <CopyToClipboard
-                  text={group.url}
+                  text={group.link}
                   onCopy={(text, result) => {
-                    checkCopied(text, result, group.jid);
+                    checkCopied(text, result, group.groupjid);
                   }}
                 >
                   <div className="copy-link">
-                    {copied[group.jid] ? (
+                    {copied[group.groupjid] ? (
                       <Image src="/static/tick.png" alt="copy" layout="fill" />
                     ) : (
                       <Image src="/static/copy.png" alt="copy" layout="fill" />
@@ -62,3 +63,16 @@ export default function Whatsapp(props) {
     </div>
   );
 }
+
+Whatsapp.propTypes = {
+  wagroups: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      gname: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+      groupjid: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

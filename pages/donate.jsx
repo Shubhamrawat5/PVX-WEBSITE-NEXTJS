@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import mongoose from "mongoose";
+import PropTypes from "prop-types";
 
 import Donate from "../components/donate/Donate";
 
@@ -55,3 +56,12 @@ export default function DonatePage({ donators }) {
     </>
   );
 }
+
+DonatePage.propTypes = {
+  donators: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
