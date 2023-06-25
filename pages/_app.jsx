@@ -1,10 +1,10 @@
 /* eslint-disable */
 // TODO: CHECK ESLINT
-import React from "react";
-import Head from "next/head";
-import Script from "next/script";
-import Layout from "../components/Layout";
-import "../styles/globals.css";
+import React from 'react';
+import Head from 'next/head';
+import Script from 'next/script';
+import Layout from '../components/Layout';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -32,16 +32,10 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta
-          name="google-site-verification"
-          content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU"
-        />
+        <meta name="google-site-verification" content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU" />
         <title>PVX</title>
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
-        strategy="afterInteractive"
-      />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
