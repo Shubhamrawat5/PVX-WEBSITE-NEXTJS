@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import mongoose from "mongoose";
+import { Client } from "pg";
 import Head from "next/head";
 import Bdays from "../components/bday/Bdays";
 import BdayStateProvider from "../components/bday/BdayStateProvider";
@@ -14,47 +14,30 @@ export const getServerSideProps = async () => {
   // let { data } = await axios.get(url);
   // return { data: data.data };
 
-  const { URI } = process.env;
-  // TODO: use elephant sql
-  // DB connect
-  mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  const proConfig = {
+    connectionString: process.env.HEROKU_PG,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  };
+  const client = new Client(proConfig);
+  await client.connect();
 
-  // Collection schema
-  const bdaySchema = new mongoose.Schema({
-    name: String,
-    username: String,
-    date: Number,
-    month: Number,
-    year: Number,
-    numb: Number,
-    place: String,
-  });
+  let dataBdays;
 
-  const Birthday =
-    mongoose.models.birthdays || mongoose.model("birthdays", bdaySchema);
+  const resultBdays = await client.query("select * from bday;");
+  await client.end();
 
-  const obj = {};
-  const data = await Birthday.find().sort({ date: 1 }); // sort by date
+  if (resultBdays.rowCount) {
+    dataBdays = resultBdays.rows;
+  } else {
+    dataBdays = [];
+  }
 
-  const arr = [];
-  data.forEach((document) => {
-    const { name, username, date, month, place } = document;
-    arr.push({
-      name,
-      username,
-      date,
-      month,
-      place,
-    });
-
-    // {"data":[{},{},{},{},{}]}
-    obj.data = arr;
-  });
-
-  return { props: { data: obj.data } };
+  return { props: { dataBdays } };
 };
 
-export default function BdaysPage({ data }) {
+export default function BdaysPage({ dataBdays }) {
   const months = BdayStateProvider();
   let todayBday = "";
 
@@ -62,7 +45,7 @@ export default function BdaysPage({ data }) {
   const todayDate = dateNew.getDate();
   const todayMonth = dateNew.getMonth() + 1; // getMonth return 0 to 11
 
-  data.forEach((member) => {
+  dataBdays.forEach((member) => {
     const { name, username, date, month, place } = member;
 
     if (todayDate === date && todayMonth === month) {
@@ -84,7 +67,7 @@ export default function BdaysPage({ data }) {
 }
 
 BdaysPage.propTypes = {
-  data: PropTypes.PropTypes.arrayOf(
+  dataBdays: PropTypes.PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       username: PropTypes.string.isRequired,
