@@ -26,7 +26,7 @@ export const getServerSideProps = async () => {
   let dataPVXT;
 
   const resultPVXG = await client.query(
-    "SELECT groupname.gname,groupname.groupjid,SUM(countmember.count) as count from countmember INNER JOIN groupname ON countmember.groupjid = groupname.groupjid GROUP BY groupname.gname,groupname.groupjid ORDER BY count DESC;"
+    "SELECT groups.gname,groups.groupjid, SUM(countmember.count) as count from countmember INNER JOIN groups ON countmember.groupjid = groups.groupjid GROUP BY groups.gname,groups.groupjid ORDER BY count DESC;"
   );
 
   if (resultPVXG.rowCount) {
@@ -36,7 +36,7 @@ export const getServerSideProps = async () => {
   }
 
   const resultPVXT = await client.query(
-    "SELECT countmembername.name,countmember.memberjid,sum(countmember.count) as count FROM countmember LEFT JOIN countmembername ON countmember.memberjid=countmembername.memberjid GROUP BY countmember.memberjid,countmembername.name ORDER BY count DESC LIMIT 50;"
+    "SELECT members.name,countmember.memberjid, SUM(countmember.count) as count FROM countmember LEFT JOIN members ON countmember.memberjid=members.memberjid GROUP BY countmember.memberjid,members.name ORDER BY count DESC LIMIT 50;"
   );
   await client.end();
 
