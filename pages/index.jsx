@@ -36,9 +36,7 @@ export const getServerSideProps = async () => {
   let groupLinks = [];
   if (enabled) {
     // Get all links
-    const resultGroupLinks = await client.query(
-      "SELECT gl.groupjid,gl.link,gn.gname FROM grouplinks gl LEFT JOIN groupname gn ON gl.groupjid=gn.groupjid;"
-    );
+    const resultGroupLinks = await client.query("SELECT * from groups;");
 
     if (resultGroupLinks.rowCount) {
       groupLinks = resultGroupLinks.rows;
@@ -102,7 +100,7 @@ HomePage.propTypes = {
     PropTypes.shape({
       gname: PropTypes.string.isRequired,
       groupjid: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
+      link: PropTypes.string,
     })
   ).isRequired,
   enabled: PropTypes.number.isRequired,

@@ -72,7 +72,7 @@ Whatsapp.propTypes = {
       img: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       groupjid: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
+      link: PropTypes.string,
     })
   ).isRequired,
 };
