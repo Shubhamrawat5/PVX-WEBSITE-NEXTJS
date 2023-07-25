@@ -26,15 +26,17 @@ export const getServerSideProps = async () => {
   const client = new Client(proConfig);
   await client.connect();
 
-  let enabled = true;
-  const resultEnabled = await client.query("SELECT * from grouplinksenabled;");
+  let isEnabled = true;
+  const resultEnabled = await client.query(
+    "SELECT * from meta where variable='groups_link_enabled';"
+  );
 
   if (resultEnabled.rowCount) {
-    enabled = resultEnabled.rows[0].enabled;
+    isEnabled = resultEnabled.rows[0].value;
   }
 
   let groupLinks = [];
-  if (enabled) {
+  if (isEnabled) {
     // Get all links
     const resultGroupLinks = await client.query("SELECT * from groups;");
 
@@ -49,19 +51,19 @@ export const getServerSideProps = async () => {
   return {
     props: {
       data: JSON.parse(JSON.stringify(groupLinks)),
-      enabled,
+      isEnabled,
     },
   };
 };
 
-export default function HomePage({ data, enabled }) {
+export default function HomePage({ data, isEnabled }) {
   const [showGame, setShowGame] = useState(false);
   const [gameEventAdded, setGameEventAdded] = useState(false);
 
   const wagroups = GroupStateProvider();
 
   // if not blocked then attach links
-  if (enabled) {
+  if (isEnabled) {
     // grpOut = data coming from outside - api
     // grpIn = data present inside already - wagroups
     wagroups.forEach((grpIn, index) => {
@@ -87,7 +89,7 @@ export default function HomePage({ data, enabled }) {
       ) : (
         <>
           <Header setShowGame={setShowGame} />
-          <Groups wagroups={wagroups} enabled={enabled} />
+          <Groups wagroups={wagroups} isEnabled={isEnabled} />
           <Admin />
         </>
       )}
@@ -103,5 +105,5 @@ HomePage.propTypes = {
       link: PropTypes.string,
     })
   ).isRequired,
-  enabled: PropTypes.number.isRequired,
+  isEnabled: PropTypes.number.isRequired,
 };
