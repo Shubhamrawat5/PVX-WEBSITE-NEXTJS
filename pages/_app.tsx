@@ -1,14 +1,13 @@
-/* eslint-disable */
-// TODO: CHECK ESLINT
 import React from "react";
 import Head from "next/head";
 import Script from "next/script";
-import Layout from "../components/Layout";
 import "../styles/globals.css";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -52,8 +51,10 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
 
+      <Nav />
       <Component {...pageProps} />
-    </Layout>
+      <Footer />
+    </>
   );
 }
 
