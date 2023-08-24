@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Month } from "./BirhdayState";
 
-export default function Month(props) {
+export default function MonthCard(props: { month: Month; id: number }) {
   const { month, id } = props;
   return (
     <div className="card_b" id={month.name.toLowerCase()} key={id}>
@@ -16,12 +17,12 @@ export default function Month(props) {
           </tr>
         </thead>
         <tbody id={`${month.name.toLowerCase()}-body`}>
-          {month.members.map((member) => (
-            <tr key={member.username}>
-              <td>{member.date}</td>
-              <td>{member.name}</td>
-              <td>{member.username}</td>
-              <td>{member.place}</td>
+          {month.bdays.map((bday) => (
+            <tr key={bday.username}>
+              <td>{bday.date}</td>
+              <td>{bday.name}</td>
+              <td>{bday.username}</td>
+              <td>{bday.place}</td>
             </tr>
           ))}
         </tbody>
@@ -30,11 +31,11 @@ export default function Month(props) {
   );
 }
 
-Month.propTypes = {
-  month: PropTypes.PropTypes.shape({
+MonthCard.propTypes = {
+  month: PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    members: PropTypes.PropTypes.PropTypes.arrayOf(
+    bdays: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         username: PropTypes.string.isRequired,

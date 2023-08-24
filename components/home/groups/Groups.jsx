@@ -33,7 +33,5 @@ Groups.propTypes = {
       link: PropTypes.string,
     })
   ).isRequired,
-  isEnabled: PropTypes.number.isRequired,
+  isEnabled: PropTypes.bool.isRequired,
 };
-
-// TODO: make isEnabled bool

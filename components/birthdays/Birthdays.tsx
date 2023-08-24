@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import Month from "./Month";
+import MonthCard from "./MonthCard";
+import { Month } from "./BirhdayState";
 
-export default function Bdays(props) {
+export default function Birthdays(props: {
+  months: Month[];
+  todayBday: string;
+}) {
   const { months, todayBday } = props;
 
   return (
@@ -39,7 +43,7 @@ export default function Bdays(props) {
       <div className="months-container_b">
         {months ? (
           months.map((month) => (
-            <Month month={month} id={month.id} key={month.id} />
+            <MonthCard month={month} id={month.id} key={month.id} />
           ))
         ) : (
           <div id="err" className="err" style={{ border: "1px solid black" }}>
@@ -52,16 +56,17 @@ export default function Bdays(props) {
   );
 }
 
-Bdays.propTypes = {
-  months: PropTypes.PropTypes.arrayOf(
+Birthdays.propTypes = {
+  months: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      members: PropTypes.PropTypes.PropTypes.arrayOf(
+      bdays: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string.isRequired,
           username: PropTypes.string.isRequired,
           date: PropTypes.number.isRequired,
+          month: PropTypes.number.isRequired,
           place: PropTypes.string.isRequired,
         })
       ),

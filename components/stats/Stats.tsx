@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { DataPVXG, DataPVXT } from "../../pages/stats";
 
-export default function Stats({ dataPVXG, dataPVXT }) {
+export default function Stats(props: {
+  dataPVXG: DataPVXG[];
+  dataPVXT: DataPVXT[];
+}) {
+  const { dataPVXG, dataPVXT } = props;
   let totalMessages = 0;
   if (dataPVXG) {
     dataPVXG.forEach((ele) => {
@@ -74,14 +79,14 @@ export default function Stats({ dataPVXG, dataPVXT }) {
 }
 
 Stats.propTypes = {
-  dataPVXG: PropTypes.PropTypes.arrayOf(
+  dataPVXG: PropTypes.arrayOf(
     PropTypes.shape({
       gname: PropTypes.string.isRequired,
       groupjid: PropTypes.string.isRequired,
       count: PropTypes.string.isRequired,
     })
   ).isRequired,
-  dataPVXT: PropTypes.PropTypes.arrayOf(
+  dataPVXT: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       memberjid: PropTypes.string.isRequired,

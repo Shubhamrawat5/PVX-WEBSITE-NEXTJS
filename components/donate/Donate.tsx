@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
+import { Members } from "../../pages/donate";
 
-export default function Donate({ donators }) {
+export default function Donate(props: { members: Members[] }) {
+  const { members } = props;
+
   let totalDonation = 0;
-  // data.sort((x, y) => y.amount - x.amount);
-  if (donators) {
-    donators.forEach((ele) => {
-      totalDonation += ele.amount;
-    });
-  }
+  members.forEach((member) => {
+    totalDonation += member.donation;
+  });
 
   return (
     <section id="achieve-section" className="section donation-section">
@@ -66,7 +66,7 @@ export default function Donate({ donators }) {
         tools, 🌐 buy domain, 🤖 bots and much more ❤️
       </p>
 
-      {donators ? (
+      {members ? (
         <>
           <h2 className="donators-subheading">
             <span>TOTAL DONATIONS:</span>
@@ -74,10 +74,10 @@ export default function Donate({ donators }) {
           </h2>
           <table className="donators-table">
             <tbody>
-              {donators.map((mem) => (
-                <tr key={mem.name}>
-                  <td className="donator-name">{mem.name}</td>
-                  <td className="donator-amount">{`₹ ${mem.amount}`}</td>
+              {members.map((member) => (
+                <tr key={member.name}>
+                  <td className="donator-name">{member.name}</td>
+                  <td className="donator-amount">{`₹ ${member.donation}`}</td>
                 </tr>
               ))}
             </tbody>
@@ -92,10 +92,9 @@ export default function Donate({ donators }) {
     </section>
   );
 }
-// TODO: VERIFY ALL THE KEYS IN MAP
 
 Donate.propTypes = {
-  donators: PropTypes.PropTypes.arrayOf(
+  members: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,

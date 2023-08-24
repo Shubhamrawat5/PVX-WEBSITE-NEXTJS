@@ -1,12 +1,15 @@
 {
   "extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks"],
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/jsx-one-expression-per-line": "off",
     "quotes": ["error", "double"],
     "linebreak-style": "off",
-    "react/jsx-one-expression-per-line": "off",
     "comma-dangle": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/no-cycle": "off",
+    "import/extensions": "off"
   }
 }

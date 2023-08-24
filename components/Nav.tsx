@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Nav() {
   const router = useRouter();
   const { pathname } = router;
-  // console.log(pathname);
+
   useEffect(() => {
     // everytime url will change so page will be scrolled href top
     window.scrollTo(0, 0);
@@ -21,30 +21,34 @@ export default function Nav() {
       </div>
       <ul className="nav-item-container">
         <Link href="/" passHref>
-          <li className={pathname === "/" ? "active" : null}>Home</li>
+          <li className={pathname === "/" ? "active" : undefined}>Home</li>
         </Link>
         {/* <Link href="/" passHref>
           <a>
-            <li className={pathname === "/projects" ? "active" : null}>
+            <li className={pathname === "/projects" ? "active" : undefined}>
               Projects
             </li>
           </a>
         </Link> */}
         <Link href="/stats" passHref>
-          <li className={pathname === "/stats" ? "active" : null}>Stats</li>
+          <li className={pathname === "/stats" ? "active" : undefined}>
+            Stats
+          </li>
         </Link>
         {/* <Link href="/donate" passHref>
           <a>
-            <li className={pathname === "/donate" ? "active" : null}>Donate</li>
+            <li className={pathname === "/donate" ? "active" : undefined}>Donate</li>
           </a>
         </Link> */}
-        <Link href="/bdays" passHref>
-          <li className={pathname === "/bdays" ? "active" : null}>
+        <Link href="/birthdays" passHref>
+          <li className={pathname === "/birthdays" ? "active" : undefined}>
             B&apos;Day
           </li>
         </Link>
         <Link href="/others" passHref>
-          <li className={pathname === "/others" ? "active" : null}>Others</li>
+          <li className={pathname === "/others" ? "active" : undefined}>
+            Others
+          </li>
         </Link>
         {/* <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
           <a>

@@ -4,15 +4,20 @@ import { Client } from "pg";
 import PropTypes from "prop-types";
 
 import Stats from "../components/stats/Stats";
-// import axios from "axios";
 
-// StatsPage.getInitialProps = async () => {
+export interface DataPVXG {
+  gname: string;
+  groupjid: string;
+  count: number;
+}
+
+export interface DataPVXT {
+  name: string;
+  memberjid: string;
+  count: number;
+}
+
 export const getServerSideProps = async () => {
-  // runs in server side
-  // const url = "https://pvx-api-vercel.vercel.app/api/gcount";
-  // let { data } = await axios.get(url);
-  // return { gcount: data.data };
-
   const proConfig = {
     connectionString: process.env.HEROKU_PG,
     ssl: {
@@ -22,8 +27,8 @@ export const getServerSideProps = async () => {
   const client = new Client(proConfig);
   await client.connect();
 
-  let dataPVXG;
-  let dataPVXT;
+  let dataPVXG: DataPVXG[] = [];
+  let dataPVXT: DataPVXT[] = [];
 
   const resultPVXG = await client.query(
     "SELECT groups.gname, groups.groupjid, SUM(countmember.message_count) as count from countmember INNER JOIN groups ON countmember.groupjid = groups.groupjid GROUP BY groups.gname,groups.groupjid ORDER BY count DESC;"
@@ -31,25 +36,25 @@ export const getServerSideProps = async () => {
 
   if (resultPVXG.rowCount) {
     dataPVXG = resultPVXG.rows;
-  } else {
-    dataPVXG = [];
   }
 
   const resultPVXT = await client.query(
     "SELECT members.name,countmember.memberjid,sum(countmember.message_count) as count FROM countmember LEFT JOIN members ON countmember.memberjid=members.memberjid GROUP BY countmember.memberjid,members.name ORDER BY count DESC LIMIT 50;"
   );
-  await client.end();
 
   if (resultPVXT.rowCount) {
     dataPVXT = resultPVXT.rows;
-  } else {
-    dataPVXT = [];
   }
 
+  await client.end();
   return { props: { dataPVXG, dataPVXT } };
 };
 
-export default function StatsPage({ dataPVXG, dataPVXT }) {
+export default function StatsPage(props: {
+  dataPVXG: DataPVXG[];
+  dataPVXT: DataPVXT[];
+}) {
+  const { dataPVXG, dataPVXT } = props;
   return (
     <>
       <Head>
@@ -61,14 +66,14 @@ export default function StatsPage({ dataPVXG, dataPVXT }) {
 }
 
 StatsPage.propTypes = {
-  dataPVXG: PropTypes.PropTypes.arrayOf(
+  dataPVXG: PropTypes.arrayOf(
     PropTypes.shape({
       gname: PropTypes.string.isRequired,
       groupjid: PropTypes.string.isRequired,
       count: PropTypes.string.isRequired,
     })
   ).isRequired,
-  dataPVXT: PropTypes.PropTypes.arrayOf(
+  dataPVXT: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       memberjid: PropTypes.string.isRequired,

@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Client } from "pg";
 import Head from "next/head";
-import Bdays from "../components/bday/Bdays";
-import BdayStateProvider from "../components/bday/BdayStateProvider";
+import Birthdays from "../components/birthdays/Birthdays";
+import BdayStateProvider from "../components/birthdays/BirhdayState";
 
-// import axios from "axios";
+export interface Bday {
+  name: string;
+  username: string;
+  date: number;
+  month: number;
+  place: string;
+}
 
-// BdaysPage.getInitialProps = async () => {
 export const getServerSideProps = async () => {
-  // runs in server side
-  // const url = "https://pvx-api-vercel.vercel.app/api/bday";
-  // let { data } = await axios.get(url);
-  // return { data: data.data };
-
   const proConfig = {
     connectionString: process.env.HEROKU_PG,
     ssl: {
@@ -23,21 +23,21 @@ export const getServerSideProps = async () => {
   const client = new Client(proConfig);
   await client.connect();
 
-  let dataBdays;
+  let bdays: Bday[] = [];
 
   const resultBdays = await client.query("select * from bday;");
   await client.end();
 
   if (resultBdays.rowCount) {
-    dataBdays = resultBdays.rows;
-  } else {
-    dataBdays = [];
+    bdays = resultBdays.rows;
   }
 
-  return { props: { dataBdays } };
+  return { props: { bdays } };
 };
 
-export default function BdaysPage({ dataBdays }) {
+export default function BirthdaysPage(props: { bdays: Bday[] }) {
+  const { bdays } = props;
+
   const months = BdayStateProvider();
   let todayBday = "";
 
@@ -45,15 +45,15 @@ export default function BdaysPage({ dataBdays }) {
   const todayDate = dateNew.getDate();
   const todayMonth = dateNew.getMonth() + 1; // getMonth return 0 to 11
 
-  dataBdays.forEach((member) => {
-    const { name, username, date, month, place } = member;
+  bdays.forEach((bday) => {
+    const { name, username, date, month, place } = bday;
 
     if (todayDate === date && todayMonth === month) {
-      // console.log(`TODAY IS ${name} Birthday`);
+      console.log(`TODAY IS ${name} Birthday`);
       todayBday += todayBday === "" ? name : ` & ${name}`;
     }
 
-    months[month - 1].members.push({ date, name, username, place });
+    months[month - 1].bdays.push({ date, month, name, username, place });
   });
 
   return (
@@ -61,13 +61,13 @@ export default function BdaysPage({ dataBdays }) {
       <Head>
         <title>PVX | BDAYS</title>
       </Head>
-      <Bdays months={months} todayBday={todayBday} />
+      <Birthdays months={months} todayBday={todayBday} />
     </>
   );
 }
 
-BdaysPage.propTypes = {
-  dataBdays: PropTypes.PropTypes.arrayOf(
+BirthdaysPage.propTypes = {
+  bdays: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       username: PropTypes.string.isRequired,

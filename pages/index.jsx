@@ -105,5 +105,5 @@ HomePage.propTypes = {
       link: PropTypes.string,
     })
   ).isRequired,
-  isEnabled: PropTypes.number.isRequired,
+  isEnabled: PropTypes.bool.isRequired,
 };
