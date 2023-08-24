@@ -12,11 +12,12 @@ export default function Nav() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // TODO: CHECK priority in IMAGE
   return (
     <nav>
       <div className="nav-logo">
         <Link href="/" passHref>
-          <Image src="/static/pvxx.png" alt="logo" layout="fill" />
+          <Image src="/static/pvxx.png" alt="logo" priority fill />
         </Link>
       </div>
       <ul className="nav-item-container">

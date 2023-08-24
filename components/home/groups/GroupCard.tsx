@@ -10,7 +10,7 @@
 //       <h4 className="group-name">{group.name}</h4>
 //       <p className="group-info">&#40;{group.desc}&#41;</p>
 //       <div className="group-dp">
-//         <Image src={group.img} alt={group.alt} layout="fill" />
+//         <Image src={group.img} alt={group.alt} fill />
 //       </div>
 //       <div className="join-copy-wrapper">
 //         <a
@@ -29,9 +29,9 @@
 //         >
 //           <div className="copy-link">
 //             {copiedFb[index] ? (
-//               <Image src="/static/tick.png" alt="copy" layout="fill" />
+//               <Image src="/static/tick.png" alt="copy" fill />
 //             ) : (
-//               <Image src="/static/copy.png" alt="copy" layout="fill" />
+//               <Image src="/static/copy.png" alt="copy" fill />
 //             )}
 //           </div>
 //         </CopyToClipboard>

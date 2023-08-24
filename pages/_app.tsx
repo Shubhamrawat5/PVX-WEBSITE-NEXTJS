@@ -2,10 +2,11 @@ import React from "react";
 import Head from "next/head";
 import Script from "next/script";
 import "../styles/globals.css";
+import { AppProps } from "next/app";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -50,8 +51,8 @@ function MyApp({ Component, pageProps }) {
           gtag("config", "G-VN9V7K8V4P");
         `}
       </Script>
-
       <Nav />
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
       <Footer />
     </>

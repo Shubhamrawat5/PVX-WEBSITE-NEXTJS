@@ -8,15 +8,15 @@ import Header from "../components/home/Header";
 import Admin from "../components/home/Admin";
 import Groups from "../components/home/groups/Groups";
 
-import GroupStateProvider from "../components/home/groups/GroupStateProvider";
+import GroupState from "../components/home/groups/GroupState";
 
-// HomePage.getInitialProps = async () => {
+export interface Group {
+  groupjid: string;
+  gname: string;
+  link: string;
+}
+
 export const getServerSideProps = async () => {
-  // runs in server side
-  // const url = "https://pvx-api-vercel.vercel.app/api/links";
-  // let { data } = await axios.get(url);
-  // return { data: data };
-
   const proConfig = {
     connectionString: process.env.HEROKU_PG,
     ssl: {
@@ -35,45 +35,51 @@ export const getServerSideProps = async () => {
     isEnabled = resultEnabled.rows[0].value;
   }
 
-  let groupLinks = [];
+  let groups: Group[] = [];
   if (isEnabled) {
-    // Get all links
     const resultGroupLinks = await client.query("SELECT * from groups;");
 
     if (resultGroupLinks.rowCount) {
-      groupLinks = resultGroupLinks.rows;
+      groups = resultGroupLinks.rows;
     }
   }
 
   await client.end();
 
-  // CHECK THIS PARSE
   return {
     props: {
-      data: JSON.parse(JSON.stringify(groupLinks)),
+      groups,
       isEnabled,
     },
   };
 };
 
-export default function HomePage({ data, isEnabled }) {
+export default function HomePage(props: {
+  groups: Group[];
+  isEnabled: boolean;
+}) {
+  const { groups, isEnabled } = props;
+
   const [showGame, setShowGame] = useState(false);
-  const [gameEventAdded, setGameEventAdded] = useState(false);
 
-  const wagroups = GroupStateProvider();
+  const wagroups = GroupState();
 
-  // if not blocked then attach links
+  // check if group links are enabled
   if (isEnabled) {
-    // grpOut = data coming from outside - api
-    // grpIn = data present inside already - wagroups
-    wagroups.forEach((grpIn, index) => {
-      data.forEach((grpOut) => {
-        if (grpOut.groupjid === grpIn.groupjid) {
-          wagroups[index].link = grpOut.link;
+    // groupFromDB = data coming from outside - api
+    // groupFromState = data present inside already - wagroups
+    wagroups.forEach((groupFromState, index) => {
+      groups.forEach((groupFromDB) => {
+        if (groupFromDB.groupjid === groupFromState.groupjid) {
+          wagroups[index].link = groupFromDB.link;
         }
       });
     });
   }
+
+  const showGameHandler = (value: boolean) => {
+    setShowGame(value);
+  };
 
   return (
     <>
@@ -81,14 +87,10 @@ export default function HomePage({ data, isEnabled }) {
         <title>PVX | HOME</title>
       </Head>
       {showGame ? (
-        <Game
-          setShowGame={setShowGame}
-          gameEventAdded={gameEventAdded}
-          setGameEventAdded={setGameEventAdded}
-        />
+        <Game showGameHandler={showGameHandler} />
       ) : (
         <>
-          <Header setShowGame={setShowGame} />
+          <Header showGameHandler={showGameHandler} />
           <Groups wagroups={wagroups} isEnabled={isEnabled} />
           <Admin />
         </>
@@ -98,7 +100,7 @@ export default function HomePage({ data, isEnabled }) {
 }
 
 HomePage.propTypes = {
-  data: PropTypes.PropTypes.arrayOf(
+  groups: PropTypes.arrayOf(
     PropTypes.shape({
       gname: PropTypes.string.isRequired,
       groupjid: PropTypes.string.isRequired,

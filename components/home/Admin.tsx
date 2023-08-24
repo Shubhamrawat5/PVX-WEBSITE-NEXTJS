@@ -97,7 +97,7 @@ export default function Admin() {
         {admins.map((admin) => (
           <div className="admin-box" key={admin.id}>
             <div className="admin-dp">
-              <Image src={admin.img} alt="admin" layout="fill" />
+              <Image src={admin.img} alt="admin" fill />
             </div>
             <h4 className="admin-name">{admin.name}</h4>
           </div>

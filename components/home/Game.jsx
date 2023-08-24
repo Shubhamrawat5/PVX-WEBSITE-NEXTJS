@@ -2,7 +2,7 @@
 // TODO: CHECK ESLINT
 import React, { useEffect } from "react";
 export default function Game(props) {
-  const { setShowGame, gameEventAdded, setGameEventAdded } = props;
+  const { showGameHandler } = props;
   /** Snake game - https://codepen.io/fariati/pen/mdRpEYP * */
   const keyDownhelper = (e) => {
     if (e.key === "ArrowUp" && KEY.ArrowDown) return;
@@ -10,7 +10,6 @@ export default function Game(props) {
     if (e.key === "ArrowLeft" && KEY.ArrowRight) return;
     if (e.key === "ArrowRight" && KEY.ArrowLeft) return;
     KEY[e.key] = true;
-    // console.log(KEY);
     Object.keys(KEY)
       .filter((f) => f !== e.key && f !== "listen" && f !== "resetState")
       .forEach((k) => {
@@ -26,7 +25,6 @@ export default function Game(props) {
     if (value === "ArrowLeft" && KEY.ArrowRight) return;
     if (value === "ArrowRight" && KEY.ArrowLeft) return;
     KEY[value] = true;
-    // console.log(KEY);
     Object.keys(KEY)
       .filter((f) => f !== value && f !== "listen" && f !== "resetState")
       .forEach((k) => {
@@ -54,6 +52,7 @@ export default function Game(props) {
       });
     },
   };
+
   useEffect(() => {
     let dom_replay = document.querySelector("#replays");
     let dom_score = document.querySelector("#score");
@@ -368,7 +367,6 @@ export default function Game(props) {
       snake = new Snake();
       food = new Food();
       dom_replay.addEventListener("click", reset, false);
-      setGameEventAdded(true);
       loop();
     }
 
@@ -423,7 +421,7 @@ export default function Game(props) {
         </h2>
         <div className="wrapper">
           <div className="replay-btns">
-            <button className="replay" onClick={() => setShowGame(false)}>
+            <button className="replay" onClick={() => showGameHandler(false)}>
               <i className="fas fa-play"></i>
               GO BACK
             </button>

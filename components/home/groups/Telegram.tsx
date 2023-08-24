@@ -40,8 +40,7 @@ export default function Telegram() {
 
   const [copied, setCopied] = useState(new Array(tgGroups.length).fill(false));
 
-  const checkCopied = (text, result, id) => {
-    // console.log(text, result, id);
+  const checkCopied = (text: string, result: boolean, id: number) => {
     if (result) {
       const copiedNew = new Array(tgGroups.length).fill(false);
       copiedNew[id] = true;
@@ -59,7 +58,7 @@ export default function Telegram() {
             <h4 className="group-name">{group.name}</h4>
             <p className="group-info">&#40;{group.desc}&#41;</p>
             <div className="group-dp">
-              <Image src={group.img} alt={group.alt} layout="fill" />
+              <Image src={group.img} alt={group.alt} fill />
             </div>
             <div className="join-copy-wrapper">
               <a
@@ -78,9 +77,9 @@ export default function Telegram() {
               >
                 <div className="copy-link">
                   {copied[group.id] ? (
-                    <Image src="/static/tick.png" alt="copy" layout="fill" />
+                    <Image src="/static/tick.png" alt="copy" fill />
                   ) : (
-                    <Image src="/static/copy.png" alt="copy" layout="fill" />
+                    <Image src="/static/copy.png" alt="copy" fill />
                   )}
                 </div>
               </CopyToClipboard>

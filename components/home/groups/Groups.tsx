@@ -3,8 +3,12 @@ import PropTypes from "prop-types";
 import Whatsapp from "./Whatsapp";
 import Telegram from "./Telegram";
 import OtherGroups from "./OtherGroups";
+import { Wagroup } from "./GroupState";
 
-export default function Groups(props) {
+export default function Groups(props: {
+  wagroups: Wagroup[];
+  isEnabled: boolean;
+}) {
   const { wagroups, isEnabled } = props;
 
   return (
@@ -15,7 +19,7 @@ export default function Groups(props) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       ) : null}
-      <Whatsapp wagroups={wagroups} isEnabled={isEnabled} />
+      <Whatsapp wagroups={wagroups} />
       <Telegram />
       <OtherGroups />
     </section>
@@ -23,7 +27,7 @@ export default function Groups(props) {
 }
 
 Groups.propTypes = {
-  wagroups: PropTypes.PropTypes.arrayOf(
+  wagroups: PropTypes.arrayOf(
     PropTypes.shape({
       gname: PropTypes.string.isRequired,
       desc: PropTypes.string.isRequired,

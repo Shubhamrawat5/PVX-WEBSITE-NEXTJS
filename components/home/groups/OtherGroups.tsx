@@ -18,11 +18,10 @@ export default function OtherGroups() {
     new Array(discordGroups.length).fill(false)
   );
 
-  const checkCopiedDiscord = (text, result, index) => {
-    // console.log(text, result, index);
+  const checkCopiedDiscord = (text: string, result: boolean, id: number) => {
     if (result) {
       const copiedNew = new Array(discordGroups.length).fill(false);
-      copiedNew[index] = true;
+      copiedNew[id] = true;
       setCopiedDiscord(copiedNew);
     }
   };
@@ -42,8 +41,7 @@ export default function OtherGroups() {
     new Array(discordGroups.length).fill(false)
   );
 
-  const checkCopiedFb = (text, result, id) => {
-    // console.log(text, result, id);
+  const checkCopiedFb = (text: string, result: boolean, id: number) => {
     if (result) {
       const copiedNew = new Array(discordGroups.length).fill(false);
       copiedNew[id] = true;
@@ -61,7 +59,7 @@ export default function OtherGroups() {
               <h4 className="group-name">{group.name}</h4>
               <p className="group-info">&#40;{group.desc}&#41;</p>
               <div className="group-dp">
-                <Image src={group.img} alt={group.alt} layout="fill" />
+                <Image src={group.img} alt={group.alt} fill />
               </div>
               <div className="join-copy-wrapper">
                 <a
@@ -80,9 +78,9 @@ export default function OtherGroups() {
                 >
                   <div className="copy-link">
                     {copiedDiscord[group.id] ? (
-                      <Image src="/static/tick.png" alt="copy" layout="fill" />
+                      <Image src="/static/tick.png" alt="copy" fill />
                     ) : (
-                      <Image src="/static/copy.png" alt="copy" layout="fill" />
+                      <Image src="/static/copy.png" alt="copy" fill />
                     )}
                   </div>
                 </CopyToClipboard>
@@ -100,7 +98,7 @@ export default function OtherGroups() {
               <h4 className="group-name">{group.name}</h4>
               <p className="group-info">&#40;{group.desc}&#41;</p>
               <div className="group-dp">
-                <Image src={group.img} alt={group.alt} layout="fill" />
+                <Image src={group.img} alt={group.alt} fill />
               </div>
               <div className="join-copy-wrapper">
                 <a
@@ -119,9 +117,9 @@ export default function OtherGroups() {
                 >
                   <div className="copy-link">
                     {copiedFb[group.id] ? (
-                      <Image src="/static/tick.png" alt="copy" layout="fill" />
+                      <Image src="/static/tick.png" alt="copy" fill />
                     ) : (
-                      <Image src="/static/copy.png" alt="copy" layout="fill" />
+                      <Image src="/static/copy.png" alt="copy" fill />
                     )}
                   </div>
                 </CopyToClipboard>
@@ -141,7 +139,7 @@ export default function OtherGroups() {
               <Image
                 src="/static/group/main.jpg"
                 alt="pvx community signal"
-                layout="fill"
+                fill
               />
             </div>
             <div className="join-copy-wrapper">
@@ -158,7 +156,7 @@ export default function OtherGroups() {
                   <Image
                     src="/static/copy.png"
                     alt="copy"
-                    layout="fill"
+                    fill
                   ></Image>
                 </div>
               </CopyToClipboard>

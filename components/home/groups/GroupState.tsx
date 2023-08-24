@@ -21,8 +21,17 @@ const foodImg = "/static/group/food.jpg";
 // const dealsImg = "/static/group/deals.jpg";
 // const pubgmImg = "/static/group/pubgm.jpg";
 
-export default function GroupStateProvider() {
-  const wagroups = [
+export interface Wagroup {
+  gname: string;
+  desc: string;
+  alt: string;
+  img: string;
+  link: string;
+  groupjid: string;
+}
+
+export default function GroupState() {
+  const wagroups: Wagroup[] = [
     {
       gname: "COMMUNITY",
       desc: "Main Group",
