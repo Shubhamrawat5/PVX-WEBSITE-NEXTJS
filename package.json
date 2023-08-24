@@ -10,8 +10,6 @@
   "dependencies": {
     "@types/node": "^20.3.1",
     "@types/pg": "^8.10.2",
-    "axios": "^0.24.0",
-    "mongoose": "^6.1.1",
     "next": "^12.2.2",
     "pg": "^8.7.1",
     "prop-types": "^15.8.1",
