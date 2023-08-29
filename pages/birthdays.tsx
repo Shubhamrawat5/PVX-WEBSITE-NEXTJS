@@ -24,7 +24,7 @@ export const getServerSideProps = async () => {
 
   let bdays: Bday[] = [];
 
-  const resultBdays = await client.query("select * from bday;");
+  const resultBdays = await client.query("select * from bday order by date;");
   await client.end();
 
   if (resultBdays.rowCount) {
