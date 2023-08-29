@@ -15,7 +15,7 @@ export interface Bday {
 
 export const getServerSideProps = async () => {
   const proConfig = {
-    connectionString: process.env.HEROKU_PG,
+    connectionString: process.env.PG_URL,
     ssl: {
       rejectUnauthorized: false,
     },
