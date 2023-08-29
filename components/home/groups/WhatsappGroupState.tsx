@@ -21,7 +21,7 @@ const foodImg = "/static/group/food.jpg";
 // const dealsImg = "/static/group/deals.jpg";
 // const pubgmImg = "/static/group/pubgm.jpg";
 
-export interface Wagroup {
+export interface WhatsapGroup {
   gname: string;
   desc: string;
   alt: string;
@@ -30,8 +30,8 @@ export interface Wagroup {
   groupjid: string;
 }
 
-export default function GroupState() {
-  const wagroups: Wagroup[] = [
+export default function WhatsappGroupState() {
+  const whatsappGroups: WhatsapGroup[] = [
     {
       gname: "COMMUNITY",
       desc: "Main Group",
@@ -184,5 +184,5 @@ export default function GroupState() {
     //   groupjid: "917506703222-1595354899@g.us",
     // },
   ];
-  return wagroups;
+  return whatsappGroups;
 }

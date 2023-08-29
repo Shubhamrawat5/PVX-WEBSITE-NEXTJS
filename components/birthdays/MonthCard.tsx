@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Month } from "./BirhdayState";
+import { Month } from "./BirthdayState";
 
 export default function MonthCard(props: { month: Month; id: number }) {
   const { month, id } = props;

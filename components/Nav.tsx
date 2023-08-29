@@ -43,7 +43,7 @@ export default function Nav() {
         </Link> */}
         <Link href="/birthdays" passHref>
           <li className={pathname === "/birthdays" ? "active" : undefined}>
-            B&apos;Day
+            B&apos;Days
           </li>
         </Link>
         <Link href="/others" passHref>

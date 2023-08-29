@@ -8,8 +8,6 @@ import Header from "../components/home/Header";
 import Admin from "../components/home/Admin";
 import Groups from "../components/home/groups/Groups";
 
-import GroupState from "../components/home/groups/GroupState";
-
 export interface Group {
   groupjid: string;
   gname: string;
@@ -35,6 +33,7 @@ export const getServerSideProps = async () => {
     isEnabled = resultEnabled.rows[0].value;
   }
 
+  // TODO: GET TELEGRAM DISCORD LINK FROM DB
   let groups: Group[] = [];
   if (isEnabled) {
     const resultGroupLinks = await client.query("SELECT * from groups;");
@@ -62,21 +61,6 @@ export default function HomePage(props: {
 
   const [showGame, setShowGame] = useState(false);
 
-  const wagroups = GroupState();
-
-  // check if group links are enabled
-  if (isEnabled) {
-    // groupFromDB = data coming from outside - api
-    // groupFromState = data present inside already - wagroups
-    wagroups.forEach((groupFromState, index) => {
-      groups.forEach((groupFromDB) => {
-        if (groupFromDB.groupjid === groupFromState.groupjid) {
-          wagroups[index].link = groupFromDB.link;
-        }
-      });
-    });
-  }
-
   const showGameHandler = (value: boolean) => {
     setShowGame(value);
   };
@@ -91,7 +75,7 @@ export default function HomePage(props: {
       ) : (
         <>
           <Header showGameHandler={showGameHandler} />
-          <Groups wagroups={wagroups} isEnabled={isEnabled} />
+          <Groups groups={groups} isEnabled={isEnabled} />
           <Admin />
         </>
       )}

@@ -2,13 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import MonthCard from "./MonthCard";
-import { Month } from "./BirhdayState";
+import { Bday } from "../../pages/birthdays";
+import BdayStateProvider from "./BirthdayState";
 
-export default function Birthdays(props: {
-  months: Month[];
-  todayBday: string;
-}) {
-  const { months, todayBday } = props;
+export default function Birthdays(props: { bdays: Bday[] }) {
+  const { bdays } = props;
+
+  const months = BdayStateProvider();
+  let todayBday = "";
+
+  const dateNew = new Date();
+  const todayDate = dateNew.getDate();
+  const todayMonth = dateNew.getMonth() + 1; // getMonth return 0 to 11
+
+  bdays.forEach((bday) => {
+    const { name, username, date, month, place } = bday;
+
+    if (todayDate === date && todayMonth === month) {
+      console.log(`TODAY IS ${name} Birthday`);
+      todayBday += todayBday === "" ? name : ` & ${name}`;
+    }
+
+    months[month - 1].bdays.push({ date, month, name, username, place });
+  });
 
   return (
     <section id="birthday_b">
@@ -57,20 +73,32 @@ export default function Birthdays(props: {
 }
 
 Birthdays.propTypes = {
-  months: PropTypes.arrayOf(
+  bdays: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
-      bdays: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          username: PropTypes.string.isRequired,
-          date: PropTypes.number.isRequired,
-          month: PropTypes.number.isRequired,
-          place: PropTypes.string.isRequired,
-        })
-      ),
+      username: PropTypes.string.isRequired,
+      date: PropTypes.number.isRequired,
+      month: PropTypes.number.isRequired,
+      place: PropTypes.string.isRequired,
     })
   ).isRequired,
-  todayBday: PropTypes.string.isRequired,
 };
+
+// Birthdays.propTypes = {
+//   months: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       id: PropTypes.number.isRequired,
+//       bdays: PropTypes.arrayOf(
+//         PropTypes.shape({
+//           name: PropTypes.string.isRequired,
+//           username: PropTypes.string.isRequired,
+//           date: PropTypes.number.isRequired,
+//           month: PropTypes.number.isRequired,
+//           place: PropTypes.string.isRequired,
+//         })
+//       ),
+//     })
+//   ).isRequired,
+//   todayBday: PropTypes.string.isRequired,
+// };

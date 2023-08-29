@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Client } from "pg";
 import Head from "next/head";
 import Birthdays from "../components/birthdays/Birthdays";
-import BdayStateProvider from "../components/birthdays/BirhdayState";
 
 export interface Bday {
   name: string;
@@ -38,30 +37,12 @@ export const getServerSideProps = async () => {
 export default function BirthdaysPage(props: { bdays: Bday[] }) {
   const { bdays } = props;
 
-  const months = BdayStateProvider();
-  let todayBday = "";
-
-  const dateNew = new Date();
-  const todayDate = dateNew.getDate();
-  const todayMonth = dateNew.getMonth() + 1; // getMonth return 0 to 11
-
-  bdays.forEach((bday) => {
-    const { name, username, date, month, place } = bday;
-
-    if (todayDate === date && todayMonth === month) {
-      console.log(`TODAY IS ${name} Birthday`);
-      todayBday += todayBday === "" ? name : ` & ${name}`;
-    }
-
-    months[month - 1].bdays.push({ date, month, name, username, place });
-  });
-
   return (
     <>
       <Head>
         <title>PVX | BDAYS</title>
       </Head>
-      <Birthdays months={months} todayBday={todayBday} />
+      <Birthdays bdays={bdays} />
     </>
   );
 }
