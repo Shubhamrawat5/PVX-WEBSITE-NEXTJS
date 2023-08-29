@@ -52,10 +52,11 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function HomePage(props: {
+export interface GroupsProps {
   groups: Group[];
   isEnabled: boolean;
-}) {
+}
+export default function HomePage(props: GroupsProps) {
   const { groups, isEnabled } = props;
 
   const [showGame, setShowGame] = useState(false);

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Group } from "../../../pages";
+import { GroupsProps } from "../../../pages";
 import WhatsappGroupState from "./WhatsappGroupState";
 
-export default function WhatsappGroups(props: {
-  groups: Group[];
-  isEnabled: boolean;
-}) {
+export default function WhatsappGroups(props: GroupsProps) {
   const { groups, isEnabled } = props;
 
   const whatsappGroups = WhatsappGroupState();

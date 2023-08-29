@@ -49,10 +49,12 @@ export const getServerSideProps = async () => {
   return { props: { dataPVXG, dataPVXT } };
 };
 
-export default function StatsPage(props: {
+export interface StatsProps {
   dataPVXG: DataPVXG[];
   dataPVXT: DataPVXT[];
-}) {
+}
+
+export default function StatsPage(props: StatsProps) {
   const { dataPVXG, dataPVXT } = props;
   return (
     <>

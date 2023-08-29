@@ -2,9 +2,9 @@ import React from "react";
 import Whatsapp from "./Whatsapp";
 import Telegram from "./Telegram";
 import OtherGroups from "./OtherGroups";
-import { Group } from "../../../pages";
+import { GroupsProps } from "../../../pages";
 
-export default function Groups(props: { groups: Group[]; isEnabled: boolean }) {
+export default function Groups(props: GroupsProps) {
   const { groups, isEnabled } = props;
 
   return (

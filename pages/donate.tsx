@@ -34,7 +34,11 @@ export const getServerSideProps = async () => {
   return { props: { members } };
 };
 
-export default function DonatePage(props: { members: Members[] }) {
+export interface DonateProps {
+  members: Members[];
+}
+
+export default function DonatePage(props: DonateProps) {
   const { members } = props;
   return (
     <>

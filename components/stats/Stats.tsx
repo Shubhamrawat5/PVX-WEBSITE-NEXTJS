@@ -1,10 +1,7 @@
 import React from "react";
-import { DataPVXG, DataPVXT } from "../../pages/stats";
+import { StatsProps } from "../../pages/stats";
 
-export default function Stats(props: {
-  dataPVXG: DataPVXG[];
-  dataPVXT: DataPVXT[];
-}) {
+export default function Stats(props: StatsProps) {
   const { dataPVXG, dataPVXT } = props;
   let totalMessages = 0;
   if (dataPVXG) {

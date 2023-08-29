@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { Members } from "../../pages/donate";
+import { DonateProps } from "../../pages/donate";
 
-export default function Donate(props: { members: Members[] }) {
+export default function Donate(props: DonateProps) {
   const { members } = props;
 
   let totalDonation = 0;

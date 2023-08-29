@@ -33,7 +33,11 @@ export const getServerSideProps = async () => {
   return { props: { bdays } };
 };
 
-export default function BirthdaysPage(props: { bdays: Bday[] }) {
+export interface BirthdaysProps {
+  bdays: Bday[];
+}
+
+export default function BirthdaysPage(props: BirthdaysProps) {
   const { bdays } = props;
 
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import MonthCard from "./MonthCard";
-import { Bday } from "../../pages/birthdays";
+import { BirthdaysProps } from "../../pages/birthdays";
 import BdayStateProvider from "./BirthdayState";
 
-export default function Birthdays(props: { bdays: Bday[] }) {
+export default function Birthdays(props: BirthdaysProps) {
   const { bdays } = props;
 
   const months = BdayStateProvider();
