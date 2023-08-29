@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Client } from "pg";
 import Head from "next/head";
 import Birthdays from "../components/birthdays/Birthdays";
@@ -46,15 +45,3 @@ export default function BirthdaysPage(props: { bdays: Bday[] }) {
     </>
   );
 }
-
-BirthdaysPage.propTypes = {
-  bdays: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      username: PropTypes.string.isRequired,
-      date: PropTypes.number.isRequired,
-      month: PropTypes.number.isRequired,
-      place: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};

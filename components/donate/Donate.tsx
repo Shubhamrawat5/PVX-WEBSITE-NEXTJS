@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import PropTypes from "prop-types";
 import { Members } from "../../pages/donate";
 
 export default function Donate(props: { members: Members[] }) {
@@ -92,12 +91,3 @@ export default function Donate(props: { members: Members[] }) {
     </section>
   );
 }
-
-Donate.propTypes = {
-  members: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import MonthCard from "./MonthCard";
 import { Bday } from "../../pages/birthdays";
@@ -71,34 +70,3 @@ export default function Birthdays(props: { bdays: Bday[] }) {
     </section>
   );
 }
-
-Birthdays.propTypes = {
-  bdays: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      username: PropTypes.string.isRequired,
-      date: PropTypes.number.isRequired,
-      month: PropTypes.number.isRequired,
-      place: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
-
-// Birthdays.propTypes = {
-//   months: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string.isRequired,
-//       id: PropTypes.number.isRequired,
-//       bdays: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           name: PropTypes.string.isRequired,
-//           username: PropTypes.string.isRequired,
-//           date: PropTypes.number.isRequired,
-//           month: PropTypes.number.isRequired,
-//           place: PropTypes.string.isRequired,
-//         })
-//       ),
-//     })
-//   ).isRequired,
-//   todayBday: PropTypes.string.isRequired,
-// };

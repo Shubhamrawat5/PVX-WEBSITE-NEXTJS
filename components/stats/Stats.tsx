@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { DataPVXG, DataPVXT } from "../../pages/stats";
 
 export default function Stats(props: {
@@ -77,20 +76,3 @@ export default function Stats(props: {
     </section>
   );
 }
-
-Stats.propTypes = {
-  dataPVXG: PropTypes.arrayOf(
-    PropTypes.shape({
-      gname: PropTypes.string.isRequired,
-      groupjid: PropTypes.string.isRequired,
-      count: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  dataPVXT: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      memberjid: PropTypes.string.isRequired,
-      count: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};

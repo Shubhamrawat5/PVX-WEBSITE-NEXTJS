@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
-import PropTypes from "prop-types";
 
 import Donate from "../components/donate/Donate";
 
@@ -46,12 +45,3 @@ export default function DonatePage(props: { members: Members[] }) {
     </>
   );
 }
-
-DonatePage.propTypes = {
-  members: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};

@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
-import PropTypes from "prop-types";
 
 import Stats from "../components/stats/Stats";
 
@@ -64,20 +63,3 @@ export default function StatsPage(props: {
     </>
   );
 }
-
-StatsPage.propTypes = {
-  dataPVXG: PropTypes.arrayOf(
-    PropTypes.shape({
-      gname: PropTypes.string.isRequired,
-      groupjid: PropTypes.string.isRequired,
-      count: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  dataPVXT: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      memberjid: PropTypes.string.isRequired,
-      count: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import PropTypes from "prop-types";
 import { Client } from "pg";
 
 import Game from "../components/home/Game";
@@ -82,14 +81,3 @@ export default function HomePage(props: {
     </>
   );
 }
-
-HomePage.propTypes = {
-  groups: PropTypes.arrayOf(
-    PropTypes.shape({
-      gname: PropTypes.string.isRequired,
-      groupjid: PropTypes.string.isRequired,
-      link: PropTypes.string,
-    })
-  ).isRequired,
-  isEnabled: PropTypes.bool.isRequired,
-};

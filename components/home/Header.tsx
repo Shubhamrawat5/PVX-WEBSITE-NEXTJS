@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 
 export default function Header(props: {
@@ -26,7 +25,3 @@ export default function Header(props: {
     </header>
   );
 }
-
-Header.propTypes = {
-  showGameHandler: PropTypes.func.isRequired,
-};

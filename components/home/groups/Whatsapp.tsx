@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Group } from "../../../pages";
@@ -89,27 +88,3 @@ export default function WhatsappGroups(props: {
     </div>
   );
 }
-
-WhatsappGroups.propTypes = {
-  groups: PropTypes.arrayOf(
-    PropTypes.shape({
-      gname: PropTypes.string.isRequired,
-      groupjid: PropTypes.string.isRequired,
-      link: PropTypes.string,
-    })
-  ).isRequired,
-  isEnabled: PropTypes.bool.isRequired,
-};
-
-// Whatsapp.propTypes = {
-//   wagroups: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       gname: PropTypes.string.isRequired,
-//       desc: PropTypes.string.isRequired,
-//       img: PropTypes.string.isRequired,
-//       alt: PropTypes.string.isRequired,
-//       groupjid: PropTypes.string.isRequired,
-//       link: PropTypes.string,
-//     })
-//   ).isRequired,
-// };

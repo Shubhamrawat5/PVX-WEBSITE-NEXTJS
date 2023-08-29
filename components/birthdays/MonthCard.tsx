@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Month } from "./BirthdayState";
 
 export default function MonthCard(props: { month: Month; id: number }) {
@@ -30,19 +29,3 @@ export default function MonthCard(props: { month: Month; id: number }) {
     </div>
   );
 }
-
-MonthCard.propTypes = {
-  month: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    bdays: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        username: PropTypes.string.isRequired,
-        date: PropTypes.number.isRequired,
-        place: PropTypes.string.isRequired,
-      })
-    ),
-  }).isRequired,
-  id: PropTypes.number.isRequired,
-};
