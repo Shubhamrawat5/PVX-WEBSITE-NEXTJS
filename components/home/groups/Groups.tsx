@@ -6,12 +6,12 @@ import Facebook from "./Facebook";
 import { GroupsProps } from "../../../pages";
 
 export default function Groups(props: GroupsProps) {
-  const { groups, isEnabled } = props;
+  const { groupsDB, isEnabled } = props;
 
   return (
     <section id="group-section" className="section">
       <h2 className="section-heading">PVX FAMILY GROUPS</h2>
-      <Whatsapp groups={groups} isEnabled={isEnabled} />
+      <Whatsapp groupsDB={groupsDB} isEnabled={isEnabled} />
       <Telegram />
       <Discord />
       <Facebook />

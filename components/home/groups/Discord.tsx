@@ -1,28 +1,32 @@
 import React, { useState } from "react";
 import GroupCard from "./GroupCard";
-import { GroupData } from "./WhatsappGroupState";
 
 export default function Discord() {
-  const discordGroups: GroupData[] = [
+  const [groups, setGroups] = useState([
     {
       name: "COMMUNITY",
-      id: 1,
+      id: "1",
       desc: "Channel",
       alt: "pvx community discord",
       img: "/static/group/discord.jpg",
       link: "https://discord.gg/zMktzNzx9U",
+      isCopied: false,
     },
-  ];
+  ]);
 
-  const [copied, setCopied] = useState(
-    new Array(discordGroups.length).fill(false)
-  );
-
-  const checkCopied = (text: string, result: boolean, id: number) => {
+  const checkCopied = (text: string, result: boolean, id: string) => {
     if (result) {
-      const copiedNew = new Array(discordGroups.length).fill(false);
-      copiedNew[id] = true;
-      setCopied(copiedNew);
+      const groupsNew = groups.map((group) => {
+        if (group.id === id) {
+          group.isCopied = true;
+        } else {
+          group.isCopied = false;
+        }
+
+        return group;
+      });
+
+      setGroups(groupsNew);
     }
   };
 
@@ -30,14 +34,8 @@ export default function Discord() {
     <div className="discord groups">
       <h3 className="app-heading">DISCORD</h3>
       <div className="group-container">
-        {discordGroups.map((group, index) => (
-          <GroupCard
-            key={group.id}
-            group={group}
-            isCopied={copied[index]}
-            index={index}
-            checkCopied={checkCopied}
-          />
+        {groups.map((group) => (
+          <GroupCard key={group.id} group={group} checkCopied={checkCopied} />
         ))}
       </div>
     </div>

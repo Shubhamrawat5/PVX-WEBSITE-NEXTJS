@@ -5,13 +5,11 @@ import { GroupData } from "./WhatsappGroupState";
 
 interface GroupCardProps {
   group: GroupData;
-  isCopied: boolean;
-  index: number;
   checkCopied: any;
 }
 
 export default function GroupCard(props: GroupCardProps) {
-  const { group, isCopied, index, checkCopied } = props;
+  const { group, checkCopied } = props;
   return (
     <div className="card" key={group.id}>
       <h4 className="group-name">{group.name}</h4>
@@ -33,11 +31,11 @@ export default function GroupCard(props: GroupCardProps) {
           <CopyToClipboard
             text={group.link}
             onCopy={(text, result) => {
-              checkCopied(text, result, index);
+              checkCopied(text, result, group.id);
             }}
           >
             <div className="copy-link">
-              {isCopied ? (
+              {group.isCopied ? (
                 <Image src="/static/tick.png" alt="copy" fill />
               ) : (
                 <Image src="/static/copy.png" alt="copy" fill />

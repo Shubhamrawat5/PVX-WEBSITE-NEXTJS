@@ -21,6 +21,7 @@ const foodImg = "/static/group/food.jpg";
 // const dealsImg = "/static/group/deals.jpg";
 // const pubgmImg = "/static/group/pubgm.jpg";
 
+// TODO: check all interface locations
 export interface GroupData {
   name: string;
   id: string | number;
@@ -28,6 +29,7 @@ export interface GroupData {
   alt: string;
   img: string;
   link: string;
+  isCopied: boolean;
 }
 
 export default function WhatsappGroupState() {
@@ -39,6 +41,7 @@ export default function WhatsappGroupState() {
       img: communityImg,
       link: "",
       id: "919557666582-1467533860@g.us",
+      isCopied: false,
     },
     {
       name: "TECH DISCUSS",
@@ -47,6 +50,7 @@ export default function WhatsappGroupState() {
       img: techImg,
       link: "",
       id: "919557666582-1551290369@g.us",
+      isCopied: false,
     },
     {
       name: "TECH NEWS",
@@ -55,6 +59,7 @@ export default function WhatsappGroupState() {
       img: tech2Img,
       link: "",
       id: "919557666582-1548337792@g.us",
+      isCopied: false,
     },
     {
       name: "PROGRAMMERS",
@@ -63,6 +68,7 @@ export default function WhatsappGroupState() {
       img: progImg,
       link: "",
       id: "919557666582-1584193120@g.us",
+      isCopied: false,
     },
     {
       name: "MOVIES",
@@ -71,6 +77,7 @@ export default function WhatsappGroupState() {
       img: moviesImg,
       link: "",
       id: "919557666582-1506690003@g.us",
+      isCopied: false,
     },
     {
       name: "SPORTS",
@@ -79,6 +86,7 @@ export default function WhatsappGroupState() {
       img: sportsImg,
       link: "",
       id: "919557666582-1559476348@g.us",
+      isCopied: false,
     },
 
     {
@@ -88,6 +96,7 @@ export default function WhatsappGroupState() {
       img: memeImg,
       link: "",
       id: "919557666582-1551346051@g.us",
+      isCopied: false,
     },
     {
       name: "STICKER",
@@ -96,6 +105,7 @@ export default function WhatsappGroupState() {
       img: sticker1Img,
       link: "",
       id: "919557666582-1580308963@g.us",
+      isCopied: false,
     },
     {
       name: "STICKER ONLY 1.0",
@@ -104,6 +114,7 @@ export default function WhatsappGroupState() {
       img: stickerOnlyImg,
       link: "",
       id: "919557666582-1628610549@g.us",
+      isCopied: false,
     },
     {
       name: "STICKER ONLY 2.0",
@@ -112,6 +123,7 @@ export default function WhatsappGroupState() {
       img: stickerOnlyImg,
       link: "",
       id: "919557666582-1586018947@g.us",
+      isCopied: false,
     },
     {
       name: "ANIME",
@@ -120,6 +132,7 @@ export default function WhatsappGroupState() {
       img: animeImg,
       link: "",
       id: "919557666582-1556821647@g.us",
+      isCopied: false,
     },
     {
       name: "CRYPTO",
@@ -128,6 +141,7 @@ export default function WhatsappGroupState() {
       img: cryptoImg,
       link: "",
       id: "918329198682-1614096949@g.us",
+      isCopied: false,
     },
     {
       name: "GAMING",
@@ -136,6 +150,7 @@ export default function WhatsappGroupState() {
       img: gamingImg,
       link: "",
       id: "17028054150-1608057174@g.us",
+      isCopied: false,
     },
     {
       name: "BOT",
@@ -144,6 +159,7 @@ export default function WhatsappGroupState() {
       img: botImg,
       link: "",
       id: "919675642959-1606755119@g.us",
+      isCopied: false,
     },
     // {
     //   name: "HAVELI",
@@ -158,6 +174,7 @@ export default function WhatsappGroupState() {
       img: studiesImg,
       link: "",
       id: "919557666582-1617595892@g.us",
+      isCopied: false,
     },
     {
       name: "FOOD",
@@ -166,6 +183,7 @@ export default function WhatsappGroupState() {
       img: foodImg,
       link: "",
       id: "120363039452453480@g.us",
+      isCopied: false,
     },
     {
       name: "STATUS",
@@ -174,6 +192,7 @@ export default function WhatsappGroupState() {
       img: statusImg,
       link: "",
       id: "919557666582-1627834788@g.us",
+      isCopied: false,
     },
     // {
     //   name: "AUTOMOBILE",

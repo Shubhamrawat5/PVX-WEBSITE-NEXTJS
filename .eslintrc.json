@@ -10,6 +10,7 @@
     "operator-linebreak": "off",
     "no-console": "off",
     "import/no-cycle": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-param-reassign": "off"
   }
 }

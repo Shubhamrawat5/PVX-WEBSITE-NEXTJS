@@ -33,12 +33,12 @@ export const getServerSideProps = async () => {
   }
 
   // TODO: GET TELEGRAM DISCORD LINK FROM DB
-  let groups: GroupDB[] = [];
+  let groupsDB: GroupDB[] = [];
   if (isEnabled) {
     const resultGroupLinks = await client.query("SELECT * from groups;");
 
     if (resultGroupLinks.rowCount) {
-      groups = resultGroupLinks.rows;
+      groupsDB = resultGroupLinks.rows;
     }
   }
 
@@ -46,18 +46,18 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      groups,
+      groupsDB,
       isEnabled,
     },
   };
 };
 
 export interface GroupsProps {
-  groups: GroupDB[];
+  groupsDB: GroupDB[];
   isEnabled: boolean;
 }
 export default function HomePage(props: GroupsProps) {
-  const { groups, isEnabled } = props;
+  const { groupsDB, isEnabled } = props;
 
   const [showGame, setShowGame] = useState(false);
 
@@ -75,7 +75,7 @@ export default function HomePage(props: GroupsProps) {
       ) : (
         <>
           <Header showGameHandler={showGameHandler} />
-          <Groups groups={groups} isEnabled={isEnabled} />
+          <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
           <Admin />
         </>
       )}
