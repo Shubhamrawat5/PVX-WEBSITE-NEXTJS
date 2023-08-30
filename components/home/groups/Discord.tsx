@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import GroupCard from "./GroupCard";
+import { discordGroupsState } from "./GroupsState";
 
 export default function Discord() {
-  const [groups, setGroups] = useState([
-    {
-      name: "COMMUNITY",
-      id: "1",
-      desc: "Channel",
-      alt: "pvx community discord",
-      img: "/static/group/discord.jpg",
-      link: "https://discord.gg/zMktzNzx9U",
-      isCopied: false,
-    },
-  ]);
+  const discordGroups = discordGroupsState();
+  const [groups, setGroups] = useState(discordGroups);
 
   const checkCopied = (text: string, result: boolean, id: string) => {
     if (result) {

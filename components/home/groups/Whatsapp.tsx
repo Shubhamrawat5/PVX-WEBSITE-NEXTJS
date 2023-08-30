@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { GroupsProps } from "../../../pages";
-import WhatsappGroupState from "./WhatsappGroupState";
 import GroupCard from "./GroupCard";
+import { whatsappGroupsState } from "./GroupsState";
 
 export default function WhatsappGroups(props: GroupsProps) {
   const { groupsDB, isEnabled } = props;
 
-  const whatsappGroups = WhatsappGroupState();
+  const whatsappGroups = whatsappGroupsState();
   const [groups, setGroups] = useState(whatsappGroups);
 
+  // TODO: RUNS EVERYTIME, USE USEEFFECT
   // check if group links are enabled
   if (isEnabled) {
     // groupFromDB = data coming from outside - api

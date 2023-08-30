@@ -1,5 +1,5 @@
 import React from "react";
-import { Month } from "./BirthdayState";
+import { Month } from "./BirthdaysState";
 
 export default function MonthCard(props: { month: Month; id: number }) {
   const { month, id } = props;

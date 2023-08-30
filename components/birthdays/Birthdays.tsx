@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import MonthCard from "./MonthCard";
 import { BirthdaysProps } from "../../pages/birthdays";
-import BdayStateProvider from "./BirthdayState";
+import BdayStateProvider from "./BirthdaysState";
 
 export default function Birthdays(props: BirthdaysProps) {
   const { bdays } = props;

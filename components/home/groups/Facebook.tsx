@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import GroupCard from "./GroupCard";
+import { facebookGroupsState } from "./GroupsState";
 
 export default function Facebook() {
-  const [groups, setGroups] = useState([
-    {
-      name: "COMMUNITY",
-      id: "1",
-      desc: "Posting group",
-      alt: "pvx community facebook",
-      img: "/static/group/fb.jpg",
-      link: "https://facebook.com/groups/pvxgaming/",
-      isCopied: false,
-    },
-  ]);
+  const facebookGroups = facebookGroupsState();
+  const [groups, setGroups] = useState(facebookGroups);
 
   const checkCopied = (text: string, result: boolean, id: string) => {
     if (result) {

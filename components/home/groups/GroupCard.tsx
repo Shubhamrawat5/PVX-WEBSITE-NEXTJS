@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { GroupData } from "./WhatsappGroupState";
+import { GroupData } from "./GroupsState";
 
 interface GroupCardProps {
   group: GroupData;
-  checkCopied: any;
+  // eslint-disable-next-line no-unused-vars
+  checkCopied: (text: string, result: boolean, id: string) => void;
 }
 
 export default function GroupCard(props: GroupCardProps) {
