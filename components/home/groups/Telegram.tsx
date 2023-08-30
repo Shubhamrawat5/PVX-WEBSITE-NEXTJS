@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import CopyToClipboard from "react-copy-to-clipboard";
+import GroupCard from "./GroupCard";
+import { GroupData } from "./WhatsappGroupState";
 
 export default function Telegram() {
-  const tgGroups = [
+  const tgGroups: GroupData[] = [
     {
       name: "COMMUNITY",
       id: 1,
       desc: "Group Chat",
       alt: "pvx community telegram",
       img: "/static/group/tg-pvx.jpg",
-      url: "https://t.me/PVX_Community_Group",
+      link: "https://t.me/PVX_Community_Group",
     },
     {
       name: "TECH NEWS",
@@ -18,7 +18,7 @@ export default function Telegram() {
       desc: "Channel",
       alt: "pvx tech news telegram",
       img: "/static/group/tech.jpg",
-      url: "https://t.me/pvxtechnews",
+      link: "https://t.me/pvxtechnews",
     },
     {
       name: "MOVIES",
@@ -26,7 +26,7 @@ export default function Telegram() {
       desc: "Discussion",
       alt: "pvx movies series telegram",
       img: "/static/group/movies.jpg",
-      url: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
+      link: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
     },
     // {
     //   name: "MIRROR",
@@ -34,7 +34,7 @@ export default function Telegram() {
     //   desc: "Gdrive Uploader",
     //   alt: "pvx mirror drive telegram",
     //   img: "/static/group/mirror.jpg",
-    //   url: "https://t.me/PVXMIRROR",
+    //   link: "https://t.me/PVXMIRROR",
     // },
   ];
 
@@ -53,38 +53,14 @@ export default function Telegram() {
       <h3 className="app-heading">TELEGRAM</h3>
 
       <div className="group-container">
-        {tgGroups.map((group) => (
-          <div className="card" key={group.id}>
-            <h4 className="group-name">{group.name}</h4>
-            <p className="group-info">&#40;{group.desc}&#41;</p>
-            <div className="group-dp">
-              <Image src={group.img} alt={group.alt} fill />
-            </div>
-            <div className="join-copy-wrapper">
-              <a
-                href={group.url}
-                key={group.id}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p className="join-grp">JOIN GROUP</p>
-              </a>
-              <CopyToClipboard
-                text={group.url}
-                onCopy={(text, result) => {
-                  checkCopied(text, result, group.id);
-                }}
-              >
-                <div className="copy-link">
-                  {copied[group.id] ? (
-                    <Image src="/static/tick.png" alt="copy" fill />
-                  ) : (
-                    <Image src="/static/copy.png" alt="copy" fill />
-                  )}
-                </div>
-              </CopyToClipboard>
-            </div>
-          </div>
+        {tgGroups.map((group, index) => (
+          <GroupCard
+            key={group.id}
+            group={group}
+            isCopied={copied[index]}
+            index={index}
+            checkCopied={checkCopied}
+          />
         ))}
       </div>
     </div>

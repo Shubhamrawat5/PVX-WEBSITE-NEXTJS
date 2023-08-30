@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { GroupsProps } from "../../../pages";
 import WhatsappGroupState from "./WhatsappGroupState";
+import GroupCard from "./GroupCard";
 
 export default function WhatsappGroups(props: GroupsProps) {
   const { groups, isEnabled } = props;
@@ -15,7 +14,7 @@ export default function WhatsappGroups(props: GroupsProps) {
     // groupFromState = data present inside already - wagroups
     whatsappGroups.forEach((groupFromState, index) => {
       groups.forEach((groupFromDB) => {
-        if (groupFromDB.groupjid === groupFromState.groupjid) {
+        if (groupFromDB.groupjid === groupFromState.id) {
           whatsappGroups[index].link = groupFromDB.link;
         }
       });
@@ -44,42 +43,13 @@ export default function WhatsappGroups(props: GroupsProps) {
       <h3 className="app-heading">WHATSAPP</h3>
       <div className="group-container">
         {whatsappGroups.map((group, index) => (
-          <div className="card" key={group.groupjid}>
-            <h4 className="group-name">{group.gname}</h4>
-            <p className="group-info">&#40;{group.desc}&#41;</p>
-            <div className="group-dp">
-              <Image src={group.img} alt={group.alt} fill />
-            </div>
-            {group.link ? (
-              <div className="join-copy-wrapper">
-                <a
-                  href={group.link}
-                  key={group.groupjid}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={group.gname}
-                >
-                  <p className="join-grp">JOIN GROUP</p>
-                </a>
-                <CopyToClipboard
-                  text={group.link}
-                  onCopy={(text, result) => {
-                    checkCopied(text, result, index);
-                  }}
-                >
-                  <div className="copy-link">
-                    {copied[index] ? (
-                      <Image src="/static/tick.png" alt="copy" fill />
-                    ) : (
-                      <Image src="/static/copy.png" alt="copy" fill />
-                    )}
-                  </div>
-                </CopyToClipboard>
-              </div>
-            ) : (
-              <p className="join-grp join-block">Blocked</p>
-            )}
-          </div>
+          <GroupCard
+            key={group.id}
+            group={group}
+            isCopied={copied[index]}
+            index={index}
+            checkCopied={checkCopied}
+          />
         ))}
       </div>
     </div>

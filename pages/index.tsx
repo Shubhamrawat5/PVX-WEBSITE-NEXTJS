@@ -7,7 +7,7 @@ import Header from "../components/home/Header";
 import Admin from "../components/home/Admin";
 import Groups from "../components/home/groups/Groups";
 
-export interface Group {
+export interface GroupDB {
   groupjid: string;
   gname: string;
   link: string;
@@ -33,7 +33,7 @@ export const getServerSideProps = async () => {
   }
 
   // TODO: GET TELEGRAM DISCORD LINK FROM DB
-  let groups: Group[] = [];
+  let groups: GroupDB[] = [];
   if (isEnabled) {
     const resultGroupLinks = await client.query("SELECT * from groups;");
 
@@ -53,7 +53,7 @@ export const getServerSideProps = async () => {
 };
 
 export interface GroupsProps {
-  groups: Group[];
+  groups: GroupDB[];
   isEnabled: boolean;
 }
 export default function HomePage(props: GroupsProps) {
