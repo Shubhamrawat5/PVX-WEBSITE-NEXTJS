@@ -23,7 +23,7 @@ export const getServerSideProps = async () => {
 
   await client.connect();
   const resultDonation = await client.query(
-    "SELECT name, memberjid, donation FROM members WHERE donation > 0 ORDER BY donation DESC;"
+    "SELECT name, donation FROM members WHERE donation > 0 ORDER BY donation DESC;"
   );
   await client.end();
 

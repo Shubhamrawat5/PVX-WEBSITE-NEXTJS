@@ -38,7 +38,7 @@ export const getServerSideProps = async () => {
   }
 
   const resultPVXT = await client.query(
-    "SELECT members.name,countmember.memberjid,sum(countmember.message_count) as count FROM countmember LEFT JOIN members ON countmember.memberjid=members.memberjid GROUP BY countmember.memberjid,members.name ORDER BY count DESC LIMIT 50;"
+    "SELECT members.name, sum(countmember.message_count) as count FROM countmember LEFT JOIN members ON countmember.memberjid=members.memberjid GROUP BY countmember.memberjid,members.name ORDER BY count DESC LIMIT 50;"
   );
 
   if (resultPVXT.rowCount) {

@@ -35,7 +35,9 @@ export const getServerSideProps = async () => {
   // TODO: GET TELEGRAM DISCORD LINK FROM DB
   let groupsDB: GroupDB[] = [];
   if (isEnabled) {
-    const resultGroupLinks = await client.query("SELECT * from groups;");
+    const resultGroupLinks = await client.query(
+      "SELECT gname, groupjid, link from groups;"
+    );
 
     if (resultGroupLinks.rowCount) {
       groupsDB = resultGroupLinks.rows;
