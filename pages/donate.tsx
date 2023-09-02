@@ -11,6 +11,15 @@ export interface Members {
 }
 
 export const getServerSideProps = async () => {
+  if (!process.env.PG_URL) {
+    console.error("ERROR: PG_URL is not found in environment");
+    return {
+      props: {
+        members: [],
+      },
+    };
+  }
+
   const proConfig = {
     connectionString: process.env.PG_URL,
     ssl: {

@@ -14,6 +14,16 @@ export interface GroupDB {
 }
 
 export const getServerSideProps = async () => {
+  if (!process.env.PG_URL) {
+    console.error("ERROR: PG_URL is not found in environment");
+    return {
+      props: {
+        groupsDB: [],
+        isEnabled: false,
+      },
+    };
+  }
+
   const proConfig = {
     connectionString: process.env.PG_URL,
     ssl: {
@@ -23,7 +33,7 @@ export const getServerSideProps = async () => {
   const client = new Client(proConfig);
   await client.connect();
 
-  let isEnabled = true;
+  let isEnabled = false;
   const resultEnabled = await client.query(
     "SELECT * from meta where variable='groups_link_enabled';"
   );
