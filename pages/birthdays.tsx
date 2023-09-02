@@ -12,33 +12,28 @@ export interface Bday {
 }
 
 export const getServerSideProps = async () => {
-  if (!process.env.PG_URL) {
-    console.error("ERROR: PG_URL is not found in environment");
-    return {
-      props: {
-        bdays: [],
-      },
-    };
-  }
-
-  const proConfig = {
-    connectionString: process.env.PG_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  };
-  const client = new Client(proConfig);
-  await client.connect();
-
   let bdays: Bday[] = [];
 
-  const resultBdays = await client.query(
-    "select name, username, date, month, place from bday order by date;"
-  );
-  await client.end();
+  if (process.env.PG_URL) {
+    const proConfig = {
+      connectionString: process.env.PG_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    };
+    const client = new Client(proConfig);
+    await client.connect();
 
-  if (resultBdays.rowCount) {
-    bdays = resultBdays.rows;
+    const resultBdays = await client.query(
+      "select name, username, date, month, place from bday order by date;"
+    );
+    await client.end();
+
+    if (resultBdays.rowCount) {
+      bdays = resultBdays.rows;
+    }
+  } else {
+    console.error("ERROR: PG_URL is not found in environment");
   }
 
   return { props: { bdays } };

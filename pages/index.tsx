@@ -14,47 +14,42 @@ export interface GroupDB {
 }
 
 export const getServerSideProps = async () => {
-  if (!process.env.PG_URL) {
-    console.error("ERROR: PG_URL is not found in environment");
-    return {
-      props: {
-        groupsDB: [],
-        isEnabled: false,
+  let isEnabled = false;
+  let groupsDB: GroupDB[] = [];
+
+  if (process.env.PG_URL) {
+    const proConfig = {
+      connectionString: process.env.PG_URL,
+      ssl: {
+        rejectUnauthorized: false,
       },
     };
-  }
+    const client = new Client(proConfig);
+    await client.connect();
 
-  const proConfig = {
-    connectionString: process.env.PG_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  };
-  const client = new Client(proConfig);
-  await client.connect();
-
-  let isEnabled = false;
-  const resultEnabled = await client.query(
-    "SELECT * from meta where variable='groups_link_enabled';"
-  );
-
-  if (resultEnabled.rowCount) {
-    isEnabled = resultEnabled.rows[0].value;
-  }
-
-  // TODO: GET TELEGRAM DISCORD LINK FROM DB
-  let groupsDB: GroupDB[] = [];
-  if (isEnabled) {
-    const resultGroupLinks = await client.query(
-      "SELECT gname, groupjid, link from groups;"
+    const resultEnabled = await client.query(
+      "SELECT * from meta where variable='groups_link_enabled';"
     );
 
-    if (resultGroupLinks.rowCount) {
-      groupsDB = resultGroupLinks.rows;
+    if (resultEnabled.rowCount) {
+      isEnabled = resultEnabled.rows[0].value;
     }
-  }
 
-  await client.end();
+    // TODO: GET TELEGRAM DISCORD LINK FROM DB
+    if (isEnabled) {
+      const resultGroupLinks = await client.query(
+        "SELECT gname, groupjid, link from groups;"
+      );
+
+      if (resultGroupLinks.rowCount) {
+        groupsDB = resultGroupLinks.rows;
+      }
+    }
+
+    await client.end();
+  } else {
+    console.error("ERROR: PG_URL is not found in environment");
+  }
 
   return {
     props: {

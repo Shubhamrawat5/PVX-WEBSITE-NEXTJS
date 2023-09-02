@@ -11,33 +11,28 @@ export interface Members {
 }
 
 export const getServerSideProps = async () => {
-  if (!process.env.PG_URL) {
-    console.error("ERROR: PG_URL is not found in environment");
-    return {
-      props: {
-        members: [],
-      },
-    };
-  }
-
-  const proConfig = {
-    connectionString: process.env.PG_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  };
-  const client = new Client(proConfig);
-
   let members: Members[] = [];
 
-  await client.connect();
-  const resultDonation = await client.query(
-    "SELECT name, donation FROM members WHERE donation > 0 ORDER BY donation DESC;"
-  );
-  await client.end();
+  if (process.env.PG_URL) {
+    const proConfig = {
+      connectionString: process.env.PG_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    };
+    const client = new Client(proConfig);
 
-  if (resultDonation.rowCount) {
-    members = resultDonation.rows;
+    await client.connect();
+    const resultDonation = await client.query(
+      "SELECT name, donation FROM members WHERE donation > 0 ORDER BY donation DESC;"
+    );
+    await client.end();
+
+    if (resultDonation.rowCount) {
+      members = resultDonation.rows;
+    }
+  } else {
+    console.error("ERROR: PG_URL is not found in environment");
   }
 
   return { props: { members } };
