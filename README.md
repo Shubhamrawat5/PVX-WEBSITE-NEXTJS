@@ -14,8 +14,13 @@ This is the official website for PVX COMMUNITY - a vibrant social community with
 
 - Start Server: $ `npm run dev`
 - Check linting: $ `npm run lint`
-- Create all DB tables: $ `npm run db-migrate`
-- Seed dummy data in tables: $ `npm run db-seeding`
+
+- For DB, create a postgres SQL database and paste its url in .env file
+
+  > PG_URL = "postgres://postgres:1234@localhost:5432/pvxdatabase"
+
+  - Create all DB tables: $ `npm run db-migrate`
+  - Seed dummy data in tables: $ `npm run db-seeding`
 
 ## Contribute & Issues
 
