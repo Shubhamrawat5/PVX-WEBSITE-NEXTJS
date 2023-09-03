@@ -11,6 +11,7 @@
     "no-console": "off",
     "import/no-cycle": "off",
     "import/extensions": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-plusplus": "off"
   }
 }

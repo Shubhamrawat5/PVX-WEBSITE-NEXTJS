@@ -5,11 +5,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db-migrate": "ts-node db/migrate",
+    "db-seeding": "ts-node db/seeding"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@types/node": "^20.3.1",
     "@types/pg": "^8.10.2",
+    "dotenv": "^16.3.1",
     "next": "13.4.19",
     "pg": "^8.7.1",
     "react": "18.2.0",

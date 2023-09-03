@@ -10,6 +10,13 @@ This is the official website for PVX COMMUNITY - a vibrant social community with
 - Typescipt
 - Postgres SQL
 
+## Commands
+
+- Start Server: $ `npm run dev`
+- Check linting: $ `npm run lint`
+- Create all DB tables: $ `npm run db-migrate`
+- Seed dummy data in tables: $ `npm run db-seeding`
+
 ## Contribute & Issues
 
 - Feel free to Contribute to improve the PVX website.
