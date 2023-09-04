@@ -12,22 +12,27 @@ interface GroupCardProps {
 export default function GroupCard(props: GroupCardProps) {
   const { group, checkCopied } = props;
   return (
-    <div className="card" key={group.id}>
-      <h4 className="group-name">{group.name}</h4>
-      <p className="group-info">&#40;{group.desc}&#41;</p>
-      <div className="group-dp">
+    <div
+      className="bg-gray-950 flex flex-col items-center justify-between m-5 p-2 w-56 h-64 rounded-lg overflow-hidden"
+      key={group.id}
+    >
+      <h4 className="border-b w-full pb-1">{group.name}</h4>
+      <p className="text-sm">&#40;{group.desc}&#41;</p>
+      <div className="relative overflow-hidden h-36 w-36 rounded-full">
         <Image src={group.img} alt={group.alt} fill />
       </div>
       {group.link ? (
-        <div className="join-copy-wrapper">
+        <div className="flex items-center justify-between w-full">
           <a
             href={group.link}
             key={group.id}
             target="_blank"
             rel="noopener noreferrer"
-            className={group.name}
+            className="w-full"
           >
-            <p className="join-grp">JOIN GROUP</p>
+            <p className="border-gray-500 border-2 text-sm w-full px-2 py-0.5 rounded hover:text-black hover:bg-slate-200">
+              JOIN GROUP
+            </p>
           </a>
           <CopyToClipboard
             text={group.link}
@@ -35,7 +40,7 @@ export default function GroupCard(props: GroupCardProps) {
               checkCopied(text, result, group.id);
             }}
           >
-            <div className="copy-link">
+            <div className="w-5 h-5 invert mx-2 cursor-pointer">
               {group.isCopied ? (
                 <Image src="/static/tick.png" alt="copy" fill />
               ) : (
@@ -45,7 +50,9 @@ export default function GroupCard(props: GroupCardProps) {
           </CopyToClipboard>
         </div>
       ) : (
-        <p className="join-grp join-block">Blocked</p>
+        <p className="border-gray-500 border-2 text-sm w-full px-2 py-0.5 rounded opacity-70">
+          Blocked
+        </p>
       )}
     </div>
   );

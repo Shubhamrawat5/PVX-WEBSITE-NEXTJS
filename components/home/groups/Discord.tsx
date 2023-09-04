@@ -9,9 +9,11 @@ export default function Discord() {
   const { groups, checkCopied } = useGroup(discordGroups);
 
   return (
-    <div className="discord groups">
-      <h3 className="app-heading">DISCORD</h3>
-      <div className="group-container">
+    <div className="inline-block">
+      <h3 className="text-black bg-slate-200 rounded text-lg w-11/12 m-auto">
+        DISCORD
+      </h3>
+      <div className="flex justify-center items-center flex-wrap">
         {groups.map((group) => (
           <GroupCard key={group.id} group={group} checkCopied={checkCopied} />
         ))}

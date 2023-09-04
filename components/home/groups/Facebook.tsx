@@ -9,9 +9,11 @@ export default function Facebook() {
   const { groups, checkCopied } = useGroup(facebookGroups);
 
   return (
-    <div className="fb groups">
-      <h3 className="app-heading">FACEBOOK</h3>
-      <div className="group-container">
+    <div className="inline-block">
+      <h3 className="text-black bg-slate-200 rounded text-lg w-11/12 m-auto">
+        FACEBOOK
+      </h3>
+      <div className="flex justify-center items-center flex-wrap">
         {groups.map((group) => (
           <GroupCard key={group.id} group={group} checkCopied={checkCopied} />
         ))}

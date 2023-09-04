@@ -5,7 +5,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-/* TODO: define fixed font size */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ------------------------------------ - ----------------------------------- */
 @font-face {
   font-family: "game";
@@ -195,14 +198,14 @@ section {
   color: #35adde;
 }
 
-.err {
+/* .err {
   border: 1px solid white;
   padding: 3px 8px;
   margin-bottom: 25px;
   font-family: monospace;
   font-size: 14px;
   width: 100%;
-}
+} */
 a {
   text-decoration: none;
   color: white;
@@ -214,17 +217,17 @@ a {
 .section:nth-child(2n + 1) {
   background-color: #080101;
 }
-#admin-section,
+/* #admin-section,
 #drive-section {
   background-position: center;
-}
+} */
 /* #group-section,
 #achieve-section {
   background-image: url("/static/ex.svg");
 } */
 
 /* --------------------------------- NAV BAR -------------------------------- */
-nav {
+/* nav {
   display: inline-flex;
   width: 100%;
   align-items: center;
@@ -237,58 +240,57 @@ nav {
   background: #020000d9;
   box-shadow: 0px 2px 5px rgb(42 24 24 / 60%);
   height: 40px;
-}
+} */
 
-.nav-item-container {
+/* .nav-item-container {
   display: inline-flex;
   align-items: center;
   transform: translateY(2px);
-}
+} */
 
-.nav-logo {
+/* .nav-logo {
   position: relative;
   margin: 0;
   width: 80px;
   height: 30px;
   transform: translateY(2px);
   filter: invert(1);
-}
+} */
 
-.nav-logo:hover {
+/* .nav-logo:hover {
   transition: 1s;
-}
+} */
 
-nav li {
+/* nav li {
   display: inline;
   cursor: pointer;
   margin-left: 18px;
   font-size: 18px;
-}
+} */
 
-nav li:hover {
+/* nav li:hover {
   color: #e5dede;
 }
 
 nav .active {
   text-decoration: underline;
-}
+} */
 
 /* --------------------------------- HEADER --------------------------------- */
 header {
-  width: 100%;
-  height: 100vh;
-  background-color: #0c151a;
-  /* background-image: url(./asserts/images/bg-stars.svg); */
-  display: inline-flex;
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* background-color: #0c151a; */
+  /* display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   background-image: url("/static/ex2.svg");
   background-position: center;
   background-size: cover;
 }
 
-#logo {
+/* #logo {
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -300,35 +302,30 @@ header {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-duration: 1.5s;
-}
+} */
 @keyframes border-anim {
   100% {
     border: 4px solid rgba(255, 255, 255, 0.74);
   }
 }
 
-#edit-icon {
-  display: none;
-  width: 30px;
-}
-
-header .heading {
+/* header .heading {
   font-size: 40px;
   font-weight: 400;
   margin-bottom: 0;
-}
+} */
 
-header .subheading {
-  font-weight: 200;
-  font-size: 18px;
-}
+/* header .subheading {
+    font-weight: 200;
+    font-size: 18px;
+  } */
 
 /* ------------------------------ GROUP SECTION ----------------------------- */
-.groups {
+/* .groups {
   display: inline-block;
-}
+} */
 
-.section-heading {
+/* .section-heading {
   font-weight: 500;
   font-size: 30px;
   margin: 0 10px 36px 10px;
@@ -338,9 +335,9 @@ header .subheading {
   box-shadow: 0px 0px 2px 1px #2776ebe0;
   padding: 4px 15px;
   display: inline-block;
-}
+} */
 
-.app-heading {
+/* .app-heading {
   font-weight: 400;
   background-color: #0c151a;
   width: 90%;
@@ -350,12 +347,12 @@ header .subheading {
   border: 1px solid aliceblue;
   background-color: white;
   color: black;
-}
-.wa .app-heading {
+} */
+/* .wa .app-heading {
   margin-top: 0;
-}
+} */
 
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,34 +365,34 @@ header .subheading {
   width: 220px;
   border-radius: 10px;
   overflow: hidden;
-}
-.card,
+} */
+/* .card,
 .admin-box {
   box-shadow: 2px 2px 5px -1px #000000;
   background-color: #131618;
   background-color: #292a505e;
-}
+} */
 
 /* .card:hover {
   box-shadow: 0px 0px 4px 0px white;
   transition: 0s;
 } */
 
-.group-container {
+/* .group-container {
   display: inline-flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.group-dp {
+/* .group-dp {
   position: relative;
   overflow: hidden;
   display: inline-block;
   width: 140px;
   height: 140px;
   border-radius: 50%;
-}
+} */
 
 .card img {
   transition: all 0.3s;
@@ -406,42 +403,42 @@ header .subheading {
   transition: all 0.3s;
 }
 
-.group-name {
+/* .group-name {
   font-weight: 400;
   margin: 0px;
-  /* color: #e52d2dfa; */
   border-bottom: 1px solid #e52d2d94;
   padding-bottom: 5px;
   width: 100%;
-}
-.admin-name {
+} */
+
+/* .admin-name {
   font-weight: 400;
   padding-bottom: 5px;
   margin: 0px;
   font-size: 15px;
-}
+} */
 
-.group-info {
+/* .group-info {
   font-family: "Inter", sans-serif;
   font-family: "Mukta", sans-serif;
   font-size: 14px;
   margin: 0;
   color: #ffffffc7;
   letter-spacing: 0.8px;
-}
+} */
 
-.card a {
+/* .card a {
   width: 100%;
-}
+} */
 
-.join-copy-wrapper {
+/* .join-copy-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-}
+} */
 
-.join-grp {
+/* .join-grp {
   margin: 0;
   margin-top: 5px;
   box-shadow: 0px 0px 1px 1px #f0f8ff91;
@@ -450,25 +447,25 @@ header .subheading {
   border-radius: 3px;
   font-size: 14px;
   width: 100%;
-}
+} */
 
-.join-block {
+/* .join-block {
   opacity: 0.2;
 }
 
 .join-grp:hover {
   background-color: white;
   color: black;
-}
+} */
 
-.copy-link {
+/* .copy-link {
   width: 20px;
   height: 20px;
   filter: invert(1);
   cursor: pointer;
   margin-left: 10px;
   margin-top: 5px;
-}
+} */
 
 /* ------------------------------ DRIVE SECTION ----------------------------- */
 .drive-container {
@@ -597,25 +594,25 @@ header .subheading {
 }
 
 /* ------------------------------ ADMIN SECTION ----------------------------- */
-.admin-box {
+/* .admin-box {
   margin: 5px;
   padding: 10px;
   padding-bottom: 0;
   border-radius: 10px;
   box-shadow: 6px 6px 10px -3px #101010;
-}
+} */
 
-.admin-dp {
+/* .admin-dp {
   position: relative;
   overflow: hidden;
   display: inline-block;
   width: 80px;
   height: 82px;
   border-radius: 50%;
-}
+} */
 
 /* --------------------------------- FOOTER --------------------------------- */
-footer {
+/* footer {
   padding: 18px 0 14px 0;
   background: #000000 !important;
 }
@@ -626,7 +623,7 @@ footer {
 
 .dev-name a {
   color: #007eff;
-}
+} */
 
 /* --------------------------- MEDIA QUERY: 700PX --------------------------- */
 @media (max-width: 700px) {

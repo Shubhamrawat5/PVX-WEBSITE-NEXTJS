@@ -24,14 +24,16 @@ export default function WhatsappGroups(props: GroupsProps) {
   }
 
   return (
-    <div className="wa groups">
+    <div className="inline-block">
       {!isEnabled && (
-        <div id="err" className="err">
+        <div className="border mb-4 px-2 py-1 text-sm w-ful">
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       )}
-      <h3 className="app-heading">WHATSAPP</h3>
-      <div className="group-container">
+      <h3 className="text-black bg-slate-200 rounded text-lg w-11/12 m-auto">
+        WHATSAPP
+      </h3>
+      <div className="flex justify-center items-center flex-wrap">
         {groups.map((group) => (
           <GroupCard key={group.id} group={group} checkCopied={checkCopied} />
         ))}

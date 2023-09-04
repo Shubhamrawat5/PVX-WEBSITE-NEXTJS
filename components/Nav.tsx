@@ -7,6 +7,29 @@ export default function Nav() {
   const router = useRouter();
   const { pathname } = router;
 
+  const navItems = [
+    {
+      href: "/",
+      name: "Home",
+    },
+    {
+      href: "/stats",
+      name: "Stats",
+    },
+    {
+      href: "/birthdays",
+      name: "B'Days",
+    },
+    {
+      href: "/others",
+      name: "Others",
+    },
+  ];
+
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+  }
+
   useEffect(() => {
     // everytime url will change so page will be scrolled href top
     window.scrollTo(0, 0);
@@ -14,48 +37,28 @@ export default function Nav() {
 
   // TODO: CHECK priority in IMAGE
   return (
-    <nav>
-      <div className="nav-logo">
+    <nav className="flex align items-center justify-between px-5 py-3 fixed w-full z-10 bg-gray-950">
+      <div className="w-20 h-7 relative invert">
         <Link href="/" passHref>
           <Image src="/static/pvxx.png" alt="logo" priority fill />
         </Link>
       </div>
-      <ul className="nav-item-container">
-        <Link href="/" passHref>
-          <li className={pathname === "/" ? "active" : undefined}>Home</li>
-        </Link>
-        {/* <Link href="/" passHref>
-          <a>
-            <li className={pathname === "/projects" ? "active" : undefined}>
-              Projects
+
+      <ul>
+        {navItems.map((item) => (
+          <Link href={item.href} passHref key={item.name}>
+            <li
+              className={classNames(
+                item.href === pathname
+                  ? "bg-gray-900 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                "inline rounded-md px-3 py-2 mx-1 text-lg font-medium"
+              )}
+            >
+              {item.name}
             </li>
-          </a>
-        </Link> */}
-        <Link href="/stats" passHref>
-          <li className={pathname === "/stats" ? "active" : undefined}>
-            Stats
-          </li>
-        </Link>
-        {/* <Link href="/donate" passHref>
-          <a>
-            <li className={pathname === "/donate" ? "active" : undefined}>Donate</li>
-          </a>
-        </Link> */}
-        <Link href="/birthdays" passHref>
-          <li className={pathname === "/birthdays" ? "active" : undefined}>
-            B&apos;Days
-          </li>
-        </Link>
-        <Link href="/others" passHref>
-          <li className={pathname === "/others" ? "active" : undefined}>
-            Others
-          </li>
-        </Link>
-        {/* <Link href="https://forms.gle/WEQ33xzHpYAQvArd6" passHref>
-          <a>
-            <li>Feedback</li>
-          </a>
-        </Link> */}
+          </Link>
+        ))}
       </ul>
     </nav>
   );
