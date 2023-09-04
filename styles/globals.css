@@ -173,17 +173,21 @@ footer {
 }
 
 section {
-  padding: 30px 20px 10px 20px;
-  /* border-top: 0.6px solid #938787;
-  border-top-style: groove; */
+  padding: 40px 0;
 }
-.subheading-p {
+
+/* section { */
+/* padding: 30px 20px 10px 20px; */
+/* border-top: 0.6px solid #938787;
+  border-top-style: groove; */
+/* } */
+/* .subheading-p {
   font-family: "Mukta", sans-serif;
   color: #c8dedf;
   letter-spacing: 0.8px;
-}
+} */
 
-#bot-section ol {
+/* #bot-section ol {
   text-align: left;
   margin: 15px auto;
   max-width: 750px;
@@ -192,11 +196,11 @@ section {
 #bot-section ol li {
   margin-left: 10px;
   text-align: justify;
-}
+} */
 
-.bot-github a {
+/* .bot-github a {
   color: #35adde;
-}
+} */
 
 /* .err {
   border: 1px solid white;
@@ -546,18 +550,15 @@ header {
 }
 
 /* ----------------------------- ACHIEVE SECTION ---------------------------- */
-#achieve-section {
-  width: 100%;
-}
 
-.achieve-container {
+/* .achieve-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
-.achieve-box {
+/* .achieve-box {
   display: inline-block;
   margin: 5px;
   margin-bottom: 32px;
@@ -567,31 +568,28 @@ header {
   border-radius: 6px;
   background-color: #0c151a;
   background-color: #0c151a73;
-}
-.tournament {
-  width: 500px;
-}
+} */
 
-.medal-img {
+/* .medal-img {
   width: 55px;
   height: 55px;
-}
-.winners {
+} */
+/* .winners {
   display: flex;
   justify-content: center;
   margin-top: 15px;
   margin-bottom: 80px;
-}
-.winners div {
+} */
+/* .winners div {
   width: 110px;
-}
+} */
 
-.winners-2 {
+/* .winners-2 {
   transform: translateY(40px);
 }
 .winners-3 {
   transform: translateY(50px);
-}
+} */
 
 /* ------------------------------ ADMIN SECTION ----------------------------- */
 /* .admin-box {
@@ -707,9 +705,6 @@ header {
     height: 160px;
     background-size: 182px;
   }
-  .tournament {
-    width: 100%;
-  }
   header .heading {
     font-size: 26px;
   }
@@ -780,9 +775,6 @@ header {
   }
   .admin-name {
     font-size: 12px;
-  }
-  .winners div {
-    width: 33%;
   }
 }
 

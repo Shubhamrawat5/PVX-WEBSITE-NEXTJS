@@ -52,7 +52,7 @@ export default function Nav() {
                 item.href === pathname
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                "inline rounded-md px-3 py-2 mx-1 text-lg font-medium"
+                "inline rounded-md px-3 py-2 mx-1 text-lg"
               )}
             >
               {item.name}

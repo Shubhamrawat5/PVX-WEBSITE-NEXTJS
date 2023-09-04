@@ -11,169 +11,206 @@ const botImg = "/static/group/bot.jpg";
 export default function Extra() {
   return (
     <>
-      <section
-        id="achieve-section"
-        className="section"
-        style={{
-          paddingTop: "80px",
-        }}
-      >
-        <h2 className="section-heading">CONTESTS</h2>
-        <div className="achieve-container">
-          <div className="achieve-box tournament">
-            <div className="winners">
-              <div className="winners-2">
+      <section className="pt-20">
+        <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+          EVENTS
+        </h2>
+        {/* TODO: REFACTOR NEEDED!!! */}
+        <div className="flex items-center justify-center flex-wrap">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <div className="mt-4 mb-20 flex justify-center">
+              <div className="translate-y-10">
                 <Image
+                  className="m-auto"
                   src="/static/medal 2.png"
                   alt="2"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
-                <p>Nikunj NJV</p>
+                <p>NJV</p>
               </div>
-              <div className="winners-1">
+              <div>
                 <Image
+                  className="m-auto mx-10"
                   src="/static/medal 1.png"
                   alt="1"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
                 <p>Ash</p>
               </div>
-              <div className="winners-3">
+              <div className="translate-y-12">
                 <Image
+                  className="m-auto"
                   src="/static/medal 3.png"
                   alt="3"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
                 <p>Sweeton</p>
               </div>
             </div>
-            <p className="subheading-p">CHESS TOURNAMENT (12/08/21)</p>
+            <p className="mt-3 mb-2">CHESS TOURNAMENT (12/08/21)</p>
           </div>
 
-          <div className="achieve-box tournament">
-            <div className="winners">
-              <div className="winners-2">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <div className="mt-4 mb-20 flex justify-center">
+              <div className="translate-y-10">
                 <Image
+                  className="m-auto"
                   src="/static/medal 2.png"
                   alt="2"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
                 <p>Cheems</p>
               </div>
-              <div className="winners-1">
+              <div>
                 <Image
+                  className="m-auto mx-10"
                   src="/static/medal 1.png"
                   alt="1"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
                 <p>Sakshat</p>
               </div>
-              <div className="winners-3">
+              <div className="translate-y-12">
                 <Image
+                  className="m-auto"
                   src="/static/medal 3.png"
                   alt="3"
-                  className="medal-img"
                   height="55"
                   width="55"
                 />
                 <p>Tejash</p>
               </div>
             </div>
-            <p className="subheading-p">SNAKE GAME CONTEST (23/06/22)</p>
+            <p className="mt-3 mb-2">SNAKE GAME CONTEST (23/06/22)</p>
           </div>
 
-          <div className="achieve-box tournament">
-            <Image src={memeImg} alt="pvx memes" height="160" width="170" />
-            <p className="subheading-p">Winner: Harsh</p>
-            <p className="subheading-p">PVX MEME LOGO COMPETITION (12/07/22)</p>
-          </div>
-
-          <div className="achieve-box tournament">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
             <Image
+              className="m-auto"
+              src={memeImg}
+              alt="pvx memes"
+              height="160"
+              width="170"
+            />
+            <p className="mt-3 mb-2">Winner: Harsh</p>
+            <p className="text-sm text-gray-400">
+              PVX MEME LOGO COMPETITION (12/07/22)
+            </p>
+          </div>
+
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <Image
+              className="m-auto"
               src={sticker1Img}
               alt="pvx sticker"
               height="160"
               width="170"
             />
-            <p className="subheading-p">Winner: Doku Doku Noooo</p>
-            <p className="subheading-p">
+            <p className="mt-3 mb-2">Winner: Doku Doku Noooo</p>
+            <p className="text-sm text-gray-400">
               PVX STICKER LOGO COMPETITION (25/07/22)
             </p>
           </div>
 
-          <div className="achieve-box tournament">
-            <Image src={animeImg} alt="pvx anime" height="160" width="170" />
-            <p className="subheading-p">Winner: Satya</p>
-            <p className="subheading-p">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <Image
+              className="m-auto"
+              src={animeImg}
+              alt="pvx anime"
+              height="160"
+              width="170"
+            />
+            <p className="mt-3 mb-2">Winner: Satya</p>
+            <p className="text-sm text-gray-400">
               PVX ANIME LOGO COMPETITION (26/09/22)
             </p>
           </div>
 
-          <div className="achieve-box tournament">
-            <Image src={techImg} alt="pvx tech" height="160" width="170" />
-            <p className="subheading-p">Winner: Spandan Ghosh</p>
-            <p className="subheading-p">PVX TECH LOGO COMPETITION (18/11/22)</p>
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <Image
+              className="m-auto"
+              src={techImg}
+              alt="pvx tech"
+              height="160"
+              width="170"
+            />
+            <p className="mt-3 mb-2">Winner: Spandan Ghosh</p>
+            <p className="text-sm text-gray-400">
+              PVX TECH LOGO COMPETITION (18/11/22)
+            </p>
           </div>
 
-          <div className="achieve-box tournament">
-            <Image src={progImg} alt="pvx tech" height="160" width="170" />
-            <p className="subheading-p">Winner: Satya</p>
-            <p className="subheading-p">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <Image
+              className="m-auto"
+              src={progImg}
+              alt="pvx tech"
+              height="160"
+              width="170"
+            />
+            <p className="mt-3 mb-2">Winner: Satya</p>
+            <p className="text-sm text-gray-400">
               PVX PROGRAMMERS LOGO COMPETITION (07/02/23)
             </p>
           </div>
 
-          <div className="achieve-box tournament">
-            <Image src={botImg} alt="pvx tech" height="160" width="170" />
-            <p className="subheading-p">Winner: Ikshwaku</p>
-            <p className="subheading-p">PVX BOT LOGO COMPETITION (02/05/23)</p>
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
+            <Image
+              className="m-auto"
+              src={botImg}
+              alt="pvx tech"
+              height="160"
+              width="170"
+            />
+            <p className="mt-3 mb-2">Winner: Ikshwaku</p>
+            <p className="text-sm text-gray-400">
+              PVX BOT LOGO COMPETITION (02/05/23)
+            </p>
           </div>
         </div>
       </section>
-      <section id="achieve-section" className="section">
-        <h2 className="section-heading">SCREENSHOTS</h2>
-        <div className="achieve-container">
-          <div className="achieve-box donation">
+      <section className="bg-gray-950">
+        <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+          SCREENSHOTS
+        </h2>
+        <div className="flex items-center justify-center flex-wrap">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
             <Image
+              className="m-auto"
               src="/static/pvx/certificate1.jpg"
               alt="certificate"
               height="350"
               width="500"
             />
-            <p className="subheading-p">
-              Donations collected by PVX in Feb 2020
-            </p>
+            <p className="mt-3 mb-2">Donations collected by PVX in Feb 2020</p>
           </div>
-          <div className="achieve-box donation">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
             <Image
+              className="m-auto"
               src="/static/pvx/certificate2.jpg"
               alt="certificate"
               height="600"
               width="480"
             />
-            <p className="subheading-p">
+            <p className="mt-3 mb-2">
               Donations collected by PVX in June 2023 (for odisha train
               collision)
             </p>
           </div>
-          <div className="achieve-box unread">
+          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4">
             <Image
+              className="m-auto"
               src="/static/pvx/unread.jpg"
               alt="unread"
               height="280"
               width="600"
             />
-            <p className="subheading-p">
+            <p className="mt-3 mb-2">
               Yes it is real! Unread message over some years. <br /> Credits:
               Hritik Jain
             </p>
