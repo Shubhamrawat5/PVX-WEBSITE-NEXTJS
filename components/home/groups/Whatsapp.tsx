@@ -30,7 +30,7 @@ export default function WhatsappGroups(props: GroupsProps) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       )}
-      <h3 className="text-black bg-slate-200 rounded text-lg w-11/12 m-auto">
+      <h3 className="text-black bg-white rounded text-lg w-11/12 m-auto">
         WHATSAPP
       </h3>
       <div className="flex justify-center items-center flex-wrap">
