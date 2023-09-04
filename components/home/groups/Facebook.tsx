@@ -1,26 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import GroupCard from "./GroupCard";
 import { facebookGroupsState } from "./GroupsState";
+import useGroup from "./hook/useGroup";
 
 export default function Facebook() {
   const facebookGroups = facebookGroupsState();
-  const [groups, setGroups] = useState(facebookGroups);
 
-  const checkCopied = (text: string, result: boolean, id: string) => {
-    if (result) {
-      const groupsNew = groups.map((group) => {
-        if (group.id === id) {
-          group.isCopied = true;
-        } else {
-          group.isCopied = false;
-        }
-
-        return group;
-      });
-
-      setGroups(groupsNew);
-    }
-  };
+  const { groups, checkCopied } = useGroup(facebookGroups);
 
   return (
     <div className="fb groups">
