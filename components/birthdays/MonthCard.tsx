@@ -4,24 +4,24 @@ import { Month } from "./BirthdaysState";
 export default function MonthCard(props: { month: Month; id: number }) {
   const { month, id } = props;
   return (
-    <div className="card_b" id={month.name.toLowerCase()} key={id}>
-      <div className={`month_b month${(id % 3) + 1}_b`}>{month.name}</div>
-      <table className={`content-table_b month${(id % 3) + 1}-tr_b`}>
-        <thead>
+    <div className="m-5" key={id}>
+      <div className="p-2 text-xl bg-indigo-800">{month.name}</div>
+      <table className="p-2">
+        <thead className="bg-gray-900">
           <tr>
-            <th className="date_b">Date</th>
-            <th className="name_b">Name</th>
-            <th className="username_b">Username</th>
-            <th className="place_b">Place</th>
+            <th className="p-2 ">Date</th>
+            <th className="p-2 ">Name</th>
+            <th className="p-2 ">Username</th>
+            <th className="p-2 ">Place</th>
           </tr>
         </thead>
-        <tbody id={`${month.name.toLowerCase()}-body`}>
+        <tbody className="bg-gray-800 ">
           {month.bdays.map((bday) => (
-            <tr key={bday.username}>
-              <td>{bday.date}</td>
-              <td>{bday.name}</td>
-              <td>{bday.username}</td>
-              <td>{bday.place}</td>
+            <tr key={bday.username} className="border-b border-b-gray-400">
+              <td className="p-2">{bday.date}</td>
+              <td className="p-2">{bday.name}</td>
+              <td className="p-2">{bday.username}</td>
+              <td className="p-2">{bday.place}</td>
             </tr>
           ))}
         </tbody>
