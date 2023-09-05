@@ -30,25 +30,24 @@ export default function Birthdays(props: BirthdaysProps) {
       <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         &lt;&#123;PVX&#125;&gt; COMMUNITY
         <br />
-        Birthday List
+        BIRTHDAY LIST
       </h2>
       {todayBday !== "" ? (
-        <div className="wish_b">
-          <div className="gif_b" />
-          <div className="">
-            <h6 className="text-xl">Happy Birthday</h6>
-            <h6 className="text-xl">{todayBday}</h6>
-          </div>
+        <div className="flex justify-center items-center">
           <Image
             src="/static/balloon.png"
-            className="balloon_b"
+            className="animate-bounc"
             alt="balloon"
             height={120}
             width={50}
           />
+          <div className="mx-4">
+            <h3 className="text-2xl">Happy Birthday !!</h3>
+            <h3 className="text-2xl">{todayBday}</h3>
+          </div>
           <Image
             src="/static/balloon.png"
-            className="balloon_b balloon2_b"
+            className="animate-bounc"
             alt="balloon"
             height={120}
             width={50}

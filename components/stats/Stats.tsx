@@ -28,16 +28,21 @@ export default function Stats(props: StatsProps) {
 
       {dataPVXG ? (
         <>
-          <h2 className="mt-10 text-indigo-800 text-xl">
+          <h2 className="mt-10 text-indigo-800 text-xl font-bold">
             <span className="underline">TOTAL GROUP MESSAGES: </span>
             <span>{totalMessages.toLocaleString("en-IN")}</span>
           </h2>
-          <table className="text-left mx-auto my-6 capitalize">
-            <tbody>
+          <table className="mx-auto my-6 capitalize w-full ">
+            <tbody className="w-full max-w-xl inline-block">
               {dataPVXG.map((group) => (
-                <tr className="border-b-gray-800 border-b" key={group.groupjid}>
-                  <td className="p-1">{group.gname.slice(8)}</td>
-                  <td className="">{group.count}</td>
+                <tr
+                  className="border-b-gray-800 border-b font-Inter "
+                  key={group.groupjid}
+                >
+                  <td className="p-1 text-left w-full lowercase first-letter:capitalize">
+                    {group.gname.slice(8)}
+                  </td>
+                  <td className="p-1 text-right">{group.count}</td>
                 </tr>
               ))}
             </tbody>
@@ -52,20 +57,20 @@ export default function Stats(props: StatsProps) {
 
       {dataPVXT ? (
         <>
-          <h2 className="mt-10 text-indigo-800 text-xl">
+          <h2 className="mt-10 text-indigo-800 text-xl  font-bold">
             <span className="underline">TOP MEMBER MESSAGES </span>
           </h2>
-          <table className="text-left mx-auto my-6 capitalize">
-            <tbody>
+          <table className="mx-auto my-6 capitalize w-full ">
+            <tbody className="w-full max-w-xl inline-block">
               {dataPVXT.map((member, index) => (
                 <tr
                   className="border-b-gray-800 border-b"
                   key={member.memberjid}
                 >
-                  <td className="p-1">
+                  <td className="p-1 text-left w-full">
                     {index + 1}) {member.name}
                   </td>
-                  <td className="">{member.count}</td>
+                  <td className="p-1 text-right">{member.count}</td>
                 </tr>
               ))}
             </tbody>

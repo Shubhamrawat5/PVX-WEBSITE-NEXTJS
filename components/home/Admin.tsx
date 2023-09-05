@@ -98,13 +98,13 @@ export default function Admin() {
       <div className="flex justify-center items-center flex-wrap  font-Inter">
         {admins.map((admin) => (
           <div
-            className="bg-gray-950 m-2 px-4 py-3 rounded-lg flex justify-center items-center flex-col"
+            className="bg-gray-800 m-2 px-4 py-3 rounded-lg flex justify-center items-center flex-col"
             key={admin.id}
           >
-            <div className="relative overflow-hidden rounded-full h-20 w-20">
-              <Image src={admin.img} alt="admin" fill />
+            <div className="overflow-hidden rounded-full">
+              <Image src={admin.img} alt="admin" height="80" width="80" />
             </div>
-            <h4 className="mt-3">{admin.name}</h4>
+            <h3 className="mt-3">{admin.name}</h3>
           </div>
         ))}
       </div>

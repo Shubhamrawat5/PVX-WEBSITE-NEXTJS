@@ -16,16 +16,17 @@ export default function GroupCard(props: GroupCardProps) {
       className="bg-gray-800 border-gray-700 flex  items-center  m-5 p-2 h-36 rounded-lg overflow-hidden"
       key={group.id}
     >
-      <div className="relative overflow-hidden h-32 w-32 rounded-full">
+      <div className="overflow-hidden rounded-full">
         <Image
           className="hover:scale-105 transition-all"
           src={group.img}
           alt={group.alt}
-          fill
+          height="128"
+          width="128"
         />
       </div>
       <div className="h-full ml-4 flex justify-between items-center flex-col">
-        <h4 className="border-b pb-1 text-white my-1">{group.name}</h4>
+        <h3 className="border-b pb-1 text-white my-1">{group.name}</h3>
         <p className="text-sm text-gray-400 mb-9  font-Inter">&#40;{group.desc}&#41;</p>
         {group.link ? (
           <div className="flex items-center justify-between">
@@ -46,11 +47,11 @@ export default function GroupCard(props: GroupCardProps) {
                 checkCopied(text, result, group.id);
               }}
             >
-              <div className="w-5 h-5 invert mx-2 cursor-pointer">
+              <div className="invert mx-2 cursor-pointer">
                 {group.isCopied ? (
-                  <Image src="/static/tick.png" alt="copy" fill />
+                  <Image src="/static/tick.png" alt="copy" height="20" width="20" />
                 ) : (
-                  <Image src="/static/copy.png" alt="copy" fill />
+                  <Image src="/static/copy.png" alt="copy" height="20" width="20" />
                 )}
               </div>
             </CopyToClipboard>

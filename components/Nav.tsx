@@ -37,10 +37,16 @@ export default function Nav() {
 
   // TODO: CHECK priority in IMAGE
   return (
-    <nav className="flex align items-center justify-between px-5 py-3 fixed w-full z-10 bg-gray-950 border-b border-gray-600">
-      <div className="w-20 h-7 relative invert">
+    <nav className="flex align items-center justify-between px-5 py-3 fixed top-0 w-full z-10 bg-gray-950 border-b border-gray-600">
+      <div className="invert">
         <Link href="/" passHref>
-          <Image src="/static/pvxx.png" alt="logo" priority fill />
+          <Image
+            src="/static/pvxx.png"
+            alt="logo"
+            priority
+            width="80"
+            height="28"
+          />
         </Link>
       </div>
 

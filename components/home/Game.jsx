@@ -415,7 +415,7 @@ export default function Game(props) {
 
   return (
     <>
-      <div className="container noselect">
+      <div className="container-game noselect bg-neutral-800">
         <h2 id="game-over" style={{ display: "none" }}>
           Game Over
         </h2>

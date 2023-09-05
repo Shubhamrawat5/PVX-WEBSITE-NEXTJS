@@ -10,6 +10,9 @@ module.exports = {
         Inter: ["Inter", "sans-serif"],
         Roboto: ["Roboto Slab", "serif"],
       },
+      backgroundImage: {
+        cats: "url('/static/ex2.svg')",
+      },
     },
   },
   plugins: [],
