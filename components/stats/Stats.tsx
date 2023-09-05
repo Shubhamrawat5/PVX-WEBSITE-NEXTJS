@@ -11,18 +11,20 @@ export default function Stats(props: StatsProps) {
   }
 
   return (
-    <section className="pt-20">
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+    <section className="pt-20 bg-neutral-950">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         PVX GROUPS STATS
       </h2>
 
-      <p>ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
-      <p>FROM 24 NOV 2021</p>
-      <p>
-        Please note that these figures may not be 100% accurate, as the PVX bot
-        in WhatsApp groups is used to collect message counts and can sometimes
-        be down. Messages sent during this time are not counted.
-      </p>
+      <div className="font-Inter text-sm">
+        <p>ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
+        <p className="my-4 text-gray-400">FROM 24 NOV 2021</p>
+        <p>
+          Please note that these figures may not be 100% accurate, as the PVX
+          bot in WhatsApp groups is used to collect message counts and can
+          sometimes be down. Messages sent during this time are not counted.
+        </p>
+      </div>
 
       {dataPVXG ? (
         <>

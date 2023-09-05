@@ -90,12 +90,12 @@ export default function Admin() {
     },
   ];
   return (
-    <section>
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+    <section className="bg-neutral-950">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         PVX MAIN ADMINS
       </h2>
 
-      <div className="flex justify-center items-center flex-wrap">
+      <div className="flex justify-center items-center flex-wrap  font-Inter">
         {admins.map((admin) => (
           <div
             className="bg-gray-950 m-2 px-4 py-3 rounded-lg flex justify-center items-center flex-col"
@@ -104,7 +104,7 @@ export default function Admin() {
             <div className="relative overflow-hidden rounded-full h-20 w-20">
               <Image src={admin.img} alt="admin" fill />
             </div>
-            <h4 className="mt-2">{admin.name}</h4>
+            <h4 className="mt-3">{admin.name}</h4>
           </div>
         ))}
       </div>

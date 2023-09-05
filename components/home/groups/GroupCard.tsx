@@ -26,7 +26,7 @@ export default function GroupCard(props: GroupCardProps) {
       </div>
       <div className="h-full ml-4 flex justify-between items-center flex-col">
         <h4 className="border-b pb-1 text-white my-1">{group.name}</h4>
-        <p className="text-sm text-gray-400 mb-9">&#40;{group.desc}&#41;</p>
+        <p className="text-sm text-gray-400 mb-9  font-Inter">&#40;{group.desc}&#41;</p>
         {group.link ? (
           <div className="flex items-center justify-between">
             <a
@@ -36,7 +36,7 @@ export default function GroupCard(props: GroupCardProps) {
               rel="noopener noreferrer"
               className=""
             >
-              <p className="px-3 py-1 text-sm text-white bg-indigo-700 rounded-lg hover:bg-blue-800">
+              <p className="px-3 py-1 text-xs text-white bg-indigo-700 rounded-lg hover:bg-blue-800  font-Inter">
                 JOIN GROUP
               </p>
             </a>
@@ -56,7 +56,7 @@ export default function GroupCard(props: GroupCardProps) {
             </CopyToClipboard>
           </div>
         ) : (
-          <p className="border-gray-500 border-2 text-sm w-full px-2 py-0.5 rounded opacity-70">
+          <p className="border-gray-500 border-2 text-xs w-full px-2 py-0.5 rounded opacity-70 font-Inter">
             Blocked
           </p>
         )}

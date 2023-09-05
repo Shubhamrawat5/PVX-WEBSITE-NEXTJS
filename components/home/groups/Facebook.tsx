@@ -10,7 +10,7 @@ export default function Facebook() {
 
   return (
     <div className="inline-block">
-      <h3 className="text-black bg-white rounded text-lg mx-3 py-1 mt-4">
+      <h3 className="text-black bg-white rounded text-lg mx-3 py-1 mt-4  font-Inter">
         FACEBOOK
       </h3>
       <div className="flex justify-center items-center flex-wrap">

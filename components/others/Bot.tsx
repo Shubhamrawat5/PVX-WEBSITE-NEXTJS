@@ -14,11 +14,11 @@ export default function Bot() {
   ];
 
   return (
-    <section>
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+    <section className="bg-neutral-950">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         PVX BOT
       </h2>
-      <div>
+      <div className="font-Inter">
         <h3>
           PVX Bot is a whatsapp bot for all PVX groups that has a variety of
           commands with different functionalies.
@@ -42,7 +42,10 @@ export default function Bot() {
         </div>
         <ol className="text-left m-auto max-w-3xl p-0">
           {botFeatures.map((feature) => (
-            <li className="list-decimal text-justify" key={feature}>
+            <li
+              className="list-decimal text-justify text-sm my-2"
+              key={feature}
+            >
               {feature}
             </li>
           ))}
