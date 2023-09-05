@@ -102,9 +102,15 @@ export default function Admin() {
             key={admin.id}
           >
             <div className="overflow-hidden rounded-full">
-              <Image src={admin.img} alt="admin" height="80" width="80" />
+              <Image
+                className="w-16 h-16 sm:w-20 sm:h-20"
+                src={admin.img}
+                alt="admin"
+                height="80"
+                width="80"
+              />
             </div>
-            <h3 className="mt-3">{admin.name}</h3>
+            <h3 className="mt-3 text-sm sm:text-base">{admin.name}</h3>
           </div>
         ))}
       </div>

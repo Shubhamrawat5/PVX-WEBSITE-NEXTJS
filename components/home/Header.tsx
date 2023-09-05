@@ -11,7 +11,7 @@ export default function Header(props: {
     <header className="h-screen flex items-center justify-center flex-col bg-cats bg-center bg-cover ">
       <div className="rounded-full overflow-hidden">
         <Image
-          className=" border-4 rounded-full"
+          className="border-4 rounded-full w-52 h-52 sm:w-64 sm:h-64"
           src="/static/group/main.jpg"
           alt="logo"
           height="256"
@@ -20,10 +20,12 @@ export default function Header(props: {
           onClick={() => showGameHandler(true)}
         />
       </div>
-      <h1 className="text-4xl mt-6 mb-4">
+      <h1 className="text-2xl sm:text-4xl mt-6 mb-4">
         &lt;&#123;PVX&#125;&gt; COMMUNITY ❤️
       </h1>
-      <p className="text-lg text-gray-400">Created by You, 03/07/16</p>
+      <p className="text-base sm:text-lg text-gray-400">
+        Created by You, 03/07/16
+      </p>
     </header>
   );
 }

@@ -71,7 +71,10 @@ export default function Events() {
       {/* TODO: REFACTOR NEEDED!!! */}
       <div className="flex items-center justify-center flex-wrap">
         {threeWinnerEvents.map((event) => (
-          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4 key={event.description}">
+          <div
+            className="bg-gray-800 rounded-lg py-5 px-10 m-4"
+            key={event.description}
+          >
             <div className="mt-4 mb-20 flex justify-center font-Inter">
               <div className="translate-y-10">
                 <Image
@@ -112,7 +115,10 @@ export default function Events() {
         ))}
 
         {singleWinnerEvents.map((event) => (
-          <div className="bg-gray-800 rounded-lg py-5 px-10 m-4 key={event.description}">
+          <div
+            className="bg-gray-800 rounded-lg py-5 px-10 m-4 "
+            key={event.description}
+          >
             <Image
               className="m-auto"
               src={event.image}
