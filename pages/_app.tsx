@@ -52,6 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <Nav />
+      <p className="left-0 bottom-0 fixed z-20 text-sm">
+        website is under maintainence...
+      </p>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
       <Footer />
