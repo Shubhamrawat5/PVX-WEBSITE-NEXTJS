@@ -151,10 +151,8 @@ html {
 body {
   background-color: black;
   text-align: center;
-  margin: 0;
   font-family: "Roboto Slab", serif;
   color: white;
-  letter-spacing: 0.5px;
 }
 
 nav,
@@ -210,7 +208,7 @@ section {
   font-size: 14px;
   width: 100%;
 } */
-a {
+/* a {
   text-decoration: none;
   color: white;
   cursor: pointer;
@@ -220,7 +218,7 @@ a {
 }
 .section:nth-child(2n + 1) {
   background-color: #080101;
-}
+} */
 /* #admin-section,
 #drive-section {
   background-position: center;
@@ -307,11 +305,11 @@ header {
   animation-direction: alternate;
   animation-duration: 1.5s;
 } */
-@keyframes border-anim {
+/* @keyframes border-anim {
   100% {
     border: 4px solid rgba(255, 255, 255, 0.74);
   }
-}
+} */
 
 /* header .heading {
   font-size: 40px;
@@ -398,14 +396,14 @@ header {
   border-radius: 50%;
 } */
 
-.card img {
-  transition: all 0.3s;
+/* .card img { */
+/* transition: all 0.3s;
 }
 
 .card:hover img {
   transform: scale(1.03);
   transition: all 0.3s;
-}
+} */
 
 /* .group-name {
   font-weight: 400;
@@ -472,7 +470,7 @@ header {
 } */
 
 /* ------------------------------ DRIVE SECTION ----------------------------- */
-.drive-container {
+/* .drive-container {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -493,47 +491,47 @@ header {
 .donation-text a,
 .drive-text a {
   color: #007eff;
-}
+} */
 
 /* ---------------------------- DONATION SECTION ---------------------------- */
-.donation-section {
+/* .donation-section {
   padding-top: 80px !important;
-}
+} */
 
-.donators-subheading {
+/* .donators-subheading {
   color: #e52d2dfa;
   margin: 50px 0 0 0;
   font-weight: 500;
-}
-.donators-subheading span:first-child {
+} */
+/* .donators-subheading span:first-child {
   text-decoration: underline;
   margin-right: 10px;
-}
-.donators-table {
+} */
+/* .donators-table {
   margin: 25px auto;
   text-align: left;
   text-transform: capitalize;
   border-collapse: collapse;
-}
-.donators-table tr {
+} */
+/* .donators-table tr {
   border-bottom: solid 1px #e52d2d91;
   color: #e7e7e4;
-}
-.donators-table td {
+} */
+/* .donators-table td {
   margin: 0 5px;
   padding: 2px;
   font-family: "Mukta", sans-serif;
-}
-.donator-name {
+} */
+/* .donator-name {
   min-width: 600px;
 }
 
 .donator-amount {
   min-width: 54px;
   text-align: right;
-}
+} */
 
-.qr-img {
+/* .qr-img {
   height: 250px;
   width: 250px;
 }
@@ -547,7 +545,7 @@ header {
   margin-top: 8px !important;
   line-height: 1.5;
   padding-top: 8px;
-}
+} */
 
 /* ----------------------------- ACHIEVE SECTION ---------------------------- */
 

@@ -37,7 +37,7 @@ export default function Nav() {
 
   // TODO: CHECK priority in IMAGE
   return (
-    <nav className="flex align items-center justify-between px-5 py-3 fixed w-full z-10 bg-gray-950">
+    <nav className="flex align items-center justify-between px-5 py-3 fixed w-full z-10 bg-gray-950 border-b border-gray-600">
       <div className="w-20 h-7 relative invert">
         <Link href="/" passHref>
           <Image src="/static/pvxx.png" alt="logo" priority fill />
@@ -50,7 +50,7 @@ export default function Nav() {
             <li
               className={classNames(
                 item.href === pathname
-                  ? "bg-gray-900 text-white"
+                  ? "bg-gray-800 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white",
                 "inline rounded-md px-3 py-2 mx-1 text-lg"
               )}

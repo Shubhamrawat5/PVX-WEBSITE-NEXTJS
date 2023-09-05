@@ -17,7 +17,12 @@ export default function GroupCard(props: GroupCardProps) {
       key={group.id}
     >
       <div className="relative overflow-hidden h-32 w-32 rounded-full">
-        <Image src={group.img} alt={group.alt} fill />
+        <Image
+          className="hover:scale-105 transition-all"
+          src={group.img}
+          alt={group.alt}
+          fill
+        />
       </div>
       <div className="h-full ml-4 flex justify-between items-center flex-col">
         <h4 className="border-b pb-1 text-white my-1">{group.name}</h4>

@@ -11,12 +11,14 @@ export default function Stats(props: StatsProps) {
   }
 
   return (
-    <section id="achieve-section" className="section donation-section">
-      <h2 className="section-heading">PVX GROUPS STATS</h2>
+    <section className="pt-20">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8">
+        PVX GROUPS STATS
+      </h2>
 
-      <p className="subheading-p">ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
-      <p className="subheading-p">FROM 24 NOV 2021</p>
-      <p className="subheading-p">
+      <p>ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
+      <p>FROM 24 NOV 2021</p>
+      <p>
         Please note that these figures may not be 100% accurate, as the PVX bot
         in WhatsApp groups is used to collect message counts and can sometimes
         be down. Messages sent during this time are not counted.
@@ -24,50 +26,53 @@ export default function Stats(props: StatsProps) {
 
       {dataPVXG ? (
         <>
-          <h2 className="donators-subheading">
-            <span>TOTAL GROUP MESSAGES: </span>
+          <h2 className="mt-10 text-indigo-800 text-xl">
+            <span className="underline">TOTAL GROUP MESSAGES: </span>
             <span>{totalMessages.toLocaleString("en-IN")}</span>
           </h2>
-          <table className="donators-table">
+          <table className="text-left mx-auto my-6 capitalize">
             <tbody>
               {dataPVXG.map((group) => (
-                <tr key={group.groupjid}>
-                  <td className="donator-name">{group.gname.slice(8)}</td>
-                  <td className="donator-amount">{group.count}</td>
+                <tr className="border-b-gray-800 border-b" key={group.groupjid}>
+                  <td className="p-1">{group.gname.slice(8)}</td>
+                  <td className="">{group.count}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       ) : (
-        <div id="err" className="err">
-          NOTE: There is a problem with attaching the stats data ! Contact PVX
-          admins.
+        <div className="border mb-4 px-2 py-1 text-sm w-full">
+          NOTE: There is a problem with attaching the group stats data ! Contact
+          PVX admins.
         </div>
       )}
 
       {dataPVXT ? (
         <>
-          <h2 className="donators-subheading">
-            <span>TOP MEMBER MESSAGES </span>
+          <h2 className="mt-10 text-indigo-800 text-xl">
+            <span className="underline">TOP MEMBER MESSAGES </span>
           </h2>
-          <table className="donators-table">
+          <table className="text-left mx-auto my-6 capitalize">
             <tbody>
               {dataPVXT.map((member, index) => (
-                <tr key={member.memberjid}>
-                  <td className="donator-name">
+                <tr
+                  className="border-b-gray-800 border-b"
+                  key={member.memberjid}
+                >
+                  <td className="p-1">
                     {index + 1}) {member.name}
                   </td>
-                  <td className="donator-amount">{member.count}</td>
+                  <td className="">{member.count}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       ) : (
-        <div id="err" className="err">
-          NOTE: There is a problem with attaching the stats data ! Contact PVX
-          admins.
+        <div className="border mb-4 px-2 py-1 text-sm w-full">
+          NOTE: There is a problem with attaching the member stats data !
+          Contact PVX admins.
         </div>
       )}
     </section>

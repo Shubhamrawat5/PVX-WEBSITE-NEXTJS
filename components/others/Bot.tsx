@@ -42,7 +42,9 @@ export default function Bot() {
         </div>
         <ol className="text-left m-auto max-w-3xl p-0">
           {botFeatures.map((feature) => (
-            <li className="list-decimal text-justify">{feature}</li>
+            <li className="list-decimal text-justify" key={feature}>
+              {feature}
+            </li>
           ))}
         </ol>
       </div>
