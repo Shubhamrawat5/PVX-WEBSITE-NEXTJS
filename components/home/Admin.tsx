@@ -90,16 +90,27 @@ export default function Admin() {
     },
   ];
   return (
-    <section id="admin-section" className="section">
-      <h2 className="section-heading">PVX MAIN ADMINS</h2>
+    <section className="bg-neutral-950">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
+        PVX MAIN ADMINS
+      </h2>
 
-      <div className="group-container">
+      <div className="flex justify-center items-center flex-wrap  font-Inter">
         {admins.map((admin) => (
-          <div className="admin-box" key={admin.id}>
-            <div className="admin-dp">
-              <Image src={admin.img} alt="admin" fill />
+          <div
+            className="bg-gray-800 m-2 px-4 py-3 rounded-lg flex justify-center items-center flex-col"
+            key={admin.id}
+          >
+            <div className="overflow-hidden rounded-full">
+              <Image
+                className="w-16 h-16 sm:w-20 sm:h-20"
+                src={admin.img}
+                alt="admin"
+                height="80"
+                width="80"
+              />
             </div>
-            <h4 className="admin-name">{admin.name}</h4>
+            <h3 className="mt-3 text-sm sm:text-base">{admin.name}</h3>
           </div>
         ))}
       </div>

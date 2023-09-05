@@ -26,44 +26,43 @@ export default function Birthdays(props: BirthdaysProps) {
   });
 
   return (
-    <section id="birthday_b">
-      <h2 className="bday-header_b">
+    <section className="pt-20 bg-neutral-950">
+      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         &lt;&#123;PVX&#125;&gt; COMMUNITY
         <br />
-        <u> Birthday List</u>
+        BIRTHDAY LIST
       </h2>
       {todayBday !== "" ? (
-        <div className="wish_b">
-          <div className="gif_b" />
-          <div className="today-bday-text_b">
-            <h6 className="happy-birthday_b">Happy Birthday</h6>
-            <h6 className="bdy-boy_b">{todayBday}</h6>
-          </div>
+        <div className="flex justify-center items-center">
           <Image
             src="/static/balloon.png"
-            className="balloon_b"
+            className="animate-bounc"
             alt="balloon"
             height={120}
             width={50}
           />
+          <div className="mx-4">
+            <h3 className="text-2xl">Happy Birthday !!</h3>
+            <h3 className="text-2xl">{todayBday}</h3>
+          </div>
           <Image
             src="/static/balloon.png"
-            className="balloon_b balloon2_b"
+            className="animate-bounc"
             alt="balloon"
             height={120}
             width={50}
           />
         </div>
       ) : null}
-      <div className="months-container_b">
+      <div className="flex flex-wrap justify-center items-center">
         {months ? (
           months.map((month) => (
             <MonthCard month={month} id={month.id} key={month.id} />
           ))
         ) : (
-          <div id="err" className="err" style={{ border: "1px solid black" }}>
-            NOTE: There is a problem with attaching the birthday data ! Contact
-            PVX admins.
+          <div className="border mb-4 px-2 py-1 text-sm w-full">
+            NOTE: There is a problem with attaching the group stats data !
+            Contact PVX admins.
           </div>
         )}
       </div>

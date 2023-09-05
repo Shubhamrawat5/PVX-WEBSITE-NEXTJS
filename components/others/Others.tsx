@@ -1,11 +1,13 @@
 import React from "react";
-import Extra from "./Extra";
+import Events from "./Events";
 import Bot from "./Bot";
+import Screenshots from "./Screenshots";
 
 export default function Others() {
   return (
     <>
-      <Extra />
+      <Events />
+      <Screenshots />
       <Bot />
     </>
   );
