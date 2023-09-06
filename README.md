@@ -8,6 +8,7 @@ This is the official website for PVX COMMUNITY - a vibrant social community with
 
 - Next js
 - Typescipt
+- Tailwind CSS
 - Postgres SQL
 
 ## Commands
