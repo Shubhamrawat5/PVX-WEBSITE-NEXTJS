@@ -90,7 +90,7 @@ export default function Admin() {
     },
   ];
   return (
-    <section className="bg-neutral-950">
+    <section className="bg-gradient-to-r from-gray-950 to-gray-900">
       <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         PVX MAIN ADMINS
       </h2>

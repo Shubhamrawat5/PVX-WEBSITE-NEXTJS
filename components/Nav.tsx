@@ -50,7 +50,7 @@ export default function Nav() {
   // TODO: CHECK priority in IMAGE
   return (
     <>
-      <nav className="flex align items-center justify-between px-3 sm:px-5 py-3 fixed top-0 w-full z-10 bg-gray-950 border-b border-gray-600">
+      <nav className="flex align items-center justify-between px-3 sm:px-5 py-2 fixed top-0 w-full z-10 bg-gray-950">
         <div className="invert">
           <Link href="/" passHref>
             <Image
@@ -68,7 +68,7 @@ export default function Nav() {
             <Link href={item.href} passHref key={item.name}>
               <button
                 type="button"
-                onClick={() => setLoading(true)}
+                onClick={() => item.href !== pathname && setLoading(true)}
                 className={`inline rounded-md px-2 sm:px-3 py-2 mx-1 text-base sm:text-lg ${
                   item.href === pathname
                     ? "bg-gray-800 text-white"
@@ -102,7 +102,7 @@ export default function Nav() {
           </button>
 
           <div
-            className={`h-screen w-full bg-gray-800 fixed left-0 top-0 -z-10 flex items-center justify-center flex-col gap-6 ease-in-out duration-300 ${
+            className={`h-screen w-full bg-gradient-to-r from-gray-950 to-gray-900 fixed left-0 top-0 -z-10 flex items-center justify-center flex-col gap-6 ease-in-out duration-300 ${
               showNav ? "translate-x-0" : "translate-x-full"
             }`}
           >
@@ -110,7 +110,7 @@ export default function Nav() {
               <Link href={item.href} passHref key={item.name}>
                 <button
                   type="button"
-                  onClick={() => setLoading(true)}
+                  onClick={() => item.href !== pathname && setLoading(true)}
                   className={`rounded-md px-4 py-3 text-xl ${
                     item.href === pathname
                       ? "bg-gray-900 text-white"
@@ -127,7 +127,7 @@ export default function Nav() {
         </div>
       </nav>
       {loading && (
-        <div className="z-50 flex justify-center items-center fixed top-0 left-0 w-full h-screen bg-slate-800 opacity-80">
+        <div className="z-50 flex justify-center items-center fixed top-0 left-0 w-full h-screen bg-gradient-to-r from-gray-950 to-gray-900 opacity-75">
           <Spinner />
         </div>
       )}
