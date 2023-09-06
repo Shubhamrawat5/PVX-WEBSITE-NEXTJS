@@ -83,7 +83,7 @@ export default function Nav() {
         </div>
 
         <div className="sm:hidden">
-          <button type="button" onClick={() => () => setShowNav(!showNav)}>
+          <button type="button" onClick={() => setShowNav(!showNav)}>
             <div
               className={`w-7 h-0.5 duration-300 ease-in-out  bg-white ${
                 showNav && "rotate-45"
