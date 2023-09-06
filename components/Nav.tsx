@@ -39,13 +39,13 @@ export default function Nav() {
 
   useEffect(() => {
     // Turn off background scrolling
-    if (showNav || loading) {
+    if (showNav) {
       document.body.style.overflow = "hidden";
     }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [showNav, loading]);
+  }, [showNav]);
 
   // TODO: CHECK priority in IMAGE
   return (

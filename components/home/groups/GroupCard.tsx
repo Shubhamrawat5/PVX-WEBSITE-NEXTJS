@@ -26,8 +26,12 @@ export default function GroupCard(props: GroupCardProps) {
         />
       </div>
       <div className="h-full md:ml-4 flex justify-between items-center flex-col">
-        <h3 className="border-b pb-1 text-white my-1 text-sm md:text-base">{group.name}</h3>
-        <p className="text-xs md:text-sm text-gray-400 mb-2 sm:mb-9 font-Inter">&#40;{group.desc}&#41;</p>
+        <h3 className="border-b pb-1 text-white my-1 text-sm md:text-base">
+          {group.name}
+        </h3>
+        <p className="text-xs md:text-sm text-gray-400 mb-2 sm:mb-9 font-Inter">
+          &#40;{group.desc}&#41;
+        </p>
         {group.link ? (
           <div className="flex items-center justify-between">
             <a
@@ -49,9 +53,19 @@ export default function GroupCard(props: GroupCardProps) {
             >
               <div className="invert mx-2 cursor-pointer">
                 {group.isCopied ? (
-                  <Image src="/static/tick.png" alt="copy" height="20" width="20" />
+                  <Image
+                    src="/static/tick.png"
+                    alt="copy"
+                    height="20"
+                    width="20"
+                  />
                 ) : (
-                  <Image src="/static/copy.png" alt="copy" height="20" width="20" />
+                  <Image
+                    src="/static/copy.png"
+                    alt="copy"
+                    height="20"
+                    width="20"
+                  />
                 )}
               </div>
             </CopyToClipboard>

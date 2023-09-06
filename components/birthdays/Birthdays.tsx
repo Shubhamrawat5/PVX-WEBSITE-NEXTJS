@@ -33,7 +33,7 @@ export default function Birthdays(props: BirthdaysProps) {
         BIRTHDAY LIST
       </h2>
       {todayBday !== "" ? (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center gap-4">
           <Image
             src="/static/balloon.png"
             className="animate-bounc"
@@ -41,7 +41,7 @@ export default function Birthdays(props: BirthdaysProps) {
             height={120}
             width={50}
           />
-          <div className="mx-4">
+          <div>
             <h3 className="text-2xl">Happy Birthday !!</h3>
             <h3 className="text-2xl">{todayBday}</h3>
           </div>
@@ -54,7 +54,7 @@ export default function Birthdays(props: BirthdaysProps) {
           />
         </div>
       ) : null}
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="flex flex-wrap justify-center items-center gap-8">
         {months ? (
           months.map((month) => (
             <MonthCard month={month} id={month.id} key={month.id} />

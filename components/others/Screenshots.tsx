@@ -33,10 +33,10 @@ export default function Screenshots() {
       <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
         SCREENSHOTS
       </h2>
-      <div className="flex items-center justify-center flex-wrap flex-col sm:flex-row">
+      <div className="flex items-center justify-center flex-wrap flex-col sm:flex-row gap-6">
         {screenshots.map((screenshot) => (
           <div
-            className="shadow-md shadow-neutral-600 rounded-lg py-5 px-10 mx-0 my-4 sm:m-4"
+            className="shadow-md shadow-neutral-600 rounded-lg py-5 px-10"
             key={screenshot.description}
           >
             <Image
