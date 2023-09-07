@@ -35,7 +35,7 @@ export default function Birthdays(props: BirthdaysProps) {
       {todayBday !== "" ? (
         <div className="flex justify-center items-center gap-4">
           <Image
-            src="/static/balloon.png"
+            src="/static/birthday/balloon.png"
             className="animate-bounc"
             alt="balloon"
             height={120}
@@ -46,7 +46,7 @@ export default function Birthdays(props: BirthdaysProps) {
             <h3 className="text-2xl">{todayBday}</h3>
           </div>
           <Image
-            src="/static/balloon.png"
+            src="/static/birthday/balloon.png"
             className="animate-bounc"
             alt="balloon"
             height={120}

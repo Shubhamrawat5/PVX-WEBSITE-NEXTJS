@@ -54,14 +54,14 @@ export default function GroupCard(props: GroupCardProps) {
               <div className="invert mx-2 cursor-pointer">
                 {group.isCopied ? (
                   <Image
-                    src="/static/tick.png"
+                    src="/static/icons/tick.png"
                     alt="copy"
                     height="20"
                     width="20"
                   />
                 ) : (
                   <Image
-                    src="/static/copy.png"
+                    src="/static/icons/copy.png"
                     alt="copy"
                     height="20"
                     width="20"
@@ -76,7 +76,12 @@ export default function GroupCard(props: GroupCardProps) {
               Link Blocked
             </p>
             <div className="invert mx-2">
-              <Image src="/static/copy.png" alt="copy" height="20" width="20" />
+              <Image
+                src="/static/icons/copy.png"
+                alt="copy"
+                height="20"
+                width="20"
+              />
             </div>
           </div>
         )}

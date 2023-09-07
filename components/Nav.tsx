@@ -54,7 +54,7 @@ export default function Nav() {
         <div className="invert">
           <Link href="/" passHref>
             <Image
-              src="/static/pvxx.png"
+              src="/static/pvx/pvx-dark.png"
               alt="logo"
               priority
               width="80"

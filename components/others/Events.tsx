@@ -87,7 +87,7 @@ export default function Events() {
               <div className="translate-y-10">
                 <Image
                   className="m-auto"
-                  src="/static/medal 2.png"
+                  src="/static/icons/medal 2.png"
                   alt="2"
                   height="55"
                   width="55"
@@ -97,7 +97,7 @@ export default function Events() {
               <div>
                 <Image
                   className="m-auto"
-                  src="/static/medal 1.png"
+                  src="/static/icons/medal 1.png"
                   alt="1"
                   height="55"
                   width="55"
@@ -107,7 +107,7 @@ export default function Events() {
               <div className="translate-y-12">
                 <Image
                   className="m-auto"
-                  src="/static/medal 3.png"
+                  src="/static/icons/medal 3.png"
                   alt="3"
                   height="55"
                   width="55"
