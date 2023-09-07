@@ -19,7 +19,7 @@ export default function Bot() {
         PVX BOT
       </h2>
       <div className="font-Inter">
-        <h3>
+        <h3 className="">
           PVX Bot is a whatsapp bot for all PVX groups that has a variety of
           commands with different functionalies.
         </h3>
@@ -40,7 +40,7 @@ export default function Bot() {
             [ GITHUB SOURCE CODE ]
           </a>
         </div>
-        <ol className="text-left m-auto max-w-3xl p-4 pl-6">
+        <ol className="text-left m-auto max-w-3xl p-4 pl-6 text-gray-200">
           {botFeatures.map((feature) => (
             <li
               className="list-decimal text-justify text-sm my-2"

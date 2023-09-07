@@ -95,10 +95,10 @@ export default function Admin() {
         PVX MAIN ADMINS
       </h2>
 
-      <div className="flex justify-center items-center flex-wrap  font-Inter  gap-4 ">
+      <div className="flex justify-center items-center flex-wrap font-Inter gap-4 ">
         {admins.map((admin) => (
           <div
-            className="bg-gray-800 px-4 py-3 rounded-lg flex justify-center items-center flex-col gap-3"
+            className="bg-gray-800 px-4 py-3 rounded-lg flex justify-center items-center flex-col gap-3 basis-28"
             key={admin.id}
           >
             <div className="overflow-hidden rounded-full">

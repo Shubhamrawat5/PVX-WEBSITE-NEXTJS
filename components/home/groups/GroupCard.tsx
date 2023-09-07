@@ -41,7 +41,7 @@ export default function GroupCard(props: GroupCardProps) {
               rel="noopener noreferrer"
               className=""
             >
-              <p className="px-3 py-1 text-xs text-white bg-indigo-700 rounded-lg hover:bg-blue-800  font-Inter">
+              <p className="px-3 py-1 text-xs text-white bg-indigo-700 rounded-lg hover:bg-blue-800 font-Inter">
                 JOIN GROUP
               </p>
             </a>
@@ -71,9 +71,14 @@ export default function GroupCard(props: GroupCardProps) {
             </CopyToClipboard>
           </div>
         ) : (
-          <p className="border-gray-500 border-2 text-xs w-full px-2 py-0.5 rounded opacity-70 font-Inter">
-            Blocked
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="px-3 py-1 text-xs border-gray-600 border-2 rounded-lg opacity-70 font-Inter">
+              Link Blocked
+            </p>
+            <div className="invert mx-2">
+              <Image src="/static/copy.png" alt="copy" height="20" width="20" />
+            </div>
+          </div>
         )}
       </div>
     </div>

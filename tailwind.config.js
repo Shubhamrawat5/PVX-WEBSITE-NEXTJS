@@ -11,7 +11,7 @@ module.exports = {
         Roboto: ["Roboto Slab", "serif"],
       },
       backgroundImage: {
-        cats: "url('/static/ex2.svg')",
+        space: "url('/static/space.svg')",
       },
     },
   },

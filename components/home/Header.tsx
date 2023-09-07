@@ -8,7 +8,7 @@ export default function Header(props: {
   const { showGameHandler } = props;
 
   return (
-    <header className="h-screen flex items-center justify-center flex-col bg-cats bg-center bg-cover gap-2">
+    <header className="h-screen flex items-center justify-center flex-col bg-space bg-center bg-cover gap-2">
       <div className="rounded-full overflow-hidden">
         <Image
           className="border-4 rounded-full w-52 h-52 sm:w-64 sm:h-64"

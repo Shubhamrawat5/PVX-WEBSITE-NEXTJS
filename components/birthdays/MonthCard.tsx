@@ -23,10 +23,16 @@ export default function MonthCard(props: { month: Month; id: number }) {
               key={bday.username}
               className="border-b border-b-gray-600 font-Inter text-sm"
             >
-              <td className="p-2 break-all ">{bday.date}</td>
-              <td className="p-2 break-all capitalize">{bday.name}</td>
-              <td className="p-2 break-all lowercase">{bday.username}</td>
-              <td className="p-2 break-all capitalize">{bday.place}</td>
+              <td className="p-2 [overflow-wrap:anywhere] ">{bday.date}</td>
+              <td className="p-2 [overflow-wrap:anywhere] capitalize">
+                {bday.name}
+              </td>
+              <td className="p-2 [overflow-wrap:anywhere] lowercase">
+                {bday.username}
+              </td>
+              <td className="p-2 [overflow-wrap:anywhere] capitalize">
+                {bday.place}
+              </td>
             </tr>
           ))}
         </tbody>
