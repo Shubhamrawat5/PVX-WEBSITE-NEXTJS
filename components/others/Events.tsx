@@ -73,10 +73,7 @@ export default function Events() {
 
   return (
     <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
-        EVENTS
-      </h2>
-      {/* TODO: REFACTOR NEEDED!!! */}
+      <h2 className="section-heading">EVENTS</h2>
       <div className="flex items-center justify-center flex-wrap gap-6">
         {threeWinnerEvents.map((event) => (
           <div

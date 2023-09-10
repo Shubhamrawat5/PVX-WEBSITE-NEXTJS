@@ -3,29 +3,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import Spinner from "./utils/Spinner";
+import { navItems } from "./constants/index";
 
 export default function Nav() {
   const router = useRouter();
   const { pathname } = router;
-
-  const navItems = [
-    {
-      href: "/",
-      name: "Home",
-    },
-    {
-      href: "/stats",
-      name: "Stats",
-    },
-    {
-      href: "/birthdays",
-      name: "B'Days",
-    },
-    {
-      href: "/others",
-      name: "Others",
-    },
-  ];
 
   const [showNav, setShowNav] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -49,7 +31,7 @@ export default function Nav() {
 
   // TODO: CHECK priority in IMAGE
   return (
-    <>
+    <header>
       <nav className="flex align items-center justify-between px-3 sm:px-5 py-2 fixed top-0 w-full z-10 bg-gray-950">
         <div className="invert">
           <Link href="/" passHref>
@@ -131,6 +113,6 @@ export default function Nav() {
           <Spinner />
         </div>
       )}
-    </>
+    </header>
   );
 }

@@ -30,9 +30,7 @@ export default function Screenshots() {
 
   return (
     <section className="bg-gradient-to-r from-neutral-950 to-neutral-900">
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
-        SCREENSHOTS
-      </h2>
+      <h2 className="section-heading">SCREENSHOTS</h2>
       <div className="flex items-center justify-center flex-wrap flex-col sm:flex-row gap-6">
         {screenshots.map((screenshot) => (
           <div

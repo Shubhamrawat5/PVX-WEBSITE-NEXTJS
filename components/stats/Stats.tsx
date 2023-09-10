@@ -12,9 +12,7 @@ export default function Stats(props: StatsProps) {
 
   return (
     <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
-        PVX GROUPS STATS
-      </h2>
+      <h2 className="section-heading">PVX GROUPS STATS</h2>
 
       <div className="font-Inter text-sm">
         <p>ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
@@ -42,7 +40,9 @@ export default function Stats(props: StatsProps) {
                   <td className="p-1 text-left w-full lowercase first-letter:capitalize">
                     {group.gname.slice(8)}
                   </td>
-                  <td className="p-1 text-right">{group.count}</td>
+                  <td className="p-1 text-right text-gray-200">
+                    {group.count}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -70,7 +70,9 @@ export default function Stats(props: StatsProps) {
                   <td className="p-1 text-left w-full">
                     {index + 1}) {member.name}
                   </td>
-                  <td className="p-1 text-right">{member.count}</td>
+                  <td className="p-1 text-right text-gray-200">
+                    {member.count}
+                  </td>
                 </tr>
               ))}
             </tbody>

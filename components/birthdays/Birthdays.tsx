@@ -27,7 +27,7 @@ export default function Birthdays(props: BirthdaysProps) {
 
   return (
     <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold">
+      <h2 className="section-heading">
         &lt;&#123;PVX&#125;&gt; COMMUNITY
         <br />
         BIRTHDAY LIST
@@ -56,9 +56,7 @@ export default function Birthdays(props: BirthdaysProps) {
       ) : null}
       <div className="flex flex-wrap justify-center items-center gap-8">
         {months ? (
-          months.map((month) => (
-            <MonthCard month={month} id={month.id} key={month.id} />
-          ))
+          months.map((month) => <MonthCard month={month} key={month.id} />)
         ) : (
           <div className="border mb-4 px-2 py-1 text-sm w-full">
             NOTE: There is a problem with attaching the group stats data !
