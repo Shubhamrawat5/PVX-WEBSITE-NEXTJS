@@ -5,7 +5,7 @@ export default function MonthCard(props: { month: Month }) {
   const { month } = props;
   return (
     <table className="p-2 overflow-hidden rounded-md">
-      <caption className="caption-top p-2 text-xl bg-indigo-800 uppercase border-b border-b-white">
+      <caption className="caption-top p-2 text-xl bg-gradient-to-r from-indigo-800 to-indigo-700 uppercase border-b border-b-white">
         {month.name}
       </caption>
       <thead className="bg-gray-900 border-b border-b-gray-600">

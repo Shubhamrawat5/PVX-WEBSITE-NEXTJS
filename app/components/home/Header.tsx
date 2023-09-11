@@ -1,15 +1,13 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 // import Game from "../../components/home/Game";
 
 export default function Header() {
-  const [showGame, setShowGame] = useState(false);
+  // const [showGame, setShowGame] = useState(false);
 
-  const showGameHandler = (value: boolean) => {
-    setShowGame(value);
-  };
+  // const showGameHandler = (value: boolean) => {
+  //   setShowGame(value);
+  // };
 
   /* {showGame ? (
         <Game showGameHandler={showGameHandler} />
@@ -31,7 +29,7 @@ export default function Header() {
           height="256"
           width="256"
           priority
-          onClick={() => showGameHandler(true)}
+          // onClick={() => showGameHandler(true)}
         />
       </div>
       <h1 className="text-2xl sm:text-4xl mt-2">

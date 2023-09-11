@@ -13,7 +13,7 @@ export default function GroupCard(props: GroupCardProps) {
   const { group, checkCopied } = props;
   return (
     <div
-      className="bg-gray-800 border-gray-700 flex flex-col sm:flex-row items-center mx-2 mt-4 md:m-4 p-2 md:h-36 rounded-lg overflow-hidden"
+      className="bg-gradient-to-r from-gray-800 to-gray-800 flex flex-col sm:flex-row items-center mx-2 mt-4 md:m-4 p-2 md:h-36 rounded-lg overflow-hidden"
       key={group.id}
     >
       <div className="overflow-hidden rounded-full">
@@ -41,7 +41,7 @@ export default function GroupCard(props: GroupCardProps) {
               rel="noopener noreferrer"
               className=""
             >
-              <p className="px-3 py-1 text-xs text-white bg-indigo-700 rounded-lg hover:bg-blue-800 font-Inter">
+              <p className="px-3 py-1 text-xs text-white bg-gradient-to-r from-indigo-800 to-indigo-700 rounded-lg hover:from-indigo-600 hover:to-indigo-600 font-Inter">
                 JOIN GROUP
               </p>
             </a>

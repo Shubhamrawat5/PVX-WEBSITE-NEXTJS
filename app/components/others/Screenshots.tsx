@@ -34,7 +34,7 @@ export default function Screenshots() {
       <div className="flex items-center justify-center flex-wrap flex-col sm:flex-row gap-6">
         {screenshots.map((screenshot) => (
           <div
-            className="bg-gray-800 rounded-lg py-5 px-10"
+            className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg py-5 px-10"
             key={screenshot.description}
           >
             <Image

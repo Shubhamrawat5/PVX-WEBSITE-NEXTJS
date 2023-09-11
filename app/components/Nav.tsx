@@ -33,10 +33,11 @@ export default function Nav() {
   // TODO: CHECK priority in IMAGE
   return (
     <header>
-      <nav className="flex align items-center justify-between px-3 sm:px-5 py-2 fixed top-0 w-full z-10 bg-gray-950">
-        <div className="invert">
+      <nav className="flex align items-center justify-between px-3 sm:px-5 py-2 fixed top-0 w-full z-10 bg-gray-950 bg-opacity-80">
+        <div className="">
           <Link href="/" passHref>
             <Image
+              className="invert"
               src="/static/pvx/pvx-dark.png"
               alt="logo"
               priority
@@ -52,10 +53,10 @@ export default function Nav() {
               <button
                 type="button"
                 onClick={() => item.href !== pathname && setLoading(true)}
-                className={`inline rounded-md px-2 sm:px-3 py-2 mx-1 text-base sm:text-lg ${
+                className={`inline rounded-md px-2 sm:px-3 py-1 mx-1 text-base sm:text-lg ${
                   item.href === pathname
-                    ? "bg-gray-800 text-white"
-                    : "hover:bg-gray-700 hover:text-white"
+                    ? "bg-indigo-800 "
+                    : "hover:bg-indigo-700"
                 }
                  `}
               >
@@ -96,8 +97,8 @@ export default function Nav() {
                   onClick={() => item.href !== pathname && setLoading(true)}
                   className={`rounded-md px-4 py-3 text-xl ${
                     item.href === pathname
-                      ? "bg-gray-900 text-white"
-                      : " hover:bg-gray-700 hover:text-white"
+                      ? "bg-indigo-800 "
+                      : " hover:bg-indigo-700 "
                   }
                  
                 `}
