@@ -1,6 +1,6 @@
 import React from "react";
+import { Metadata } from "next";
 import { Client } from "pg";
-import Head from "next/head";
 import Birthdays from "../components/birthdays/Birthdays";
 
 export interface Bday {
@@ -43,15 +43,12 @@ export interface BirthdaysProps {
   bdays: Bday[];
 }
 
+export const metadata: Metadata = {
+  title: "PVX | B'DAYS",
+};
+
 export default async function BirthdaysPage() {
   const { bdays } = await getBirthdayData();
 
-  return (
-    <>
-      <Head>
-        <title>PVX | BDAYS</title>
-      </Head>
-      <Birthdays bdays={bdays} />
-    </>
-  );
+  return <Birthdays bdays={bdays} />;
 }

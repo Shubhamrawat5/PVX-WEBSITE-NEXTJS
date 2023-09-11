@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import { Metadata } from "next";
 import { Client } from "pg";
 import Stats from "../components/stats/Stats";
 
@@ -57,14 +57,12 @@ export interface StatsProps {
   dataPVXT: DataPVXT[];
 }
 
+export const metadata: Metadata = {
+  title: "PVX | STATS",
+};
+
 export default async function StatsPage() {
   const { dataPVXG, dataPVXT } = await getStatsData();
-  return (
-    <>
-      <Head>
-        <title>PVX | STATS</title>
-      </Head>
-      <Stats dataPVXG={dataPVXG} dataPVXT={dataPVXT} />
-    </>
-  );
+
+  return <Stats dataPVXG={dataPVXG} dataPVXT={dataPVXT} />;
 }

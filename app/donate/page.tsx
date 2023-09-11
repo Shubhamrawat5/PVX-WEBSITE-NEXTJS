@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import { Metadata } from "next";
 import { Client } from "pg";
 
 import Donate from "../components/donate/Donate";
@@ -42,14 +42,12 @@ export interface DonateProps {
   members: Members[];
 }
 
+export const metadata: Metadata = {
+  title: "PVX | DONATE",
+};
+
 export default async function DonatePage() {
   const { members } = await getMembersData();
-  return (
-    <>
-      <Head>
-        <title>PVX | DONATE</title>
-      </Head>
-      <Donate members={members} />
-    </>
-  );
+
+  return <Donate members={members} />;
 }

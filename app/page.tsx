@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import { Metadata } from "next";
 import { Client } from "pg";
 
 import Header from "./components/home/Header";
@@ -60,15 +60,16 @@ export interface GroupsProps {
   groupsDB: GroupDB[];
   isEnabled: boolean;
 }
+
+export const metadata: Metadata = {
+  title: "PVX | HOME",
+};
+
 export default async function HomePage() {
   const { groupsDB, isEnabled } = await getGroupData();
 
   return (
     <>
-      <Head>
-        <title>PVX | HOME</title>
-      </Head>
-
       <Header />
       <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
       <Admin />

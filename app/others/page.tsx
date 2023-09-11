@@ -1,14 +1,11 @@
 import React from "react";
-import Head from "next/head";
+import { Metadata } from "next";
 import Others from "../components/others/Others";
 
+export const metadata: Metadata = {
+  title: "PVX | EVENTS",
+};
+
 export default function OthersPage() {
-  return (
-    <>
-      <Head>
-        <title>PVX | OTHERS</title>
-      </Head>
-      <Others />
-    </>
-  );
+  return <Others />;
 }
