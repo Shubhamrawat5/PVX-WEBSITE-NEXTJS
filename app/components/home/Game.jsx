@@ -1,4 +1,6 @@
 /* eslint-disable */
+"use client";
+
 // TODO: CHECK ESLINT
 import React, { useEffect } from "react";
 export default function Game(props) {

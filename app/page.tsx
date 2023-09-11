@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
 
-import Game from "../components/home/Game";
-import Header from "../components/home/Header";
-import Admin from "../components/home/Admin";
-import Groups from "../components/home/groups/Groups";
+import Header from "./components/home/Header";
+import Admin from "./components/home/Admin";
+import Groups from "./components/home/groups/Groups";
 
 export interface GroupDB {
   groupjid: string;
@@ -13,7 +12,7 @@ export interface GroupDB {
   link: string;
 }
 
-export const getServerSideProps = async () => {
+export const getGroupData = async () => {
   let isEnabled = false;
   let groupsDB: GroupDB[] = [];
 
@@ -52,10 +51,8 @@ export const getServerSideProps = async () => {
   }
 
   return {
-    props: {
-      groupsDB,
-      isEnabled,
-    },
+    groupsDB,
+    isEnabled,
   };
 };
 
@@ -63,29 +60,18 @@ export interface GroupsProps {
   groupsDB: GroupDB[];
   isEnabled: boolean;
 }
-export default function HomePage(props: GroupsProps) {
-  const { groupsDB, isEnabled } = props;
-
-  const [showGame, setShowGame] = useState(false);
-
-  const showGameHandler = (value: boolean) => {
-    setShowGame(value);
-  };
+export default async function HomePage() {
+  const { groupsDB, isEnabled } = await getGroupData();
 
   return (
     <>
       <Head>
         <title>PVX | HOME</title>
       </Head>
-      {showGame ? (
-        <Game showGameHandler={showGameHandler} />
-      ) : (
-        <>
-          <Header showGameHandler={showGameHandler} />
-          <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
-          <Admin />
-        </>
-      )}
+
+      <Header />
+      <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
+      <Admin />
     </>
   );
 }

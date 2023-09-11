@@ -11,7 +11,7 @@ export interface Bday {
   place: string;
 }
 
-export const getServerSideProps = async () => {
+export const getBirthdayData = async () => {
   let bdays: Bday[] = [];
 
   if (process.env.PG_URL) {
@@ -36,15 +36,15 @@ export const getServerSideProps = async () => {
     console.error("ERROR: PG_URL is not found in environment");
   }
 
-  return { props: { bdays } };
+  return { bdays };
 };
 
 export interface BirthdaysProps {
   bdays: Bday[];
 }
 
-export default function BirthdaysPage(props: BirthdaysProps) {
-  const { bdays } = props;
+export default async function BirthdaysPage() {
+  const { bdays } = await getBirthdayData();
 
   return (
     <>

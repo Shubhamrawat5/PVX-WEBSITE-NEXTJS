@@ -1,14 +1,18 @@
-import React from "react";
 import Head from "next/head";
-import Script from "next/script";
+import React from "react";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import "../styles/globals.css";
-import { AppProps } from "next/app";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 
-function MyApp({ Component, pageProps }: AppProps) {
+// Layouts must accept a children prop.
+// This will be populated with nested layouts or pages
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
+    <html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -37,33 +41,36 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU"
         />
         <title>PVX</title>
-      </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        {/* <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag("config", "G-VN9V7K8V4P");
         `}
-      </Script>
-      <Nav />
-      <p className="left-0 bottom-0 text-left fixed z-20 text-sm">
-        website is under maintainence...
-        <br />
-        if you&apos;ve any suggestions about website,
-        <br />
-        feel free to discuss in any pvx group.
-      </p>
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <Component {...pageProps} />
-      <Footer />
-    </>
+        </Script> */}
+      </Head>
+      <body>
+        <Nav />
+        <p className="left-0 bottom-0 text-left fixed z-20 text-sm">
+          website is under maintainence...
+          <br />
+          if you&apos;ve any suggestions about website,
+          <br />
+          feel free to discuss in any pvx group.
+        </p>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        {/* <Component {...pageProps} /> */}
+        {children}
+        {/* <body>{children}</body> */}
+
+        <Footer />
+      </body>
+    </html>
   );
 }
-
-export default MyApp;

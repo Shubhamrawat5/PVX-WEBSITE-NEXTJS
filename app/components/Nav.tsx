@@ -1,13 +1,14 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Spinner from "./utils/Spinner";
 import { navItems } from "./constants/index";
 
 export default function Nav() {
-  const router = useRouter();
-  const { pathname } = router;
+  const pathname = usePathname();
 
   const [showNav, setShowNav] = useState(false);
   const [loading, setLoading] = useState(false);

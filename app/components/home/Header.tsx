@@ -1,11 +1,25 @@
-import React from "react";
-import Image from "next/image";
+"use client";
 
-export default function Header(props: {
-  // eslint-disable-next-line no-unused-vars
-  showGameHandler: (value: boolean) => void;
-}) {
-  const { showGameHandler } = props;
+import React, { useState } from "react";
+import Image from "next/image";
+// import Game from "../../components/home/Game";
+
+export default function Header() {
+  const [showGame, setShowGame] = useState(false);
+
+  const showGameHandler = (value: boolean) => {
+    setShowGame(value);
+  };
+
+  /* {showGame ? (
+        <Game showGameHandler={showGameHandler} />
+      ) : (
+        <>
+          <Header showGameHandler={showGameHandler} />
+          <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
+          <Admin />
+        </>
+      )} */
 
   return (
     <section className="min-h-screen flex items-center justify-center flex-col bg-space bg-center bg-cover gap-2">

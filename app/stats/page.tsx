@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
-
 import Stats from "../components/stats/Stats";
 
 export interface DataPVXG {
@@ -16,7 +15,7 @@ export interface DataPVXT {
   count: number;
 }
 
-export const getServerSideProps = async () => {
+export const getStatsData = async () => {
   let dataPVXG: DataPVXG[] = [];
   let dataPVXT: DataPVXT[] = [];
 
@@ -50,7 +49,7 @@ export const getServerSideProps = async () => {
   } else {
     console.error("ERROR: PG_URL is not found in environment");
   }
-  return { props: { dataPVXG, dataPVXT } };
+  return { dataPVXG, dataPVXT };
 };
 
 export interface StatsProps {
@@ -58,8 +57,8 @@ export interface StatsProps {
   dataPVXT: DataPVXT[];
 }
 
-export default function StatsPage(props: StatsProps) {
-  const { dataPVXG, dataPVXT } = props;
+export default async function StatsPage() {
+  const { dataPVXG, dataPVXT } = await getStatsData();
   return (
     <>
       <Head>
