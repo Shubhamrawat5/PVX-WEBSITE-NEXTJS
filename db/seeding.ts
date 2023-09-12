@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { Pool } from "pg";
 import { faker } from "@faker-js/faker";
-import { whatsappGroupsState } from "../components/home/groups/GroupsState";
+import { whatsappGroupsState } from "../app/home/groups/GroupsState";
 
 /* -------------------------------- Birthday -------------------------------- */
 interface Bday {

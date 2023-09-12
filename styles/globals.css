@@ -5,21 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* nav,
-header,
-section,
-footer {
-  animation: fade-in;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-@keyframes fade-in {
-  100% {
-    opacity: 1;
-  }
-} */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,7 +14,7 @@ footer {
 
 @layer components {
   .section-heading {
-    @apply text-2xl text-red-600 border-red-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold;
+    @apply text-2xl text-orange-400 border-orange-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold;
   }
 }
 
