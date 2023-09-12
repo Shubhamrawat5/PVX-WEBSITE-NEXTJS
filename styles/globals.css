@@ -5,21 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* nav,
-header,
-section,
-footer {
-  animation: fade-in;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-@keyframes fade-in {
-  100% {
-    opacity: 1;
-  }
-} */
-
 * {
   box-sizing: border-box;
   margin: 0;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import Others from "../components/others/Others";
+import Others from "./Others";
 
 export const metadata: Metadata = {
   title: "PVX | EVENTS",

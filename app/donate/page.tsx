@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 
-import Donate from "../components/donate/Donate";
+import Donate from "./Donate";
 
 export interface Members {
   name: string;
@@ -10,7 +10,7 @@ export interface Members {
   donation: number;
 }
 
-export const getMembersData = async () => {
+const getMembersData = async () => {
   let members: Members[] = [];
 
   if (process.env.PG_URL) {

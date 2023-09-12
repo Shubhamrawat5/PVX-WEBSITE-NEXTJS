@@ -81,7 +81,7 @@ export default function HomePage(props: GroupsProps) {
         <Game showGameHandler={showGameHandler} />
       ) : (
         <>
-          <Header showGameHandler={showGameHandler} />
+          <Header />
           <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
           <Admin />
         </>

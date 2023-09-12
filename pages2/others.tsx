@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Others from "../app/components/others/Others";
+import Others from "../app/others/others/Others";
 
 export default function OthersPage() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
-import Birthdays from "../components/birthdays/Birthdays";
+import Birthdays from "./Birthdays";
 
 export interface Bday {
   name: string;
@@ -11,7 +11,7 @@ export interface Bday {
   place: string;
 }
 
-export const getBirthdayData = async () => {
+const getBirthdayData = async () => {
   let bdays: Bday[] = [];
 
   if (process.env.PG_URL) {

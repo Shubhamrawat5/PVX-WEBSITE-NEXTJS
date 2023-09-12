@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
-import Stats from "../components/stats/Stats";
+import Stats from "./Stats";
 
 export interface DataPVXG {
   gname: string;
@@ -15,7 +15,7 @@ export interface DataPVXT {
   count: number;
 }
 
-export const getStatsData = async () => {
+const getStatsData = async () => {
   let dataPVXG: DataPVXG[] = [];
   let dataPVXT: DataPVXT[] = [];
 

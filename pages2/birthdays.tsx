@@ -1,7 +1,7 @@
 import React from "react";
 import { Client } from "pg";
 import Head from "next/head";
-import Birthdays from "../app/components/birthdays/Birthdays";
+import Birthdays from "../app/birthdays/birthdays/Birthdays";
 
 export interface Bday {
   name: string;

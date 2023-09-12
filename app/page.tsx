@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 
-import Header from "./components/home/Header";
-import Admin from "./components/home/Admin";
-import Groups from "./components/home/groups/Groups";
+import Admin from "./home/Admin";
+import Groups from "./home/groups/Groups";
+import Header from "./home/Header";
 
 export interface GroupDB {
   groupjid: string;
@@ -12,7 +12,7 @@ export interface GroupDB {
   link: string;
 }
 
-export const getGroupData = async () => {
+const getGroupData = async () => {
   let isEnabled = false;
   let groupsDB: GroupDB[] = [];
 

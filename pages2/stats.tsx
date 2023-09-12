@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
 
-import Stats from "../app/components/stats/Stats";
+import Stats from "../app/stats/stats/Stats";
 
 export interface DataPVXG {
   gname: string;

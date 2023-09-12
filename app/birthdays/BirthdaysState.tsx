@@ -1,4 +1,4 @@
-import { Bday } from "../../pages/birthdays";
+import { Bday } from "./page";
 
 export interface Month {
   name: string;

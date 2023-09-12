@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Spinner from "./utils/Spinner";
+import Spinner from "./Spinner";
 import { navItems } from "./constants/index";
 
 export default function Nav() {

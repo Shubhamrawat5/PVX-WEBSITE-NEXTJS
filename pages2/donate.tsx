@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Client } from "pg";
 
-import Donate from "../app/components/donate/Donate";
+import Donate from "../app/donate/donate/Donate";
 
 export interface Members {
   name: string;
