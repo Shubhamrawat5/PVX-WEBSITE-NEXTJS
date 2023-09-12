@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 
-import Admin from "./home/Admin";
-import Groups from "./home/groups/Groups";
-import Header from "./home/Header";
+import Admin from "./Admin";
+import Groups from "./groups/Groups";
+import Header from "./Header";
 
 export interface GroupDB {
   groupjid: string;
