@@ -12,6 +12,9 @@ export interface GroupDB {
   link: string;
 }
 
+// WORKING HERE ONLY INSIDE PAGES
+export const revalidate = 600; // 10 min
+
 export const metadata: Metadata = {
   title: "PVX | HOME",
 };

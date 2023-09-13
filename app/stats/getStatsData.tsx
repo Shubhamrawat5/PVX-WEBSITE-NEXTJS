@@ -2,7 +2,7 @@ import { Client } from "pg";
 import { cache } from "react";
 import { DataPVXG, DataPVXT } from "./page";
 
-export const revalidate = 60 * 30; // 30 min
+export const revalidate = 600; // 10 min
 
 export const getStatsData = cache(async () => {
   // console.log("FETCHING STATS");

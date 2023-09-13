@@ -10,6 +10,8 @@ export interface Members {
   donation: number;
 }
 
+export const revalidate = 600; // 10 min
+
 export const metadata: Metadata = {
   title: "PVX | DONATE",
 };

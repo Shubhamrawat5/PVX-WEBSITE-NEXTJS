@@ -14,6 +14,7 @@ export default function Birthdays(props: BirthdaysProps) {
   const months = BdayStateProvider();
   let todayBday = "";
 
+  // TODO: SERVER COMPONENT, SO IT'S TAKING SAME DATE EVERYTIME
   const dateNew = new Date();
   const todayDate = dateNew.getDate();
   const todayMonth = dateNew.getMonth() + 1; // getMonth return 0 to 11

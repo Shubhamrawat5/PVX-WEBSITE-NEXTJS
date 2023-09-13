@@ -11,6 +11,8 @@ export interface Bday {
   place: string;
 }
 
+export const revalidate = 600; // 10 min
+
 export const metadata: Metadata = {
   title: "PVX | B'DAYS",
 };
