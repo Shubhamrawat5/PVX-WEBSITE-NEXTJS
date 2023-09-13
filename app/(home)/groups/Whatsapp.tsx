@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { GroupsProps } from "../page";
 import GroupCard from "./GroupCard";
 import { whatsappGroupsState } from "./GroupsState";
 import useGroup from "./hook/useGroup";
+import { GroupsProps } from "./Groups";
 
 export default function WhatsappGroups(props: GroupsProps) {
   const { groupsDB, isEnabled } = props;
