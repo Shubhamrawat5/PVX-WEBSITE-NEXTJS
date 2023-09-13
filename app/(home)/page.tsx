@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 
@@ -12,7 +12,12 @@ export interface GroupDB {
   link: string;
 }
 
-const getGroupData = async () => {
+// TODO: NOT WORKING AS EXPECTED
+export const revalidate = 60 * 30; // 30 min
+
+export const getGroupData = cache(async () => {
+  // console.log("FETCHING HOME");
+
   let isEnabled = false;
   let groupsDB: GroupDB[] = [];
 
@@ -54,7 +59,7 @@ const getGroupData = async () => {
     groupsDB,
     isEnabled,
   };
-};
+});
 
 export interface GroupsProps {
   groupsDB: GroupDB[];

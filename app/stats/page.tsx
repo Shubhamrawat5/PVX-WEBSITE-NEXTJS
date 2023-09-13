@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 import Stats from "./Stats";
@@ -15,7 +15,11 @@ export interface DataPVXT {
   count: number;
 }
 
-const getStatsData = async () => {
+export const revalidate = 60 * 30; // 30 min
+
+export const getStatsData = cache(async () => {
+  // console.log("FETCHING STATS");
+
   let dataPVXG: DataPVXG[] = [];
   let dataPVXT: DataPVXT[] = [];
 
@@ -50,7 +54,7 @@ const getStatsData = async () => {
     console.error("ERROR: PG_URL is not found in environment");
   }
   return { dataPVXG, dataPVXT };
-};
+});
 
 export interface StatsProps {
   dataPVXG: DataPVXG[];

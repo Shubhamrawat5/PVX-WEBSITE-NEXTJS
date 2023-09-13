@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 import Birthdays from "./Birthdays";
@@ -11,7 +11,11 @@ export interface Bday {
   place: string;
 }
 
-const getBirthdayData = async () => {
+export const revalidate = 60 * 30; // 30 min
+
+export const getBirthdayData = cache(async () => {
+  // console.log("FETCHING BDAYS");
+
   let bdays: Bday[] = [];
 
   if (process.env.PG_URL) {
@@ -37,7 +41,7 @@ const getBirthdayData = async () => {
   }
 
   return { bdays };
-};
+});
 
 export interface BirthdaysProps {
   bdays: Bday[];

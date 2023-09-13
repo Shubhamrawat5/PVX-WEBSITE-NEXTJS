@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import { Metadata } from "next";
 import { Client } from "pg";
 
@@ -10,7 +10,9 @@ export interface Members {
   donation: number;
 }
 
-const getMembersData = async () => {
+export const revalidate = 60 * 30; // 30 min
+
+export const getMembersData = cache(async () => {
   let members: Members[] = [];
 
   if (process.env.PG_URL) {
@@ -36,7 +38,7 @@ const getMembersData = async () => {
   }
 
   return { members };
-};
+});
 
 export interface DonateProps {
   members: Members[];
