@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { DonateProps } from "./page";
+import { Members } from "./page";
+
+export interface DonateProps {
+  members: Members[];
+}
 
 export default function Donate(props: DonateProps) {
   const { members } = props;

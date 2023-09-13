@@ -3,7 +3,12 @@ import Whatsapp from "./Whatsapp";
 import Telegram from "./Telegram";
 import Discord from "./Discord";
 import Facebook from "./Facebook";
-import { GroupsProps } from "../page";
+import { GroupDB } from "../page";
+
+export interface GroupsProps {
+  groupsDB: GroupDB[];
+  isEnabled: boolean;
+}
 
 export default function Groups(props: GroupsProps) {
   const { groupsDB, isEnabled } = props;

@@ -1,7 +1,7 @@
-import React, { cache } from "react";
+import React from "react";
 import { Metadata } from "next";
-import { Client } from "pg";
 import Birthdays from "./Birthdays";
+import { getBirthdayData } from "./getBirthdayData";
 
 export interface Bday {
   name: string;
@@ -9,42 +9,6 @@ export interface Bday {
   date: number;
   month: number;
   place: string;
-}
-
-export const revalidate = 60 * 30; // 30 min
-
-export const getBirthdayData = cache(async () => {
-  // console.log("FETCHING BDAYS");
-
-  let bdays: Bday[] = [];
-
-  if (process.env.PG_URL) {
-    const proConfig = {
-      connectionString: process.env.PG_URL,
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    };
-    const client = new Client(proConfig);
-    await client.connect();
-
-    const resultBdays = await client.query(
-      "select name, username, date, month, place from bday order by date;"
-    );
-    await client.end();
-
-    if (resultBdays.rowCount) {
-      bdays = resultBdays.rows;
-    }
-  } else {
-    console.error("ERROR: PG_URL is not found in environment");
-  }
-
-  return { bdays };
-});
-
-export interface BirthdaysProps {
-  bdays: Bday[];
 }
 
 export const metadata: Metadata = {

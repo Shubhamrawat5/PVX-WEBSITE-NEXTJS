@@ -1,5 +1,10 @@
 import React from "react";
-import { StatsProps } from "./page";
+import { DataPVXG, DataPVXT } from "./page";
+
+export interface StatsProps {
+  dataPVXG: DataPVXG[];
+  dataPVXT: DataPVXT[];
+}
 
 export default function Stats(props: StatsProps) {
   const { dataPVXG, dataPVXT } = props;
