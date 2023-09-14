@@ -1,5 +1,6 @@
 import React from "react";
 import { DataPVXG, DataPVXT } from "./page";
+// import Graph from "./Graph";
 
 export interface StatsProps {
   dataPVXG: DataPVXG[];
@@ -28,6 +29,8 @@ export default function Stats(props: StatsProps) {
           sometimes be down. Messages sent during this time are not counted.
         </p>
       </div>
+
+      {/* <Graph dataPVXG={dataPVXG} /> */}
 
       {dataPVXG ? (
         <>

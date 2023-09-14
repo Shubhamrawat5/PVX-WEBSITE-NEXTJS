@@ -13,14 +13,17 @@
     "@faker-js/faker": "^8.0.2",
     "@types/node": "^20.3.1",
     "@types/pg": "^8.10.2",
+    "chart.js": "^4.4.0",
     "dotenv": "^16.3.1",
     "next": "^13.4.19",
     "pg": "^8.7.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.38",
     "@types/react": "^18.2.14",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "autoprefixer": "^10.4.15",
