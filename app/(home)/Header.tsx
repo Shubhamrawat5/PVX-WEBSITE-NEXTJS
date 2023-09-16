@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 // import Game from "../../components/home/Game";
 
 export default function Header() {
@@ -20,10 +20,12 @@ export default function Header() {
       )} */
 
   return (
-    <section className="min-h-screen flex items-center justify-center flex-col bg-space bg-center bg-cover gap-2">
-      <div className="rounded-full overflow-hidden">
+    // eslint-disable-next-line max-len
+    // <section className="min-h-screen flex items-center justify-center flex-col bg-space bg-center bg-cover gap-2">
+    <section className="pt-32 pb-10 bg-gradient-to-r from-gray-950 to-gray-900">
+      {/* <div className="rounded-full">
         <Image
-          className="border-4 rounded-full w-52 h-52 sm:w-64 sm:h-64"
+          className="m-auto shadow-lg shadow-gray-600 rounded-full w-52 h-52 sm:w-64 sm:h-64"
           src="/static/group/main.jpg"
           alt="logo"
           height="256"
@@ -31,8 +33,17 @@ export default function Header() {
           priority
           // onClick={() => showGameHandler(true)}
         />
-      </div>
-      <h1 className="text-2xl sm:text-4xl mt-2">
+      </div> */}
+      {/* <Image
+        className="m-auto hidden"
+        src="/static/group3.png"
+        alt="logo"
+        height="450"
+        width="450"
+        priority
+        quality={100}
+      /> */}
+      <h1 className="text-2xl sm:text-4xl mt-6 mb-2">
         &lt;&#123;PVX&#125;&gt; COMMUNITY ❤️
       </h1>
       <p className="text-base sm:text-lg text-gray-400">
