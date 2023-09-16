@@ -7,14 +7,14 @@ export default function Screenshots() {
       imageHeight: 340,
       imageWidth: 340,
       imageSrc: "/static/screenshots/certificate1.jpg",
-      imageAlt: "donation-certificate",
+      imageAlt: "donation certificate",
       description: "Donations collected by PVX in Feb 2020",
     },
     {
       imageHeight: 600,
       imageWidth: 480,
       imageSrc: "/static/screenshots/certificate2.jpg",
-      imageAlt: "donation-certificate",
+      imageAlt: "donation certificate",
       description:
         "Donations collected by PVX in June 2023 (for odisha train collision)",
     },
@@ -22,7 +22,7 @@ export default function Screenshots() {
       imageHeight: 280,
       imageWidth: 600,
       imageSrc: "/static/screenshots/unread.jpg",
-      imageAlt: "unread-messages",
+      imageAlt: "unread messages",
       description:
         "Yes it is real! Unread message over some years. Credits: Hritik Jain",
     },

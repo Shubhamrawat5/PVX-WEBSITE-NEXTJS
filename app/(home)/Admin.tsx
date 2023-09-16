@@ -103,7 +103,7 @@ export default function Admin() {
               <Image
                 className="w-16 h-16 sm:w-20 sm:h-20"
                 src={admin.img}
-                alt="admin"
+                alt={`admin ${admin.name}`}
                 height="80"
                 width="80"
               />

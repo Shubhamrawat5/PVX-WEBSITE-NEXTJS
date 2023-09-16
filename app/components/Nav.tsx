@@ -39,7 +39,7 @@ export default function Nav() {
             <Image
               className="invert"
               src="/static/pvx/pvx-dark.png"
-              alt="logo"
+              alt="pvx logo"
               priority
               width="80"
               height="28"

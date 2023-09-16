@@ -40,7 +40,7 @@ export function telegramGroupsState() {
       name: "COMMUNITY",
       id: "1",
       desc: "Group Chat",
-      alt: "pvx-community-telegram",
+      alt: "community telegram",
       img: communityTgImg,
       link: "https://t.me/PVX_Community_Group",
       isCopied: false,
@@ -49,7 +49,7 @@ export function telegramGroupsState() {
       name: "TECH NEWS",
       id: "2",
       desc: "Channel",
-      alt: "pvx-tech-news-telegram",
+      alt: "tech news telegram",
       img: techImg,
       link: "https://t.me/pvxtechnews",
       isCopied: false,
@@ -58,7 +58,7 @@ export function telegramGroupsState() {
       name: "MOVIES",
       id: "3",
       desc: "Discussion",
-      alt: "pvx-movies-series-telegram",
+      alt: "movies series telegram",
       img: moviesImg,
       link: "https://t.me/joinchat/J7FzKB1uYt0xNDVl",
       isCopied: false,
@@ -73,7 +73,7 @@ export function facebookGroupsState() {
       name: "COMMUNITY",
       id: "1",
       desc: "Posting group",
-      alt: "pvx-community-facebook",
+      alt: "community facebook",
       img: communityFbImg,
       link: "https://facebook.com/groups/pvxgaming/",
       isCopied: false,
@@ -88,7 +88,7 @@ export function discordGroupsState() {
       name: "COMMUNITY",
       id: "1",
       desc: "Channel",
-      alt: "pvx-community-discord",
+      alt: "community discord",
       img: communityDiscordImg,
       link: "https://discord.gg/zMktzNzx9U",
       isCopied: false,
@@ -102,7 +102,7 @@ export function whatsappGroupsState() {
     {
       name: "COMMUNITY",
       desc: "Main Group",
-      alt: "pvx-community",
+      alt: "community whatsapp",
       img: communityImg,
       link: "",
       id: "919557666582-1467533860@g.us",
@@ -111,7 +111,7 @@ export function whatsappGroupsState() {
     {
       name: "TECH DISCUSS",
       desc: "Discussion",
-      alt: "pvx-tech-discussion",
+      alt: "tech discussion",
       img: techImg,
       link: "",
       id: "919557666582-1551290369@g.us",
@@ -120,7 +120,7 @@ export function whatsappGroupsState() {
     {
       name: "TECH NEWS",
       desc: "Admin Only",
-      alt: "pvx-tech-news",
+      alt: "tech news",
       img: tech2Img,
       link: "",
       id: "919557666582-1548337792@g.us",
@@ -129,7 +129,7 @@ export function whatsappGroupsState() {
     {
       name: "PROGRAMMERS",
       desc: "Discussion",
-      alt: "pvx-programmers",
+      alt: "programmers",
       img: progImg,
       link: "",
       id: "919557666582-1584193120@g.us",
@@ -138,7 +138,7 @@ export function whatsappGroupsState() {
     {
       name: "MOVIES",
       desc: "Discussion",
-      alt: "pvx-movies-series",
+      alt: "movies series",
       img: moviesImg,
       link: "",
       id: "919557666582-1506690003@g.us",
@@ -147,7 +147,7 @@ export function whatsappGroupsState() {
     {
       name: "SPORTS",
       desc: "Discussion",
-      alt: "pvx-sports",
+      alt: "sports",
       img: sportsImg,
       link: "",
       id: "919557666582-1559476348@g.us",
@@ -157,7 +157,7 @@ export function whatsappGroupsState() {
     {
       name: "MEMES",
       desc: "Memes Sharing",
-      alt: "pvx-memes",
+      alt: "memes",
       img: memeImg,
       link: "",
       id: "919557666582-1551346051@g.us",
@@ -166,7 +166,7 @@ export function whatsappGroupsState() {
     {
       name: "STICKER",
       desc: "Sticker Sharing",
-      alt: "pvx-sticker-chat",
+      alt: "sticker chat",
       img: sticker1Img,
       link: "",
       id: "919557666582-1580308963@g.us",
@@ -175,7 +175,7 @@ export function whatsappGroupsState() {
     {
       name: "STICKER ONLY 1.0",
       desc: "Admin Only",
-      alt: "pvx-sticker-only-1.0",
+      alt: "sticker only 1.0",
       img: stickerOnlyImg,
       link: "",
       id: "919557666582-1628610549@g.us",
@@ -184,7 +184,7 @@ export function whatsappGroupsState() {
     {
       name: "STICKER ONLY 2.0",
       desc: "Admin Only",
-      alt: "pvx-sticker-only-2.0",
+      alt: "sticker only 2.0",
       img: stickerOnlyImg,
       link: "",
       id: "919557666582-1586018947@g.us",
@@ -193,7 +193,7 @@ export function whatsappGroupsState() {
     {
       name: "ANIME",
       desc: "Discussion",
-      alt: "pvx-anime",
+      alt: "anime",
       img: animeImg,
       link: "",
       id: "919557666582-1556821647@g.us",
@@ -202,7 +202,7 @@ export function whatsappGroupsState() {
     {
       name: "CRYPTO",
       desc: "Discussion",
-      alt: "pvx-crypto-discussion",
+      alt: "crypto discussion",
       img: cryptoImg,
       link: "",
       id: "918329198682-1614096949@g.us",
@@ -211,7 +211,7 @@ export function whatsappGroupsState() {
     {
       name: "GAMING",
       desc: "Discussion",
-      alt: "pvx-gaming",
+      alt: "gaming",
       img: gamingImg,
       link: "",
       id: "17028054150-1608057174@g.us",
@@ -220,7 +220,7 @@ export function whatsappGroupsState() {
     {
       name: "BOT",
       desc: "Whatsapp Bot",
-      alt: "pvx-whatsapp-bot",
+      alt: "whatsapp bot",
       img: botImg,
       link: "",
       id: "919675642959-1606755119@g.us",
@@ -229,7 +229,7 @@ export function whatsappGroupsState() {
     {
       name: "STUDIES",
       desc: "Discussion",
-      alt: "pvx-studies",
+      alt: "studies",
       img: studiesImg,
       link: "",
       id: "919557666582-1617595892@g.us",
@@ -238,7 +238,7 @@ export function whatsappGroupsState() {
     {
       name: "FOOD",
       desc: "Discussion",
-      alt: "pvx-food",
+      alt: "food",
       img: foodImg,
       link: "",
       id: "120363039452453480@g.us",
@@ -247,7 +247,7 @@ export function whatsappGroupsState() {
     {
       name: "STATUS",
       desc: "Whatsapp Status",
-      alt: "pvx-whatsapp-status",
+      alt: "whatsapp status",
       img: statusImg,
       link: "",
       id: "919557666582-1627834788@g.us",
