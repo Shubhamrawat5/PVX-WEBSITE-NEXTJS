@@ -18,11 +18,13 @@ export interface DataPVXT {
 export const revalidate = 600; // 10 min
 
 export const metadata: Metadata = {
-  title: "PVX | STATS",
+  title: "Stats",
+  description:
+    "PVX Bot is a whatsapp bot that counts all the messages of every PVX group and individual members. This lets us know about the most active group and members. Also members are ranked according to the total number of messages they've sent in every PVX group.",
   openGraph: {
     title: "PVX | STATS",
     description:
-      "PVX is an active community of friends and easy going people enthusiastically engaged in mutual transaction of ideas spanning over a spectrum of headers ranging from your typical Bakchodi to some serious Crypto and Technology...",
+      "PVX Bot is a whatsapp bot that counts all the messages of every PVX group and individual members. This lets us know about the most active group and members. Also members are ranked according to the total number of messages they've sent in every PVX group.",
     url: "https://pvxcommunity.com/stats",
     images:
       "https://github.com/Shubhamrawat5/PVX_webpage/blob/main/src/asserts/images/main.jpg?raw=true",

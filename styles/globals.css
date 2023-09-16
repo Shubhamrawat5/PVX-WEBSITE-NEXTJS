@@ -14,7 +14,7 @@
 
 @layer components {
   .section-heading {
-    @apply text-2xl text-orange-400 border-orange-600 border-2 inline-block rounded px-4 py-2 mb-8 font-bold;
+    @apply text-2xl text-orange-400 border-orange-600 border-2 inline-block rounded px-4 py-2 mb-6 font-bold;
   }
 }
 

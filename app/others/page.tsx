@@ -3,11 +3,13 @@ import { Metadata } from "next";
 import Others from "./Others";
 
 export const metadata: Metadata = {
-  title: "PVX | OTHERS",
+  title: "Events & Bot",
+  description:
+    "We hold events periodically providing members with opportunities and ample fun. These events foster engagement and strengthen our community bonds. Over time we have held many events, raked some achievements, collected funds for donations, etc.",
   openGraph: {
-    title: "PVX | OTHERS",
+    title: "PVX | EVENTS",
     description:
-      "PVX is an active community of friends and easy going people enthusiastically engaged in mutual transaction of ideas spanning over a spectrum of headers ranging from your typical Bakchodi to some serious Crypto and Technology...",
+      "We hold events periodically providing members with opportunities and ample fun. These events foster engagement and strengthen our community bonds. Over time we have held many events, raked some achievements, collected funds for donations, etc.",
     url: "https://pvxcommunity.com/others",
     images:
       "https://github.com/Shubhamrawat5/PVX_webpage/blob/main/src/asserts/images/main.jpg?raw=true",

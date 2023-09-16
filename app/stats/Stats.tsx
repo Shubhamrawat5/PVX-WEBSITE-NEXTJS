@@ -18,12 +18,12 @@ export default function Stats(props: StatsProps) {
 
   return (
     <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="section-heading">PVX GROUPS STATS</h2>
+      <h2 className="section-heading">PVX GROUP STATS</h2>
 
       <div className="font-Inter text-sm">
-        <p>ALL WHATSAPP PVX GROUPS MESSAGES STATS</p>
+        <p>ALL WHATSAPP PVX GROUP MESSAGE STATS</p>
         <p className="my-4 text-gray-400">FROM 24 NOV 2021</p>
-        <p>
+        <p className="m-auto max-w-3xl">
           Please note that these figures may not be 100% accurate, as the PVX
           bot in WhatsApp groups is used to collect message counts and can
           sometimes be down. Messages sent during this time are not counted.

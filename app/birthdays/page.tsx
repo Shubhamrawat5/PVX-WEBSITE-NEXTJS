@@ -14,11 +14,13 @@ export interface Bday {
 export const revalidate = 600; // 10 min
 
 export const metadata: Metadata = {
-  title: "PVX | B'DAYS",
+  title: "Birthdays",
+  description:
+    "Our community values members' birthdays to make their day special. We collect birthday data voluntarily from members, ensuring everyone's comfort. When birthdays arrive, we celebrate together by sending warm wishes and making their day brighter.",
   openGraph: {
     title: "PVX | B'DAYS",
     description:
-      "PVX is an active community of friends and easy going people enthusiastically engaged in mutual transaction of ideas spanning over a spectrum of headers ranging from your typical Bakchodi to some serious Crypto and Technology...",
+      "Our community values members' birthdays to make their day special. We collect birthday data voluntarily from members, ensuring everyone's comfort. When birthdays arrive, we celebrate together by sending warm wishes and making their day brighter.",
     url: "https://pvxcommunity.com/birthdays",
     images:
       "https://github.com/Shubhamrawat5/PVX_webpage/blob/main/src/asserts/images/main.jpg?raw=true",
