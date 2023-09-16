@@ -12,8 +12,8 @@ export const navItems = [
     name: "B'Days",
   },
   {
-    href: "/others",
-    name: "Others",
+    href: "/events",
+    name: "Events",
   },
 ];
 

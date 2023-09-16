@@ -8,7 +8,7 @@ const techImg = "/static/group/tech.jpg";
 const progImg = "/static/group/prog.jpg";
 const botImg = "/static/group/bot.jpg";
 
-export default function Events() {
+export default function Competition() {
   const threeWinnerEvents = [
     {
       first: "Ash",
@@ -73,7 +73,7 @@ export default function Events() {
 
   return (
     <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="section-heading">EVENTS</h2>
+      <h2 className="section-heading">COMPETITIONS</h2>
       <div className="flex items-center justify-center flex-wrap gap-6">
         {threeWinnerEvents.map((event) => (
           <div

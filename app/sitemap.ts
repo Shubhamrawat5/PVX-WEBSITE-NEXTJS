@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://pvxcommunity.com/others",
+      url: "https://pvxcommunity.com/events",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
