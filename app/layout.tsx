@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Metadata } from "next";
 import React from "react";
 import Nav from "./components/Nav";
@@ -96,7 +95,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* <meta
           name="google-site-verification"
           content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU"
@@ -114,7 +113,7 @@ export default function RootLayout({
           gtag("config", "G-VN9V7K8V4P");
         `}
         </Script> */}
-      </Head>
+      </head>
       <body>
         <Nav />
         {/* <p className="left-0 bottom-0 text-left fixed z-20 text-sm">

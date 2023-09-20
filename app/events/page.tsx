@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OthersPage() {
+export default function EventsPage() {
   return (
     <>
       <Competition />
