@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import React from "react";
+import Script from "next/script";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import "../styles/globals.css";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "PVX",
