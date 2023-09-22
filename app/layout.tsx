@@ -3,6 +3,7 @@ import React from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import "../styles/globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "PVX",
@@ -96,23 +97,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* <meta
-          name="google-site-verification"
-          content="sJN2MPzgDpzPOlooLsyGEpQUDoaPdXM9OYMBoCGuzHU"
-        /> */}
-        {/* <Script
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VN9V7K8V4P"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics">
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag("config", "G-VN9V7K8V4P");
-        `}
-        </Script> */}
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'G-VN9V7K8V4P');
+          `}
+        </Script>
       </head>
       <body>
         <Nav />
