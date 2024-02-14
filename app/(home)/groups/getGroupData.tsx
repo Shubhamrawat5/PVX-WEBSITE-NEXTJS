@@ -2,7 +2,6 @@ import { cache } from "react";
 import { Client } from "pg";
 import { GroupDB } from "../page";
 
-// TODO: NOT WORKING AS EXPECTED
 export const revalidate = 600; // 10 min
 
 export const getGroupData = cache(async () => {

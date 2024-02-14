@@ -6,6 +6,8 @@ import Groups from "./groups/Groups";
 import Header from "./Header";
 import { getGroupData } from "./groups/getGroupData";
 import Counter from "./Counter";
+import Quote from "./quote/Quote";
+import getQuote from "./quote/getQuote";
 
 export interface GroupDB {
   groupjid: string;
@@ -22,11 +24,13 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const { groupsDB, isEnabled } = await getGroupData();
+  const quote = await getQuote();
 
   return (
     <>
       <Header />
       <Counter />
+      <Quote quote={quote} />
       <Groups groupsDB={groupsDB} isEnabled={isEnabled} />
       <Admin />
     </>
