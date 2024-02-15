@@ -38,7 +38,7 @@ export default function BirhdayState() {
       bdays: [],
       img: febImg,
       headerColor: "#01b7da",
-      translateY: "translate-y-7",
+      translateY: "translate-y-6",
     },
     {
       name: "March",
@@ -70,7 +70,7 @@ export default function BirhdayState() {
       bdays: [],
       img: juneImg,
       headerColor: "#01a923",
-      translateY: "translate-y-6",
+      translateY: "translate-y-5",
     },
     {
       name: "July",
@@ -78,7 +78,7 @@ export default function BirhdayState() {
       bdays: [],
       img: julyImg,
       headerColor: "#00a965",
-      translateY: "translate-y-7",
+      translateY: "translate-y-6",
     },
     {
       name: "August",
@@ -86,7 +86,7 @@ export default function BirhdayState() {
       bdays: [],
       img: augImg,
       headerColor: "#007a7f",
-      translateY: "translate-y-6",
+      translateY: "translate-y-5",
     },
     {
       name: "September",
@@ -94,7 +94,7 @@ export default function BirhdayState() {
       bdays: [],
       img: sepImg,
       headerColor: "#fec200",
-      translateY: "translate-y-10",
+      translateY: "translate-y-9",
     },
     {
       name: "October",
@@ -110,7 +110,7 @@ export default function BirhdayState() {
       bdays: [],
       img: novImg,
       headerColor: "#fe7437",
-      translateY: "translate-y-8",
+      translateY: "translate-y-7",
     },
     {
       name: "December",

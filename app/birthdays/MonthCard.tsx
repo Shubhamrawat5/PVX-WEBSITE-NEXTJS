@@ -6,8 +6,8 @@ export default function MonthCard(props: { month: Month }) {
   const { month } = props;
   return (
     <table className="p-2 overflow-hidden rounded-md">
-      <caption className={`overflow-hidden rounded-full ${month.translateY}`}>
-        <Image src={month.img} alt="dec" height="80" width="300" />
+      <caption className={`${month.translateY}`}>
+        <Image src={month.img} alt="dec" height="120" width="280" />
       </caption>
       <thead style={{ backgroundColor: month.headerColor }}>
         <tr>
@@ -21,7 +21,8 @@ export default function MonthCard(props: { month: Month }) {
         {month.bdays.map((bday) => (
           <tr
             key={bday.username}
-            className="border-b border-b-gray-600 font-Inter text-sm"
+            className="border-b font-Inter text-sm"
+            style={{ borderBottomColor: month.headerColor }}
           >
             <td className="p-2 [overflow-wrap:anywhere] ">{bday.date}</td>
             <td className="p-2 [overflow-wrap:anywhere] capitalize">
