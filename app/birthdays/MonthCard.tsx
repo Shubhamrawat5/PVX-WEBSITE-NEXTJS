@@ -1,14 +1,15 @@
 import React from "react";
+import Image from "next/image";
 import { Month } from "./BirthdaysState";
 
 export default function MonthCard(props: { month: Month }) {
   const { month } = props;
   return (
     <table className="p-2 overflow-hidden rounded-md">
-      <caption className="caption-top p-2 text-xl bg-gradient-to-r from-indigo-800 to-indigo-700 uppercase border-b border-b-white">
-        {month.name}
+      <caption className={`overflow-hidden rounded-full ${month.translateY}`}>
+        <Image src={month.img} alt="dec" height="80" width="300" />
       </caption>
-      <thead className="bg-gray-900 border-b border-b-gray-600">
+      <thead style={{ backgroundColor: month.headerColor }}>
         <tr>
           <th className="p-2 ">Date</th>
           <th className="p-2 ">Name</th>
