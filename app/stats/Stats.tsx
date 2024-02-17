@@ -24,9 +24,9 @@ export default function Stats(props: StatsProps) {
         <p>ALL WHATSAPP PVX GROUP MESSAGE STATS</p>
         <p className="my-4 text-gray-400">FROM 24 NOV 2021</p>
         <p className="m-auto max-w-3xl">
-          Please note that these figures may not be 100% accurate, as the PVX
+          (Please note that these figures may not be 100% accurate, as the PVX
           bot in WhatsApp groups is used to collect message counts and can
-          sometimes be down. Messages sent during this time are not counted.
+          sometimes be down. Messages sent during this time are not counted)
         </p>
       </div>
 

@@ -37,8 +37,12 @@ export default function Birthdays(props: BirthdaysProps) {
         <br />
         BIRTHDAY LIST
       </h2>
+      <p className="m-auto max-w-3xl">
+        (Kindly note, the birthdays listed are exclusive to members in the
+        community main group with a message count exceeding 1000)
+      </p>
       {todayBday !== "" ? (
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-4 mt-2">
           <Image
             src="/static/birthday/balloon.png"
             className="animate-bounc"
