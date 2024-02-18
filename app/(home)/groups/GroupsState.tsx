@@ -4,7 +4,6 @@ const techImg = "/static/group/tech.jpg";
 const tech2Img = "/static/group/tech2.jpg";
 const progImg = "/static/group/prog.jpg";
 const moviesImg = "/static/group/movies.jpg";
-const statusImg = "/static/group/status.jpg";
 const memeImg = "/static/group/meme.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 // const sticker2Img = "/static/group/sticker2.jpg";
@@ -242,15 +241,6 @@ export function whatsappGroupsState() {
       img: foodImg,
       link: "",
       id: "120363039452453480@g.us",
-      isCopied: false,
-    },
-    {
-      name: "STATUS",
-      desc: "Whatsapp Status",
-      alt: "whatsapp status",
-      img: statusImg,
-      link: "",
-      id: "919557666582-1627834788@g.us",
       isCopied: false,
     },
   ];
