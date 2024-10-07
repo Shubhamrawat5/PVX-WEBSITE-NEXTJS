@@ -20,7 +20,7 @@ export const getBirthdayData = cache(async () => {
     await client.connect();
 
     const resultBdays = await client.query(
-      "select name, username, date, month, place from bday order by date;"
+      "select name, username, date, month, place from birthday order by date;"
     );
     await client.end();
 

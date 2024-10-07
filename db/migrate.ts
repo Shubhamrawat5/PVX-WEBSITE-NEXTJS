@@ -14,7 +14,7 @@ const createTables = async (pool: Pool) => {
   await createTable(
     pool,
     `
-    CREATE TABLE IF NOT EXISTS group(
+    CREATE TABLE IF NOT EXISTS groups(
       uuid UUID DEFAULT gen_random_uuid(),
       groupjid TEXT PRIMARY KEY, 
       gname TEXT NOT NULL, 
@@ -28,7 +28,7 @@ const createTables = async (pool: Pool) => {
   await createTable(
     pool,
     `
-    CREATE TABLE IF NOT EXISTS member(
+    CREATE TABLE IF NOT EXISTS members(
       uuid UUID DEFAULT gen_random_uuid(),
       memberjid TEXT PRIMARY KEY, 
       name TEXT NOT NULL, 
