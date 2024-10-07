@@ -1,66 +1,117 @@
 import "dotenv/config";
 import { Pool } from "pg";
 
-const createbdayTable = async (pool: Pool) => {
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS bday(
-        name TEXT NOT NULL, 
-        username TEXT NOT NULL, 
-        date INTEGER NOT NULL, 
-        month INTEGER NOT NULL, 
-        year INTEGER, 
-        place TEXT NOT NULL,
-        number TEXT PRIMARY KEY
-      );`
-  );
+const createTable = async (pool: Pool, query: string) => {
+  try {
+    await pool.query(query);
+    console.log("Table created successfully.");
+  } catch (error) {
+    console.error("Error creating table:", error);
+  }
 };
 
-const createMetaTable = async (pool: Pool) => {
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS meta(
-        variable text PRIMARY KEY,
-        value boolean NOT NULL,
-        last_updated Date NOT NULL
-      );`
+const createTables = async (pool: Pool) => {
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS group(
+      uuid UUID DEFAULT gen_random_uuid(),
+      groupjid TEXT PRIMARY KEY, 
+      gname TEXT NOT NULL, 
+      link TEXT, 
+      commands_disabled TEXT[] NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW()
+    );`
   );
-};
 
-const createGroupsTable = async (pool: Pool) => {
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS groups(
-        groupjid TEXT PRIMARY KEY, 
-        gname TEXT NOT NULL, 
-        link TEXT, 
-        commands_disabled TEXT[] NOT NULL 
-      );`
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS member(
+      uuid UUID DEFAULT gen_random_uuid(),
+      memberjid TEXT PRIMARY KEY, 
+      name TEXT NOT NULL, 
+      donation INTEGER DEFAULT 0,
+      milestones TEXT[] NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW()
+    );`
   );
-};
 
-const createMembersTable = async (pool: Pool) => {
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS members(
-          memberjid TEXT PRIMARY KEY, 
-          name TEXT NOT NULL, 
-          donation INTEGER DEFAULT 0,
-          milestones TEXT[] NOT NULL
-      );`
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS birthday(
+      uuid UUID DEFAULT gen_random_uuid(),
+      memberjid TEXT PRIMARY KEY,
+      name TEXT NOT NULL, 
+      username TEXT NOT NULL, 
+      date INTEGER NOT NULL, 
+      month INTEGER NOT NULL, 
+      year INTEGER, 
+      place TEXT NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW(),
+      CONSTRAINT birthdays_memberjid_fkey FOREIGN KEY(memberjid) REFERENCES members(memberjid)
+    );`
   );
-};
 
-const createCountMemberTable = async (pool: Pool) => {
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS countmember(
-        memberjid TEXT NOT NULL, 
-        groupjid TEXT NOT NULL, 
-        message_count INTEGER NOT NULL DEFAULT 0, 
-        warning_count INTEGER NOT NULL DEFAULT 0, 
-        video_count INTEGER NOT NULL DEFAULT 0, 
-        PRIMARY KEY (memberjid, groupjid), 
-        CHECK(warning_count BETWEEN 0 and 3),
-  
-        CONSTRAINT countmember_groupjid_fkey FOREIGN KEY (groupjid) REFERENCES groups (groupjid),
-        CONSTRAINT countmember_memberjid_fkey FOREIGN KEY (memberjid) REFERENCES members (memberjid)
-      );`
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS blacklist(
+      uuid UUID DEFAULT gen_random_uuid(),
+      memberjid TEXT PRIMARY KEY, 
+      reason TEXT NOT NULL, 
+      admin TEXT NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW(),
+      CONSTRAINT blacklist_memberjid_fkey FOREIGN KEY(memberjid) REFERENCES members(memberjid)
+    );`
+  );
+
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS meta(
+      uuid UUID DEFAULT gen_random_uuid(),
+      variable TEXT PRIMARY KEY,
+      value BOOLEAN NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW()
+    );`
+  );
+
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS milestonetext(
+      uuid UUID DEFAULT gen_random_uuid(),
+      sno SERIAL NOT NULL, 
+      milestone TEXT PRIMARY KEY,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW()
+    );`
+  );
+
+  await createTable(
+    pool,
+    `
+    CREATE TABLE IF NOT EXISTS countmember(
+      uuid UUID DEFAULT gen_random_uuid(),
+      memberjid TEXT NOT NULL, 
+      groupjid TEXT NOT NULL, 
+      message_count INTEGER NOT NULL DEFAULT 0, 
+      warning_count INTEGER NOT NULL DEFAULT 0, 
+      video_count INTEGER NOT NULL DEFAULT 0, 
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT NOW(),
+      PRIMARY KEY (memberjid, groupjid), 
+      CHECK(warning_count BETWEEN 0 and 3),
+      CONSTRAINT countmember_groupjid_fkey FOREIGN KEY (groupjid) REFERENCES groups (groupjid),
+      CONSTRAINT countmember_memberjid_fkey FOREIGN KEY (memberjid) REFERENCES members (memberjid)
+    );`
   );
 };
 
@@ -70,22 +121,15 @@ const migrate = async () => {
     return;
   }
 
-  const proConfig = {
-    connectionString: process.env.PG_URL,
-    ssl: false,
-  };
+  const pool = new Pool({ connectionString: process.env.PG_URL, ssl: false });
 
-  const pool = new Pool(proConfig);
-
-  console.log("Creating all tables.");
-  await createbdayTable(pool);
-  await createMetaTable(pool);
-  await createGroupsTable(pool);
-  await createMembersTable(pool);
-  await createCountMemberTable(pool);
-  console.log("Created all tables.");
-
-  pool.end();
+  try {
+    console.log("Creating all tables.");
+    await createTables(pool);
+    console.log("Created all tables.");
+  } finally {
+    await pool.end();
+  }
 };
 
 migrate();
