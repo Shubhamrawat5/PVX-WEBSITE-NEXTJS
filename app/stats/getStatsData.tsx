@@ -21,7 +21,7 @@ export const getStatsData = cache(async () => {
     await client.connect();
 
     const resultPVXG = await client.query(
-      "SELECT groups.gname, groups.groupjid, SUM(countmember.message_count) as count from countmember INNER JOIN groups ON countmember.groupjid = groups.groupjid GROUP BY groups.gname,groups.groupjid ORDER BY count DESC;"
+      "SELECT pvx_group.gname, pvx_group.groupjid, SUM(count_member.message_count) as count from count_member INNER JOIN pvx_group ON count_member.groupjid = pvx_group.groupjid GROUP BY pvx_group.gname,pvx_group.groupjid ORDER BY count DESC;"
     );
 
     if (resultPVXG.rowCount) {
@@ -29,7 +29,7 @@ export const getStatsData = cache(async () => {
     }
 
     const resultPVXT = await client.query(
-      "SELECT members.name, sum(countmember.message_count) as count FROM countmember LEFT JOIN members ON countmember.memberjid=members.memberjid GROUP BY countmember.memberjid,members.name ORDER BY count DESC LIMIT 50;"
+      "SELECT member.name, sum(count_member.message_count) as count FROM count_member LEFT JOIN member ON count_member.memberjid=member.memberjid GROUP BY count_member.memberjid,member.name ORDER BY count DESC LIMIT 50;"
     );
 
     if (resultPVXT.rowCount) {

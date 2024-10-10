@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 import { whatsappGroupsState } from "../app/(home)/groups/GroupsState";
 
 /* -------------------------------- Birthday -------------------------------- */
-interface Bday {
+interface Birthday {
   name: string;
   username: string;
   date: number;
@@ -14,7 +14,7 @@ interface Bday {
   number: string;
 }
 
-function createRandomBday(): Bday {
+function createRandomBirthday(): Birthday {
   return {
     name: faker.internet.displayName(),
     username: faker.internet.userName(),
@@ -33,7 +33,7 @@ const addBirthdays = async (pool: Pool): Promise<boolean> => {
   const bdaysAll = [];
 
   for (let i = 0; i < dataCount; i++) {
-    const bday = createRandomBday();
+    const bday = createRandomBirthday();
     bdaysAll.push(bday);
   }
 

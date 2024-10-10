@@ -31,7 +31,7 @@ export const getGroupData = cache(async () => {
     // TODO: GET TELEGRAM DISCORD LINK FROM DB
     if (isEnabled) {
       const resultGroupLinks = await client.query(
-        "SELECT gname, groupjid, link from groups;"
+        "SELECT gname, groupjid, link from pvx_group;"
       );
 
       if (resultGroupLinks.rowCount) {
