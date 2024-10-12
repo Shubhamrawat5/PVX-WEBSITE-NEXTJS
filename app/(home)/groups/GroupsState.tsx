@@ -204,7 +204,7 @@ export function whatsappGroupsState() {
       alt: "crypto discussion",
       img: cryptoImg,
       link: "",
-      id: "918329198682-1614096949@g.us",
+      id: "120363329317457388@g.us",
       isCopied: false,
     },
     {

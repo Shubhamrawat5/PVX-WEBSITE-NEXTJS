@@ -49,7 +49,7 @@ export default function Stats(props: StatsProps) {
                     {group.gname.slice(8)}
                   </td>
                   <td className="p-1 text-right text-gray-200">
-                    {group.count}
+                    {Number(group.count).toLocaleString("en-IN")}
                   </td>
                 </tr>
               ))}
@@ -79,7 +79,7 @@ export default function Stats(props: StatsProps) {
                     {index + 1}) {member.name}
                   </td>
                   <td className="p-1 text-right text-gray-200">
-                    {member.count}
+                    {Number(member.count).toLocaleString("en-IN")}
                   </td>
                 </tr>
               ))}
