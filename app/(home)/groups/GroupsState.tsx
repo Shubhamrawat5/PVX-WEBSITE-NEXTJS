@@ -7,7 +7,6 @@ const moviesImg = "/static/group/movies.jpg";
 const memeImg = "/static/group/meme.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 // const sticker2Img = "/static/group/sticker2.jpg";
-// const sticker3Img = "/static/group/sticker3.jpg";
 const animeImg = "/static/group/anime2.jpg";
 const botImg = "/static/group/bot2.jpg";
 // const haveliImg = "/static/group/haveli.jpg";

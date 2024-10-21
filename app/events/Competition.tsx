@@ -5,6 +5,7 @@ const memeImg = "/static/group/meme.jpg";
 const animeImg = "/static/group/anime.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 const techImg = "/static/group/tech.jpg";
+const sportImg = "/static/group/sports.jpg";
 const progImg = "/static/group/prog.jpg";
 const botImg = "/static/group/bot.jpg";
 
@@ -68,6 +69,13 @@ export default function Competition() {
       imageAlt: "pvx-bot",
       description: "PVX BOT LOGO COMPETITION",
       date: "(02/05/23)",
+    },
+    {
+      first: "Satya",
+      image: sportImg,
+      imageAlt: "pvx-sports",
+      description: "PVX SPORTS LOGO COMPETITION",
+      date: "(20/10/24)",
     },
   ];
 
