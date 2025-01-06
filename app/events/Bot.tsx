@@ -19,7 +19,7 @@ export default function Bot() {
       <div className="font-Inter">
         <h3 className="">
           PVX Bot is a whatsapp bot for all PVX groups that has a variety of
-          commands with different functionalies.
+          commands with different functionality.
         </h3>
         <br />
         <br />
@@ -30,7 +30,7 @@ export default function Bot() {
           height="200"
           width="200"
         />
-        <div className="my-4">
+        <div className="my-4 hover:scale-105 transition-all">
           <a
             className="text-indigo-400"
             href="https://github.com/Shubhamrawat5/whatsapp-bot-md"

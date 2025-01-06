@@ -54,7 +54,7 @@ export default function Admin() {
       img: masterImg,
     },
     {
-      name: "Añøn¥móú$",
+      name: "ANONYMOUS",
       id: 8,
       img: anmolImg,
     },
@@ -69,7 +69,7 @@ export default function Admin() {
       img: ankitImg,
     },
     {
-      name: "K Λ Я M Λ",
+      name: "KARMA",
       id: 11,
       img: karmaImg,
     },

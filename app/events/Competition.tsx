@@ -141,7 +141,8 @@ export default function Competition() {
               width="170"
             />
             <p className="mt-4 mb-2 font-Inter border-b border-b-gray-600 pb-2">
-              Winner: {event.first}
+              <b>Winner: </b>
+              {event.first}
             </p>
             <p className="text-sm text-gray-400">{event.description}</p>
             <p className="text-sm text-gray-400">{event.date}</p>

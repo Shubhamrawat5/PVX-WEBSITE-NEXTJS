@@ -21,7 +21,7 @@ export default function Stats(props: StatsProps) {
       <h2 className="section-heading">PVX GROUP STATS</h2>
 
       <div className="font-Inter text-sm">
-        <p>ALL WHATSAPP PVX GROUP MESSAGE STATS</p>
+        <p>ALL WHATSAPP PVX GROUP MESSAGES STATS</p>
         <p className="my-4 text-gray-400">FROM 24 NOV 2021</p>
         <p className="m-auto max-w-3xl">
           (Please note that these figures may not be 100% accurate, as the PVX
