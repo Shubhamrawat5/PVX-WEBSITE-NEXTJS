@@ -16,7 +16,7 @@ export interface GroupDB {
 }
 
 // WORKING HERE ONLY INSIDE PAGES
-export const revalidate = 600; // 10 min
+export const revalidate = 60; // 1 min
 
 export const metadata: Metadata = {
   title: "Home",

@@ -11,7 +11,7 @@ export interface Bday {
   place: string;
 }
 
-export const revalidate = 600; // 10 min
+export const revalidate = 60; // 1 min
 
 export const metadata: Metadata = {
   title: "Birthdays",
