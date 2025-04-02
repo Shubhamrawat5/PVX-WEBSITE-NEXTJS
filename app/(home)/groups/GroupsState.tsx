@@ -5,6 +5,7 @@ const tech2Img = "/static/group/tech2.jpg";
 const progImg = "/static/group/prog.jpg";
 const moviesImg = "/static/group/movies.jpg";
 const memeImg = "/static/group/meme.jpg";
+const fitnessImg = "/static/group/fitness.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 // const sticker2Img = "/static/group/sticker2.jpg";
 const animeImg = "/static/group/anime2.jpg";
@@ -151,7 +152,15 @@ export function whatsappGroupsState() {
       id: "919557666582-1559476348@g.us",
       isCopied: false,
     },
-
+    {
+      name: "FITNESS",
+      desc: "Discussion",
+      alt: "fitness",
+      img: fitnessImg,
+      link: "",
+      id: "120363166048344466@g.us",
+      isCopied: false,
+    },
     {
       name: "MEMES",
       desc: "Memes Sharing",

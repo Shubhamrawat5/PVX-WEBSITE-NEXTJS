@@ -44,9 +44,9 @@ export default function WhatsappGroups(props: GroupsProps) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       )}
-      <div className="bg-gradient-to-r from-gray-800 to-gray-800 inline-flex justify-center items-center w-full rounded">
+      {/* <div className="bg-gradient-to-r from-gray-800 to-gray-800 inline-flex justify-center items-center w-full rounded">
         <GroupCard group={stickerChannel} checkCopied={checkCopied} />
-      </div>
+      </div> */}
       <h3 className="text-black bg-white rounded text-lg mx-3 py-1 mt-4  font-Inter font-medium">
         WHATSAPP
       </h3>
