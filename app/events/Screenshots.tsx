@@ -8,23 +8,34 @@ export default function Screenshots() {
       imageWidth: 340,
       imageSrc: "/static/screenshots/certificate1.jpg",
       imageAlt: "donation certificate",
-      description: "Donations collected by PVX in Feb 2020",
+      subDescription:
+        "Donations collected by PVX in Feb 2020 for the Pulwama attack victims.",
+      description: "Credits: PVX",
     },
     {
       imageHeight: 600,
       imageWidth: 480,
       imageSrc: "/static/screenshots/certificate2.jpg",
       imageAlt: "donation certificate",
-      description:
-        "Donations collected by PVX in June 2023 (for odisha train collision)",
+      subDescription:
+        "Donations collected by PVX in June 2023 for the Odisha train collision.",
+      description: "Credits: PVX",
     },
     {
       imageHeight: 280,
       imageWidth: 600,
       imageSrc: "/static/screenshots/unread.jpg",
       imageAlt: "unread messages",
-      description:
-        "Yes it is real! Unread message over some years. Credits: Hritik Jain",
+      subDescription: "Back in the day… 3 million unread messages in PVX.",
+      description: "Credits: Hritik Jain",
+    },
+    {
+      imageHeight: 280,
+      imageWidth: 600,
+      imageSrc: "/static/screenshots/tg24k.jpg",
+      imageAlt: "24k members",
+      subDescription: "At its peak, PVX had 24k+ passionate movie fans.",
+      description: "Credits: Amit Johnson",
     },
   ];
 
@@ -34,7 +45,7 @@ export default function Screenshots() {
       <div className="flex items-center justify-center flex-wrap flex-col sm:flex-row gap-6">
         {screenshots.map((screenshot) => (
           <div
-            className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg py-5 px-10"
+            className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg py-5 sm:px-10 px-5"
             key={screenshot.description}
           >
             <Image
@@ -44,7 +55,10 @@ export default function Screenshots() {
               height={screenshot.imageWidth}
               width={screenshot.imageWidth}
             />
-            <p className="mt-3">{screenshot.description}</p>
+            <p className="mt-4 mb-2 font-Inter border-b border-b-gray-600 pb-2">
+              {screenshot.description}
+            </p>
+            <p className="mt-3 text-gray-400">{screenshot.subDescription}</p>
           </div>
         ))}
       </div>

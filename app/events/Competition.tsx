@@ -123,8 +123,8 @@ export default function Competition() {
             <p className="mt-4 mb-2 font-Inter border-b border-b-gray-600 pb-2">
               Winners
             </p>
-            <p className="text-sm text-gray-400 ">{event.description}</p>
-            <p className="text-sm text-gray-400 ">{event.date}</p>
+            <p className="text-sm text-gray-400">{event.description}</p>
+            <p className="text-sm text-gray-400">{event.date}</p>
           </div>
         ))}
 

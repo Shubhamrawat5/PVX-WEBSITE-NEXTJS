@@ -18,8 +18,8 @@ export default function Bot() {
       <h2 className="section-heading">PVX BOT</h2>
       <div className="font-Inter">
         <h3 className="">
-          PVX Bot is a whatsapp bot for all PVX groups that has a variety of
-          commands with different functionality.
+          PVX Bot is a WhatsApp bot to manage all PVX groups, offering a variety
+          of commands with different functionalities.
         </h3>
         <br />
         <br />
