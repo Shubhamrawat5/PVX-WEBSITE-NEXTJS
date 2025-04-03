@@ -33,7 +33,7 @@ export default function Bot() {
         <div className="my-4 hover:scale-105 transition-all">
           <a
             className="text-indigo-400"
-            href="https://github.com/Shubhamrawat5/whatsapp-bot-md"
+            href="https://github.com/Shubhamrawat5/whatsapp-bot-ts"
           >
             [ GITHUB SOURCE CODE ]
           </a>
