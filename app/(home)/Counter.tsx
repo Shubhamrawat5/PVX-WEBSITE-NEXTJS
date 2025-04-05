@@ -3,7 +3,7 @@ import React from "react";
 export default function Counter() {
   const counters = [
     {
-      count: 6,
+      count: 8,
       name: "Years",
     },
     {
@@ -11,7 +11,7 @@ export default function Counter() {
       name: "Groups",
     },
     {
-      count: 4000,
+      count: 5000,
       name: "Members",
     },
   ];
