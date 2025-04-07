@@ -9,6 +9,7 @@ const fitnessImg = "/static/group/fitness.jpg";
 const sticker1Img = "/static/group/sticker1.jpg";
 // const sticker2Img = "/static/group/sticker2.jpg";
 const animeImg = "/static/group/anime2.jpg";
+const travellersImg = "/static/group/travellers.png";
 const botImg = "/static/group/bot2.jpg";
 // const haveliImg = "/static/group/haveli.jpg";
 const gamingImg = "/static/group/gaming.jpg";
@@ -138,10 +139,19 @@ export function whatsappGroupsState() {
     {
       name: "JOB UPDATES",
       desc: "Admin only",
-      alt: "programmers",
+      alt: "job updates",
       img: jobupdatesImg,
       link: "",
       id: "120363141318508852@g.us",
+      isCopied: false,
+    },
+    {
+      name: "TRAVELLERS",
+      desc: "Discussion",
+      alt: "travellers",
+      img: travellersImg,
+      link: "",
+      id: "120363418521437326@g.us",
       isCopied: false,
     },
     {
