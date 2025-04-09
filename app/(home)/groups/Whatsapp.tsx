@@ -6,7 +6,7 @@ import { whatsappGroupsState } from "./GroupsState";
 import useGroup from "./hook/useGroup";
 import { GroupsProps } from "./Groups";
 
-// const sticker1Img = "/static/group/sticker1.jpg";
+const stickeronlyImg = "/static/group/stickeronly.jpg";
 
 export default function WhatsappGroups(props: GroupsProps) {
   const { groupsDB, isEnabled } = props;
@@ -27,15 +27,15 @@ export default function WhatsappGroups(props: GroupsProps) {
     });
   }
 
-  // const stickerChannel = {
-  //   name: "STICKER CHANNEL",
-  //   id: "0029Vb5pZvjGE56pPGa3Ov2i",
-  //   desc: "JOIN NOW",
-  //   alt: "",
-  //   img: sticker1Img,
-  //   link: "https://whatsapp.com/channel/0029Vb5pZvjGE56pPGa3Ov2i",
-  //   isCopied: false,
-  // };
+  const stickerChannel = {
+    name: "STICKER ONLY CHANNEL",
+    id: "0029Vb5pZvjGE56pPGa3Ov2i",
+    desc: "JOIN NOW",
+    alt: "",
+    img: stickeronlyImg,
+    link: "https://whatsapp.com/channel/0029Vb5pZvjGE56pPGa3Ov2i",
+    isCopied: false,
+  };
 
   return (
     <div className="inline-block">
@@ -44,10 +44,12 @@ export default function WhatsappGroups(props: GroupsProps) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       )}
-      {/* <div className="bg-gradient-to-r from-gray-800 to-gray-800
-      inline-flex justify-center items-center w-full rounded">
+      <div
+        className="bg-gradient-to-r from-gray-800 to-gray-800
+      inline-flex justify-center items-center w-full rounded"
+      >
         <GroupCard group={stickerChannel} checkCopied={checkCopied} />
-      </div> */}
+      </div>
       <h3 className="text-black bg-white rounded text-lg mx-3 py-1 mt-4  font-Inter font-medium">
         WHATSAPP
       </h3>
