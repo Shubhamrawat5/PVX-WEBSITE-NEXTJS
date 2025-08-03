@@ -13,7 +13,7 @@ const travellersImg = "/static/group/travellers.png";
 const botImg = "/static/group/bot2.jpg";
 // const haveliImg = "/static/group/haveli.jpg";
 const gamingImg = "/static/group/gaming.jpg";
-const jobupdatesImg = "/static/group/jobupdates.jpg";
+const jobUpdatesImg = "/static/group/jobupdates.jpg";
 const studiesImg = "/static/group/study.jpg";
 const sportsImg = "/static/group/sports.jpg";
 const cryptoImg = "/static/group/crypto.jpg";
@@ -98,6 +98,31 @@ export function discordGroupsState() {
   return discordGroups;
 }
 
+export function whatsappChannelsState() {
+  const whatsappChannels: GroupData[] = [
+    {
+      name: "STICKER ONLY",
+      id: "0029Vb5pZvjGE56pPGa3Ov2i",
+      desc: "CHANNEL",
+      alt: "",
+      img: stickerOnlyImg,
+      link: "https://whatsapp.com/channel/0029Vb5pZvjGE56pPGa3Ov2i",
+      isCopied: false,
+    },
+    {
+      name: "JOB UPDATES",
+      id: "0029Vb5w1aWJkK7GYtoYde2s",
+      desc: "CHANNEL",
+      alt: "",
+      img: jobUpdatesImg,
+      link: "https://whatsapp.com/channel/0029Vb5w1aWJkK7GYtoYde2s",
+      isCopied: false,
+    },
+  ];
+
+  return whatsappChannels;
+}
+
 export function whatsappGroupsState() {
   const whatsappGroups: GroupData[] = [
     {
@@ -140,7 +165,7 @@ export function whatsappGroupsState() {
       name: "JOB UPDATES",
       desc: "Admin only",
       alt: "job updates",
-      img: jobupdatesImg,
+      img: jobUpdatesImg,
       link: "",
       id: "120363141318508852@g.us",
       isCopied: false,

@@ -2,18 +2,19 @@
 
 import React from "react";
 import GroupCard from "./GroupCard";
-import { whatsappGroupsState } from "./GroupsState";
+import { whatsappGroupsState, whatsappChannelsState } from "./GroupsState";
 import useGroup from "./hook/useGroup";
 import { GroupsProps } from "./Groups";
-
-const stickeronlyImg = "/static/group/stickeronly.jpg";
-const jobUpdatesImg = "/static/group/jobupdates.jpg";
 
 export default function WhatsappGroups(props: GroupsProps) {
   const { groupsDB, isEnabled } = props;
 
   const whatsappGroups = whatsappGroupsState();
-  const { groups, checkCopied } = useGroup(whatsappGroups);
+  const whatsappChannels = whatsappChannelsState();
+  const { groups, checkCopied } = useGroup([
+    ...whatsappChannels,
+    ...whatsappGroups,
+  ]);
 
   // check if group links are enabled
   if (isEnabled) {
@@ -28,27 +29,6 @@ export default function WhatsappGroups(props: GroupsProps) {
     });
   }
 
-  const channels = [
-    {
-      name: "STICKER ONLY CHANNEL",
-      id: "0029Vb5pZvjGE56pPGa3Ov2i",
-      desc: "JOIN NOW",
-      alt: "",
-      img: stickeronlyImg,
-      link: "https://whatsapp.com/channel/0029Vb5pZvjGE56pPGa3Ov2i",
-      isCopied: false,
-    },
-    {
-      name: "JOB UPDATES CHANNEL",
-      id: "0029Vb5w1aWJkK7GYtoYde2s",
-      desc: "JOIN NOW",
-      alt: "",
-      img: jobUpdatesImg,
-      link: "https://whatsapp.com/channel/0029Vb5w1aWJkK7GYtoYde2s",
-      isCopied: false,
-    },
-  ];
-
   return (
     <div className="inline-block">
       {!isEnabled && (
@@ -56,14 +36,6 @@ export default function WhatsappGroups(props: GroupsProps) {
           NOTE: Whatsapp Group Links are currently blocked ! Contact PVX admins.
         </div>
       )}
-      <div
-        className="
-      inline-flex justify-center items-center w-full rounded"
-      >
-        {channels.map((channel) => (
-          <GroupCard group={channel} checkCopied={checkCopied} />
-        ))}
-      </div>
       <h3 className="text-black bg-white rounded text-lg mx-3 py-1 mt-4  font-Inter font-medium">
         WHATSAPP
       </h3>
