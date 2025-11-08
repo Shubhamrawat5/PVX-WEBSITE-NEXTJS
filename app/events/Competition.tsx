@@ -1,151 +1,146 @@
 import React from "react";
 import Image from "next/image";
 
-const memeImg = "/static/group/meme.jpg";
-const animeImg = "/static/group/anime.jpg";
-const sticker1Img = "/static/group/sticker1.jpg";
-const techImg = "/static/group/tech.jpg";
-const sportImg = "/static/group/sports.jpg";
-const progImg = "/static/group/prog.jpg";
-const botImg = "/static/group/bot.jpg";
+const events = [
+  {
+    title: "Chess Tournament",
+    date: "(12/08/21)",
+    winners: [
+      { name: "Ash", place: 1 },
+      { name: "NJV", place: 2 },
+      { name: "Sweeton", place: 3 },
+    ],
+  },
+  {
+    title: "Snake Game Contest",
+    date: "(23/06/22)",
+    winners: [
+      { name: "Sakshat", place: 1 },
+      { name: "Cheems", place: 2 },
+      { name: "Tejash", place: 3 },
+    ],
+  },
+  {
+    title: "Meme Logo Competition",
+    date: "(12/07/22)",
+    image: "/static/group/meme.jpg",
+    winners: [{ name: "Harsh", place: 1 }],
+  },
+  {
+    title: "Sticker Logo Competition",
+    date: "(25/07/22)",
+    image: "/static/group/sticker1.jpg",
+    winners: [{ name: "Doku Doku Noooo", place: 1 }],
+  },
+  {
+    title: "Anime Logo Competition",
+    date: "(26/09/22)",
+    image: "/static/group/anime.jpg",
+    winners: [{ name: "Satya", place: 1 }],
+  },
+  {
+    title: "Tech Logo Competition",
+    date: "(18/11/22)",
+    image: "/static/group/tech.jpg",
+    winners: [{ name: "Spandan Ghosh", place: 1 }],
+  },
+  {
+    title: "Programmers Logo Competition",
+    date: "(07/02/23)",
+    image: "/static/group/prog.jpg",
+    winners: [{ name: "Satya", place: 1 }],
+  },
+  {
+    title: "Bot Logo Competition",
+    date: "(02/05/23)",
+    image: "/static/group/bot.jpg",
+    winners: [{ name: "Ikshwaku", place: 1 }],
+  },
+  {
+    title: "Sports Logo Competition",
+    date: "(20/10/24)",
+    image: "/static/group/sports.jpg",
+    winners: [{ name: "Satya", place: 1 }],
+  },
+];
 
 export default function Competition() {
-  const threeWinnerEvents = [
-    {
-      first: "Ash",
-      second: "NJV",
-      third: "Sweeton",
-      description: "CHESS TOURNAMENT",
-      date: "(12/08/21)",
-    },
-    {
-      first: "Sakshat",
-      second: "Cheems",
-      third: "Tejash",
-      description: "SNAKE GAME CONTEST",
-      date: "(23/06/22)",
-    },
-  ];
-
-  const singleWinnerEvents = [
-    {
-      first: "Harsh",
-      image: memeImg,
-      imageAlt: "pvx-memes",
-      description: "PVX MEME LOGO COMPETITION",
-      date: "(12/07/22)",
-    },
-    {
-      first: "Doku Doku Noooo",
-      image: sticker1Img,
-      imageAlt: "pvx-sticker",
-      description: "PVX STICKER LOGO COMPETITION",
-      date: "(25/07/22)",
-    },
-    {
-      first: "Satya",
-      image: animeImg,
-      imageAlt: "pvx-anime",
-      description: "PVX ANIME LOGO COMPETITION",
-      date: "(26/09/22)",
-    },
-    {
-      first: "Spandan Ghosh",
-      image: techImg,
-      imageAlt: "pvx-tech",
-      description: "PVX TECH LOGO COMPETITION",
-      date: "(18/11/22)",
-    },
-    {
-      first: "Satya",
-      image: progImg,
-      imageAlt: "pvx-programmers",
-      description: "PVX PROGRAMMERS LOGO COMPETITION",
-      date: "(07/02/23)",
-    },
-    {
-      first: "Ikshwaku",
-      image: botImg,
-      imageAlt: "pvx-bot",
-      description: "PVX BOT LOGO COMPETITION",
-      date: "(02/05/23)",
-    },
-    {
-      first: "Satya",
-      image: sportImg,
-      imageAlt: "pvx-sports",
-      description: "PVX SPORTS LOGO COMPETITION",
-      date: "(20/10/24)",
-    },
-  ];
-
   return (
-    <section className="pt-20 bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="section-heading">COMPETITIONS</h2>
-      <div className="flex items-center justify-center flex-wrap gap-6">
-        {threeWinnerEvents.map((event) => (
+    <section className="py-16 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white font-Inter">
+      <h2 className="text-3xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-fuchsia-400 to-cyan-400 text-center mb-10">
+        Competition Results 🏆
+      </h2>
+      {/* Responsive Grid */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-6">
+        {events.map((event) => (
           <div
-            className="bg-gray-800 rounded-lg py-5 px-10 basis-96"
-            key={event.description}
+            key={event.title}
+            className="flex flex-col items-center bg-gray-800/30 backdrop-blur-md border border-gray-700/60 rounded-2xl p-5 hover:bg-gray-800/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.3)] transition-all duration-500"
           >
-            <div className="mt-4 mb-16 flex justify-around font-Inter">
-              <div className="translate-y-10">
+            {/* Logo image (only for single-winner events) */}
+            {event.image && (
+              <div className="relative w-[70%] md:w-[60%] overflow-hidden rounded-xl shadow-md mb-4">
                 <Image
-                  className="m-auto"
-                  src="/static/icons/medal 2.png"
-                  alt="2"
-                  height="55"
-                  width="55"
+                  src={event.image}
+                  alt={event.title}
+                  width={220}
+                  height={220}
+                  className="object-cover w-28 h-28 rounded-xl hover:scale-105 m-auto transition-transform duration-700"
                 />
-                <p className="mt-2">{event.second}</p>
               </div>
-              <div>
-                <Image
-                  className="m-auto"
-                  src="/static/icons/medal 1.png"
-                  alt="1"
-                  height="55"
-                  width="55"
-                />
-                <p className="mt-2">{event.first}</p>
-              </div>
-              <div className="translate-y-12">
-                <Image
-                  className="m-auto"
-                  src="/static/icons/medal 3.png"
-                  alt="3"
-                  height="55"
-                  width="55"
-                />
-                <p className="mt-2">{event.third}</p>
-              </div>
-            </div>
-            <p className="mt-4 mb-2 font-Inter border-b border-b-gray-600 pb-2">
-              Winners
-            </p>
-            <p className="text-sm text-gray-400">{event.description}</p>
-            <p className="text-sm text-gray-400">{event.date}</p>
-          </div>
-        ))}
+            )}
 
-        {singleWinnerEvents.map((event) => (
-          <div
-            className="bg-gray-800 rounded-lg py-5 px-10 basis-96"
-            key={event.description}
-          >
-            <Image
-              className="m-auto"
-              src={event.image}
-              alt={event.imageAlt}
-              height="160"
-              width="170"
-            />
-            <p className="mt-4 mb-2 font-Inter border-b border-b-gray-600 pb-2">
-              <b>Winner: </b>
-              {event.first}
+            {/* Event Title & Date */}
+            <h3 className="text-xl font-semibold text-gray-100 tracking-wide text-center">
+              {event.title}
+            </h3>
+            <p className="text-xs text-gray-400 mb-4 mt-1 text-center">
+              {event.date}
             </p>
-            <p className="text-sm text-gray-400">{event.description}</p>
-            <p className="text-sm text-gray-400">{event.date}</p>
+
+            {/* Multi-winner events */}
+            {event.winners.length > 1 ? (
+              <div className="flex flex-wrap justify-center gap-3 mt-2">
+                {event.winners.map((winner) => {
+                  let winnerStyle = "bg-gray-800/60 text-gray-400"; // default
+
+                  if (winner.place === 1) {
+                    winnerStyle =
+                      "bg-gradient-to-r from-yellow-400/20 to-yellow-300/10 text-yellow-300";
+                  } else if (winner.place === 2) {
+                    winnerStyle = "bg-gray-700/50 text-gray-200";
+                  }
+
+                  return (
+                    <div
+                      key={winner.name}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 ${winnerStyle}`}
+                    >
+                      <Image
+                        src={`/static/icons/medal ${winner.place}.png`}
+                        alt={`medal-${winner.place}`}
+                        width={20}
+                        height={20}
+                      />
+                      <span>{winner.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              // Single-winner layout
+              <div className="mt-3 flex justify-center">
+                <div className="px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-blue-400/20 to-cyan-300/10 text-cyan-300 flex items-center gap-2">
+                  <Image
+                    src="/static/icons/medal 1.png"
+                    alt="1st"
+                    width={20}
+                    height={20}
+                  />
+                  <span>{event.winners[0].name}</span>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
