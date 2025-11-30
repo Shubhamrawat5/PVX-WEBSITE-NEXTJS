@@ -15,6 +15,12 @@ export interface DataPVXT {
   count: number;
 }
 
+export interface Donation {
+  name: string;
+  memberjid: string;
+  donation: number;
+}
+
 export const revalidate = 60; // 1 min
 
 export const metadata: Metadata = {
@@ -33,7 +39,9 @@ export const metadata: Metadata = {
 };
 
 export default async function StatsPage() {
-  const { dataPVXG, dataPVXT } = await getStatsData();
+  const { dataPVXG, dataPVXT, donations } = await getStatsData();
 
-  return <Stats dataPVXG={dataPVXG} dataPVXT={dataPVXT} />;
+  return (
+    <Stats dataPVXG={dataPVXG} dataPVXT={dataPVXT} donations={donations} />
+  );
 }

@@ -1,6 +1,6 @@
 import { Client } from "pg";
 import { cache } from "react";
-import { DataPVXG, DataPVXT } from "./page";
+import { DataPVXG, DataPVXT, Donation } from "./page";
 
 export const revalidate = 60; // 1 min
 
@@ -9,6 +9,7 @@ export const getStatsData = cache(async () => {
 
   let dataPVXG: DataPVXG[] = [];
   let dataPVXT: DataPVXT[] = [];
+  let donations: Donation[] = [];
 
   if (process.env.PG_URL) {
     const proConfig = {
@@ -36,9 +37,17 @@ export const getStatsData = cache(async () => {
       dataPVXT = resultPVXT.rows;
     }
 
+    const resultDonations = await client.query(
+      "SELECT member.name, donation FROM member where donation>0 ORDER BY donation DESC;"
+    );
+
+    if (resultDonations.rowCount) {
+      donations = resultDonations.rows;
+    }
+
     await client.end();
   } else {
     console.error("ERROR: PG_URL is not found in environment");
   }
-  return { dataPVXG, dataPVXT };
+  return { dataPVXG, dataPVXT, donations };
 });

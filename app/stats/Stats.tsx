@@ -1,17 +1,25 @@
 import React from "react";
-import { DataPVXG, DataPVXT } from "./page";
+import { DataPVXG, DataPVXT, Donation } from "./page";
 
 export interface StatsProps {
   dataPVXG: DataPVXG[];
   dataPVXT: DataPVXT[];
+  donations: Donation[];
 }
 
 export default function Stats(props: StatsProps) {
-  const { dataPVXG, dataPVXT } = props;
+  const { dataPVXG, dataPVXT, donations } = props;
   let totalMessages = 0;
-  if (dataPVXG) {
+  if (dataPVXG && dataPVXG.length > 0) {
     dataPVXG.forEach((ele) => {
       totalMessages += Number(ele.count);
+    });
+  }
+
+  let totalDonations = 0;
+  if (donations && donations.length > 0) {
+    donations.forEach((donation) => {
+      totalDonations += Number(donation.donation);
     });
   }
 
@@ -101,6 +109,53 @@ export default function Stats(props: StatsProps) {
       ) : (
         <div className="text-center border border-red-400 text-red-300 bg-red-950/30 px-4 py-2 rounded-lg w-fit mx-auto mt-6">
           ⚠️ Unable to load member stats data. Please contact PVX admins.
+        </div>
+      )}
+
+      {/* DONATIONS SECTION - keeps the theme of other panels */}
+      {donations && donations.length > 0 ? (
+        <div className="max-w-4xl mx-auto mt-16">
+          <h3 className="text-2xl font-semibold text-cyan-400 mb-4 text-center">
+            DONATIONS
+          </h3>
+
+          <div className="bg-gray-800/40 backdrop-blur-md border border-gray-700/60 rounded-2xl py-4 px-2 sm:p-6 shadow-lg hover:shadow-amber-400/10 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="flex-1 text-gray-300">
+                <p className="subheading-p">Support the PVX community</p>
+                <p className="subheading-p">
+                  Your donations help run events, maintain tools, and support
+                  our bots and domain.
+                </p>
+                {/* <p className="mt-3">
+                  <strong>UPI:</strong> shubhamraw123@okhdfcbank
+                </p> */}
+                <p className="mt-3 text-gray-100 font-medium">
+                  Total donations:
+                  <strong>₹ {totalDonations.toLocaleString("en-IN")}</strong>
+                </p>
+                <div className="mt-4 divide-y divide-gray-800">
+                  {donations.map((donor) => (
+                    <div
+                      key={donor.memberjid}
+                      className="flex justify-between py-2 px-2 hover:bg-gray-800/30 rounded-md transition-all"
+                    >
+                      <span className="capitalize text-left text-gray-300">
+                        {donor.name}
+                      </span>
+                      <span className="text-gray-100 text-right font-medium">
+                        ₹ {Number(donor.donation).toLocaleString("en-IN")}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="text-center border border-red-400 text-red-300 bg-red-950/30 px-4 py-2 rounded-lg w-fit mx-auto mt-6">
+          ⚠️ Unable to load donations data. Please contact PVX admins.
         </div>
       )}
     </section>
